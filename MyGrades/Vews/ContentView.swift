@@ -12,7 +12,19 @@ struct ContentView: View {
   // MARK: Body
   
   var body: some View {
-    Text("Hello, World!")
+    ZStack {
+      Color(red: 229/254, green: 229/254, blue: 234/254)
+        .edgesIgnoringSafeArea(.all)
+      
+      VStack {
+        Image("NothingToPrint")
+        Text("NOTHING TO PRINT")
+          .font(.system(.callout, design: .rounded))
+          .bold()
+          .foregroundColor(.myGradesPurpleLight)
+          .padding(.top)
+      }
+    }
   }
 }
 
@@ -21,3 +33,4 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
+
