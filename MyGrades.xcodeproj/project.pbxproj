@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112024D1D9C40010A1AC /* AverageView.swift */; };
+		F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController.swift */; };
+		F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */; };
+		F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112724D2125B0010A1AC /* SubjectListView.swift */; };
 		F9B6358324CE1FD00030823D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358224CE1FD00030823D /* Subject.swift */; };
 		F9B6358524CE20730030823D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358424CE20730030823D /* Grade.swift */; };
 		F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358624CE21BB0030823D /* SubjectsStore.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9A8112024D1D9C40010A1AC /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
+		F9A8112224D1E4610010A1AC /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
+		F9A8112724D2125B0010A1AC /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
 		F9B6358224CE1FD00030823D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		F9B6358424CE20730030823D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		F9B6358624CE21BB0030823D /* SubjectsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsStore.swift; sourceTree = "<group>"; };
@@ -49,9 +57,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F9A8112424D1E8CB0010A1AC /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		F9B6358824CE21F50030823D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F9A8112224D1E4610010A1AC /* UINavigationController.swift */,
 				F9B6358924CE22010030823D /* File.swift */,
 				F9F79E5124CF1D1800A10C52 /* Color.swift */,
 			);
@@ -78,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B6358824CE21F50030823D /* Extensions */,
+				F9A8112424D1E8CB0010A1AC /* Shapes */,
 				F9CFFDE824CC6C95007E57C1 /* Models */,
 				F9CFFDE924CC6C9B007E57C1 /* Vews */,
 				F9CFFDEB24CC6CB9007E57C1 /* Content */,
@@ -112,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
+				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
+				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -205,10 +225,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B6358324CE1FD00030823D /* Subject.swift in Sources */,
+				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
+				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
+				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
+				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
 				F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */,
 				F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */,

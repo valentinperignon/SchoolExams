@@ -12,19 +12,41 @@ struct ContentView: View {
   // MARK: Body
   
   var body: some View {
-    ZStack {
-      Color(red: 229/254, green: 229/254, blue: 234/254)
-        .edgesIgnoringSafeArea(.all)
-      
-      VStack {
-        Image("NothingToPrint")
-        Text("NOTHING TO PRINT")
-          .font(.system(.callout, design: .rounded))
-          .bold()
-          .foregroundColor(.myGradesPurpleLight)
-          .padding(.top)
+    
+    NavigationView {
+      ScrollView {
+        // ----- Average Grade -----
+        ZStack {
+          Rectangle()
+            .fill(Color.mgPurpleLight)
+            .clipShape(RoundedRectangle(radius: 20))
+          
+          AverageView(average: 14.5)
+            .padding(.vertical, 20)
+        }
+        .padding(.bottom, 15)
+        
+        // ----- Subjects -----
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
       }
+      .navigationBarTitle(
+        Text("My Subjects")
+          .foregroundColor(.black)
+      )
+      .navigationBarItems(trailing:
+        Button(action: {}) {
+          Image(systemName: "plus")
+            .renderingMode(.original)
+        }
+      )
     }
+    
   }
 }
 

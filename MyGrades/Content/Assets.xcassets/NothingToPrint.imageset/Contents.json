@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "NothingToPrint.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "NotthingToPrint.png",
+      "filename" : "NothingToPrint@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "NothingToPrint@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
