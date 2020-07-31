@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
   // MARK: Properties
   
-  @ObservedObject var allSubjects = SubjectStore()
+  @ObservedObject var allSubjects: SubjectStore
   
   @State private var showNewSubjectSheet = false
   
@@ -60,9 +60,10 @@ struct ContentView: View {
               SubjectListView(subject: subject)
             }.accentColor(Color.black)
           }
+          
+          Spacer(minLength: 15)
         }
         .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
-        
       }
       
     }
@@ -95,6 +96,6 @@ struct ContentViewNavigationModifier: ViewModifier {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    ContentView(allSubjects: SubjectStore.getDemoData())
   }
 }

@@ -19,19 +19,14 @@ struct FormTextFieldView: View {
   var body: some View {
     VStack {
       // ----- Title
-      HStack {
-        Text(title)
-          .font(.callout)
-          .fontWeight(.bold)
-          .foregroundColor(.mgPurpleDark)
-        Spacer()
-      }
+      FormSectionTitle(title: title)
       
       // ----- Field
       TextField("Type something here...", text: $textValue)
-        .padding()
+        .padding(.horizontal)
+        .padding(.vertical, 12)
         .background(Color.appleGray)
-        .cornerRadius(10)
+        .cornerRadius(8)
     }
     .padding(.horizontal, 15)
   }

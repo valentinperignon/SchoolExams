@@ -42,79 +42,41 @@ struct NewSubjectView: View {
       .padding([.horizontal, .bottom])
       .padding(.top, 60)
       .background(Color.mgPurpleLight)
-      .padding(.bottom)
+      .padding(.bottom, 22)
       
       // ----- Form
       
       VStack {
         // Name
         FormTextFieldView(title: "Subject Name", textValue: $name)
-          .padding(.bottom, 8)
+          .padding(.bottom, 10)
         
         // Coefficient
-        VStack {
-          HStack {
-            Text("Coefficient")
-              .font(.callout)
-              .fontWeight(.bold)
-              .foregroundColor(.mgPurpleDark)
-            Spacer()
-          }
-          
-          Stepper(
-            onIncrement: {
-              self.coefficient += 0.5
-            },
-            onDecrement: {
-              if self.coefficient > 0.5 {
-                self.coefficient -= 0.5
-              }
-            }, label: {
-              Text("\(self.coefficient.description)")
+        FormStepperView(
+          title: "Coefficient",
+          value: $coefficient,
+          incrementAction: {
+            self.coefficient += 0.5
+          },
+          decrementAction: {
+            if self.coefficient > 0.5 {
+              self.coefficient -= 0.5
             }
-          )
-        }
-        .padding(.horizontal, 15)
-        .padding(.bottom, 8)
+          }
+        )
+          .padding(.bottom, 10)
         
         // Accent color
-        VStack {
-          HStack {
-            Text("Accent Color")
-              .font(.callout)
-              .fontWeight(.bold)
-              .foregroundColor(.mgPurpleDark)
-            Spacer()
-          }
-          
-          Picker("", selection: $accentColor) {
-            ForEach(SubjectColor.allCases, id: \.self) { color in
-              Text(color.rawValue)
-            }
-          }
-        .pickerStyle(SegmentedPickerStyle())
-        }
-        .padding(.horizontal, 15)
-        .padding(.bottom, 15)
+        FormSegmentedPickerView(title: "Accent color", value: $accentColor)
+          .padding(.bottom, 15)
         
         // Button
-        Button(action: {
+        FormButtonView(label: "Add the Subject") {
           self.allSubjects.subjects.append(
             Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient)
           )
           self.presentationMode.wrappedValue.dismiss()
-        }) {
-          HStack {
-            Spacer()
-            Text("Add this subject")
-            Spacer()
-          }
         }
-        .accentColor(.primary)
-        .padding(.vertical, 10)
-        .background(Color.mgPurpleLight)
-        .cornerRadius(10)
-        .padding(.horizontal,15)
       }
       
       Spacer()

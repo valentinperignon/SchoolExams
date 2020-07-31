@@ -24,7 +24,7 @@ struct SubjectListView: View {
       }
       .frame(width: 65, height: 65)
       .cornerRadius(15)
-      .padding(.trailing, 10)
+      .padding(.trailing, 5)
       
       // ----- About
       VStack {
@@ -54,6 +54,8 @@ struct SubjectListView: View {
         .renderingMode(.template)
         .foregroundColor(subject.getColor())
         .frame(width: 37, height: 37)
+        .contrast(0.95)
+        .brightness(0.01)
     }
     .padding(.horizontal, 15)
   }
