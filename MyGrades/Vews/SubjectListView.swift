@@ -11,14 +11,14 @@ import SwiftUI
 struct SubjectListView: View {
   // MARK: Properties
   
-  @Binding var subject: Subject
+  var subject: Subject
   
   // MARK: Body
   var body: some View {
     HStack {
       // ----- Average grade
       ZStack {
-        Color.mgPurpleLight
+        subject.getColor()
         
         Text("14.5")
       }
@@ -38,10 +38,9 @@ struct SubjectListView: View {
         HStack {
           Text("coeff. \(subject.coefficient.description)")
             .font(.callout)
-            .foregroundColor(.white)
             .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(Color.mgPurpleDark)
+            .background(subject.getColor())
             .cornerRadius(7)
           Spacer()
         }
@@ -50,12 +49,11 @@ struct SubjectListView: View {
       Spacer()
       
       // ----- Link to edit
-      NavigationLink(destination: EmptyView()) {
-        Image("Edit")
-          .resizable()
-          .frame(width: 55, height: 55)
-          .accentColor(Color.mgPurpleDark)
-      }
+      Image("ArrowRight")
+        .resizable()
+        .renderingMode(.template)
+        .foregroundColor(subject.getColor())
+        .frame(width: 37, height: 37)
     }
     .padding(.horizontal, 15)
   }
@@ -63,8 +61,8 @@ struct SubjectListView: View {
 
 struct SubjectListView_Previews: PreviewProvider {
   static var previews: some View {
-    SubjectListView(subject: .constant(
+    SubjectListView(subject:
       Subject(name: "Langages du Web", color: .purple, coefficient: 6)
-    ))
+    )
   }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 extension FileManager {
-  static var userDocumentsURL = FileManager.default.urls(for: .userDirectory, in: .userDomainMask)[0]
+  static var userDocumentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 }

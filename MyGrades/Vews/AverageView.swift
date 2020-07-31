@@ -20,7 +20,7 @@ struct AverageView: View {
       // ----- Icon
       Image("Calculator")
         .resizable()
-        .frame(width: 84, height: 84)
+        .frame(width: 75, height: 75)
       
       // ----- Text
       VStack {
@@ -45,8 +45,8 @@ struct AverageView: View {
       }
     }
     .padding(.horizontal, 15)
+    .padding(.vertical, 18)
     .frame(maxWidth: .infinity)
-    .padding(.vertical, 20)
     .background(Color.mgPurpleDark)
     .cornerRadius(20)
     .padding(.horizontal, 15)

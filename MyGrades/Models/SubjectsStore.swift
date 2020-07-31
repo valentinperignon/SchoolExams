@@ -9,11 +9,11 @@
 import Foundation
 
 /// All the subjects
-class SubjectStore {
+class SubjectStore: ObservableObject {
   // MARK: Properties
   
   let dataURL = URL(fileURLWithPath: "SubjectsStore", relativeTo: FileManager.userDocumentsURL).appendingPathExtension("json")
-  var subjects: [Subject] = [] {
+  @Published var subjects: [Subject] = [] {
     didSet {
       saveJSON()
     }

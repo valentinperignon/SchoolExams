@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
+		F91BB61B24D372DC0044C2E6 /* SubjectsStore.json in Resources */ = {isa = PBXBuildFile; fileRef = F91BB61A24D372DC0044C2E6 /* SubjectsStore.json */; };
+		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
 		F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112024D1D9C40010A1AC /* AverageView.swift */; };
 		F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController.swift */; };
 		F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
+		F91BB61A24D372DC0044C2E6 /* SubjectsStore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SubjectsStore.json; sourceTree = "<group>"; };
+		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		F9A8112024D1D9C40010A1AC /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
 		F9A8112224D1E4610010A1AC /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */,
+				F91BB61A24D372DC0044C2E6 /* SubjectsStore.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -132,6 +139,8 @@
 				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
 				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
 				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
+				F91BB61C24D373640044C2E6 /* NewSubjectView.swift */,
+				F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 			files = (
 				F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */,
 				F9CFFDDE24CC6C68007E57C1 /* Preview Assets.xcassets in Resources */,
+				F91BB61B24D372DC0044C2E6 /* SubjectsStore.json in Resources */,
 				F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,12 +238,14 @@
 				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
+				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
+				F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */,
 				F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */,
 				F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */,
 				F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */,

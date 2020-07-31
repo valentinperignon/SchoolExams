@@ -9,44 +9,87 @@
 import SwiftUI
 
 struct ContentView: View {
+  // MARK: Properties
+  
+  @ObservedObject var allSubjects = SubjectStore()
+  
+  @State private var showNewSubjectSheet = false
+  
   // MARK: Body
   
   var body: some View {
     
     NavigationView {
-      ScrollView {
-        // ----- Average Grade -----
-        ZStack {
-          Rectangle()
-            .fill(Color.mgPurpleLight)
-            .clipShape(RoundedRectangle(radius: 20))
-          
-          AverageView(average: 14.5)
-            .padding(.vertical, 20)
-        }
-        .padding(.bottom, 15)
+      
+      if allSubjects.subjects.isEmpty {
         
-        // ----- Subjects -----
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
-        SubjectListView(subject: .constant(Subject(name: "Langages du Web", color: .purple, coefficient: 6)))
+        VStack {
+          Image("NothingToPrint")
+            .renderingMode(.template)
+            .resizable()
+            .scaledToFit()
+            .padding(.horizontal, 40)
+            .foregroundColor(.mgPurpleLight)
+          
+          Text("No Subject")
+            .font(.title)
+            .fontWeight(.bold)
+          Text("You need to add at least one subject")
+            .foregroundColor(.mgPurpleDark)
+        }
+        .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
+        
+      } else {
+        
+        ScrollView {
+          // ----- Average Grade -----
+          ZStack {
+            Rectangle()
+              .fill(Color.mgPurpleLight)
+              .clipShape(RoundedRectangle(radius: 20))
+            
+            AverageView(average: 14.5)
+              .padding(.top, 5)
+              .padding(.bottom, 18)
+          }
+          .padding(.bottom, 8)
+          
+          // ----- Subjects -----
+          ForEach(allSubjects.subjects) { subject in
+            NavigationLink(destination: EmptyView()) {
+              SubjectListView(subject: subject)
+            }.accentColor(Color.black)
+          }
+        }
+        .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
+        
       }
+      
+    }
+    .sheet(isPresented: $showNewSubjectSheet) {
+      NewSubjectView(allSubjects: self.allSubjects)
+    }
+    
+  }
+}
+
+struct ContentViewNavigationModifier: ViewModifier {
+  @Binding var displaySheet: Bool
+  
+  func body(content: Content) -> some View {
+    content
       .navigationBarTitle(
         Text("My Subjects")
           .foregroundColor(.black)
       )
       .navigationBarItems(trailing:
-        Button(action: {}) {
+        Button(action: {
+          self.displaySheet.toggle()
+        }) {
           Image(systemName: "plus")
             .renderingMode(.original)
         }
       )
-    }
-    
   }
 }
 
@@ -55,4 +98,3 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
-
