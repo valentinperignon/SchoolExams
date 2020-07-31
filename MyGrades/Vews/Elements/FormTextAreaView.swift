@@ -22,7 +22,7 @@ struct FormTextFieldView: View {
       FormSectionTitle(title: title)
       
       // ----- Field
-      TextField("Type something here...", text: $textValue)
+      TextField("Type something here", text: $textValue)
         .padding(.horizontal)
         .padding(.vertical, 12)
         .background(Color.appleGray)

@@ -8,3 +8,8 @@ A tool that allows to compute the average in each unit and semester.
 <img src="assets/icons/Icon.png" alt="MyGrades icon" width="150">
 
 MyGrades is an app built with *Swift* and the framework *SwiftUI*. The app needs iOS13.0 or later.
+
+## Screenshots
+
+<img src="assets/readme/MainView.png" alt="Main Screen" width= "200">
+<img src="assets/readme/NewSubjectForm.png" alt="New Subject Form" width= "200">
