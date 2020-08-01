@@ -56,7 +56,7 @@ struct ContentView: View {
           
           // ----- Subjects -----
           ForEach(allSubjects.subjects) { subject in
-            NavigationLink(destination: EmptyView()) {
+            NavigationLink(destination: GradesView(subject: subject)) {
               SubjectListView(subject: subject)
             }.accentColor(Color.black)
           }
@@ -81,14 +81,12 @@ struct ContentViewNavigationModifier: ViewModifier {
     content
       .navigationBarTitle(
         Text("My Subjects")
-          .foregroundColor(.black)
       )
       .navigationBarItems(trailing:
         Button(action: {
           self.displaySheet.toggle()
         }) {
           Image(systemName: "plus")
-            .renderingMode(.original)
         }
       )
   }

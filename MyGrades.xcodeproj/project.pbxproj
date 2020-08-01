@@ -26,6 +26,9 @@
 		F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */; };
 		F9CFFDDE24CC6C68007E57C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */; };
 		F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */; };
+		F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */; };
+		F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFC24D57D3D0023E369 /* GradesView.swift */; };
+		F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFE24D59C390023E369 /* NewGradeView.swift */; };
 		F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47624D4B30C000744D5 /* FormStepperView.swift */; };
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
 		F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */; };
@@ -54,6 +57,9 @@
 		F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9CFFDE024CC6C68007E57C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9CFFDE224CC6C68007E57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListView.swift; sourceTree = "<group>"; };
+		F9DB0DFC24D57D3D0023E369 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
+		F9DB0DFE24D59C390023E369 /* NewGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGradeView.swift; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSegmentedPickerView.swift; sourceTree = "<group>"; };
@@ -71,7 +77,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F90F700324D4B1C500D06FD9 /* Elements */ = {
+		F90F700324D4B1C500D06FD9 /* FormItems */ = {
 			isa = PBXGroup;
 			children = (
 				F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */,
@@ -80,7 +86,7 @@
 				F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */,
 				F90F700124D4B1BA00D06FD9 /* FormButtonView.swift */,
 			);
-			path = Elements;
+			path = FormItems;
 			sourceTree = "<group>";
 		};
 		F9A8112424D1E8CB0010A1AC /* Shapes */ = {
@@ -160,7 +166,10 @@
 				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
 				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
 				F91BB61C24D373640044C2E6 /* NewSubjectView.swift */,
-				F90F700324D4B1C500D06FD9 /* Elements */,
+				F9DB0DFC24D57D3D0023E369 /* GradesView.swift */,
+				F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */,
+				F9DB0DFE24D59C390023E369 /* NewGradeView.swift */,
+				F90F700324D4B1C500D06FD9 /* FormItems */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -209,7 +218,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Valentin Perignon";
 				TargetAttributes = {
 					F9CFFDD024CC6C68007E57C1 = {
@@ -261,15 +270,18 @@
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
+				F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
+				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
 				F90F700224D4B1BA00D06FD9 /* FormButtonView.swift in Sources */,
 				F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */,
 				F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */,
 				F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */,
+				F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */,
 				F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */,
 				F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */,
 				F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */,
@@ -316,6 +328,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -376,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

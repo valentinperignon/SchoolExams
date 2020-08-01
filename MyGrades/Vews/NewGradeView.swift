@@ -1,25 +1,25 @@
 //
-//  NewSubjectView.swift
+//  NewGradeView.swift
 //  MyGrades
 //
-//  Created by Valentin Perignon on 30/07/2020.
+//  Created by Valentin Perignon on 01/08/2020.
 //  Copyright © 2020 Valentin Perignon. All rights reserved.
 //
 
 import SwiftUI
 
-struct NewSubjectView: View {
+struct NewGradeView: View {
   // MARK: Environment
   
   @Environment(\.presentationMode) var presentationMode
   
   // MARK: Properties
   
-  @ObservedObject var allSubjects: SubjectStore
+  @ObservedObject var subject: Subject
   
   @State private var name: String = ""
+  @State private var value: String = "0.0"
   @State private var coefficient: Double = 1
-  @State private var accentColor: SubjectColor = .purple
   
   @State private var showAlert = false
   
@@ -30,13 +30,13 @@ struct NewSubjectView: View {
       // ----- Title
       VStack {
         HStack {
-          Text("New Subject")
+          Text("New Grade")
             .font(.largeTitle)
             .fontWeight(.bold)
           Spacer()
         }
         HStack {
-          Text("Add a new subject to your list")
+          Text("Add a new grade to \(subject.name)")
             .font(.callout)
           Spacer()
         }
@@ -50,7 +50,11 @@ struct NewSubjectView: View {
       
       VStack {
         // Name
-        FormTextFieldView(keyboardType: .default, title: "Subject Name", textValue: $name)
+        FormTextFieldView(keyboardType: .default, title: "Grade Name", textValue: $name)
+          .padding(.bottom, 10)
+        
+        // Value
+        FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value)
           .padding(.bottom, 10)
         
         // Coefficient
@@ -68,20 +72,15 @@ struct NewSubjectView: View {
         )
           .padding(.bottom, 10)
         
-        // Accent color
-        FormSegmentedPickerView(title: "Accent color", value: $accentColor)
-          .padding(.bottom, 15)
         
         // Button
-        FormButtonView(label: "Add the Subject") {
+        FormButtonView(label: "Add the Grade") {
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
             return
           }
           
-          self.allSubjects.subjects.append(
-            Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient)
-          )
+          self.subject.addGrade(name: name, value: Double(value)!, coefficient: coefficient)
           self.presentationMode.wrappedValue.dismiss()
         }
       }
@@ -91,15 +90,15 @@ struct NewSubjectView: View {
     .alert(isPresented: $showAlert) {
       Alert(
         title: Text("Something went wrong"),
-        message: Text("The subject must have a title"),
+        message: Text("The grade must have a title"),
         dismissButton: .default(Text("OK"))
       )
     }
   }
 }
 
-struct NewSubjectView_Previews: PreviewProvider {
+struct NewGradeView_Previews: PreviewProvider {
   static var previews: some View {
-    NewSubjectView(allSubjects: SubjectStore())
+    NewGradeView(subject: Subject(name: "Anglais", color: .red, coefficient: 3))
   }
 }

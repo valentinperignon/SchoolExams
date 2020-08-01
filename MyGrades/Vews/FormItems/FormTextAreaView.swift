@@ -11,6 +11,8 @@ import SwiftUI
 struct FormTextFieldView: View {
   // MARK: Property
   
+  var keyboardType: UIKeyboardType
+  
   var title: String
   @Binding var textValue: String
   
@@ -23,6 +25,7 @@ struct FormTextFieldView: View {
       
       // ----- Field
       TextField("Type something here", text: $textValue)
+        .keyboardType(keyboardType)
         .padding(.horizontal)
         .padding(.vertical, 12)
         .background(Color.appleGray)
@@ -34,6 +37,6 @@ struct FormTextFieldView: View {
 
 struct FormTextFieldView_Previews: PreviewProvider {
   static var previews: some View {
-    FormTextFieldView(title: "My Title", textValue: .constant(""))
+    FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
   }
 }

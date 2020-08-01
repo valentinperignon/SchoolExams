@@ -52,6 +52,10 @@ class Subject: ObservableObject, Identifiable, Codable {
   
   // MARK: Function
   
+  func addGrade(name: String, value: Double, coefficient: Double) {
+    grades.append(Grade(name: name, value: value, coefficient: coefficient))
+  }
+  
   func getColor() -> Color {
     switch color {
     case .blue:
