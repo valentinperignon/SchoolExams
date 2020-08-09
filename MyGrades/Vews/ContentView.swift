@@ -24,6 +24,8 @@ struct ContentView: View {
       if allSubjects.subjects.isEmpty {
         
         VStack {
+          Spacer()
+          
           Image("NothingToPrint")
             .renderingMode(.template)
             .resizable()
@@ -36,6 +38,13 @@ struct ContentView: View {
             .fontWeight(.bold)
           Text("You need to add at least one subject")
             .foregroundColor(.mgPurpleDark)
+          
+          Spacer()
+          
+          ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
+            self.showNewSubjectSheet.toggle()
+          }
+          .padding(.bottom, 30)
         }
         .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
         
@@ -52,7 +61,13 @@ struct ContentView: View {
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
-          .padding(.bottom, 8)
+          .padding(.bottom, 4)
+          
+          // ----- New Subject -----
+          
+          ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
+            self.showNewSubjectSheet.toggle()
+          }
           
           // ----- Subjects -----
           ForEach(allSubjects.subjects) { subject in
@@ -81,13 +96,6 @@ struct ContentViewNavigationModifier: ViewModifier {
     content
       .navigationBarTitle(
         Text("My Subjects")
-      )
-      .navigationBarItems(trailing:
-        Button(action: {
-          self.displaySheet.toggle()
-        }) {
-          Image(systemName: "plus")
-        }
       )
   }
 }

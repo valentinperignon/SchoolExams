@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
 		F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */; };
-		F90F700224D4B1BA00D06FD9 /* FormButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F700124D4B1BA00D06FD9 /* FormButtonView.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
+		F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */; };
+		F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4424DF0C15005B23F3 /* Button.swift */; };
 		F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112024D1D9C40010A1AC /* AverageView.swift */; };
 		F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController.swift */; };
 		F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */; };
@@ -38,8 +39,9 @@
 /* Begin PBXFileReference section */
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStoreDemo.swift; sourceTree = "<group>"; };
-		F90F700124D4B1BA00D06FD9 /* FormButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButtonView.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
+		F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFullWidth.swift; sourceTree = "<group>"; };
+		F99E3D4424DF0C15005B23F3 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		F9A8112024D1D9C40010A1AC /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
 		F9A8112224D1E4610010A1AC /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
@@ -77,16 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F90F700324D4B1C500D06FD9 /* FormItems */ = {
+		F90F700324D4B1C500D06FD9 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
 				F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */,
 				F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */,
 				F9E7F47624D4B30C000744D5 /* FormStepperView.swift */,
 				F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */,
-				F90F700124D4B1BA00D06FD9 /* FormButtonView.swift */,
 			);
-			path = FormItems;
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		F99E3D4124DF08E9005B23F3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		F9A8112424D1E8CB0010A1AC /* Shapes */ = {
@@ -103,6 +112,7 @@
 				F9A8112224D1E4610010A1AC /* UINavigationController.swift */,
 				F9B6358924CE22010030823D /* File.swift */,
 				F9F79E5124CF1D1800A10C52 /* Color.swift */,
+				F99E3D4424DF0C15005B23F3 /* Button.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,7 +179,8 @@
 				F9DB0DFC24D57D3D0023E369 /* GradesView.swift */,
 				F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */,
 				F9DB0DFE24D59C390023E369 /* NewGradeView.swift */,
-				F90F700324D4B1C500D06FD9 /* FormItems */,
+				F99E3D4124DF08E9005B23F3 /* Elements */,
+				F90F700324D4B1C500D06FD9 /* Forms */,
 			);
 			path = Vews;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
 				F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */,
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
+				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */,
@@ -276,8 +288,8 @@
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
+				F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
-				F90F700224D4B1BA00D06FD9 /* FormButtonView.swift in Sources */,
 				F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */,
 				F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */,
 				F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */,

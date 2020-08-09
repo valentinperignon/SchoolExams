@@ -19,9 +19,11 @@ struct GradeListView: View {
     HStack {
       // ----- Average grade
       ZStack {
-        subject.getColor()
+        subject.getColor().dark
         
         Text("14.5")
+          .fontWeight(.heavy)
+          .foregroundColor(.white)
       }
       .frame(width: 65, height: 65)
       .cornerRadius(15)
@@ -32,6 +34,7 @@ struct GradeListView: View {
         HStack {
           Text(grade.name)
             .font(.headline)
+            .fontWeight(.medium)
             .padding(.bottom, 8)
           Spacer()
         }
@@ -39,9 +42,10 @@ struct GradeListView: View {
         HStack {
           Text("coeff. \(grade.coefficient.description)")
             .font(.callout)
+            .fontWeight(.light)
             .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(subject.getColor())
+            .background(subject.getColor().light)
             .cornerRadius(7)
           Spacer()
         }
@@ -53,7 +57,7 @@ struct GradeListView: View {
       Image("Edit")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(subject.getColor())
+        .foregroundColor(subject.getColor().dark)
         .frame(width: 40, height: 40)
         .contrast(0.80)
     }

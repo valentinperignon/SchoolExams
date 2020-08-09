@@ -54,26 +54,17 @@ struct NewSubjectView: View {
           .padding(.bottom, 10)
         
         // Coefficient
-        FormStepperView(
-          title: "Coefficient",
-          value: $coefficient,
-          incrementAction: {
-            self.coefficient += 0.5
-          },
-          decrementAction: {
-            if self.coefficient > 0.5 {
-              self.coefficient -= 0.5
-            }
-          }
-        )
+        FormStepperView(title: "Coefficient", value: $coefficient, range: 0.5...20, step: 0.5)
           .padding(.bottom, 10)
+        
+        
         
         // Accent color
         FormSegmentedPickerView(title: "Accent color", value: $accentColor)
           .padding(.bottom, 15)
         
         // Button
-        FormButtonView(label: "Add the Subject") {
+        ButtonFullWidth(type: .primary, title: "Add The Subject") {
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
             return

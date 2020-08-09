@@ -58,29 +58,18 @@ struct NewGradeView: View {
           .padding(.bottom, 10)
         
         // Coefficient
-        FormStepperView(
-          title: "Coefficient",
-          value: $coefficient,
-          incrementAction: {
-            self.coefficient += 0.5
-          },
-          decrementAction: {
-            if self.coefficient > 0.5 {
-              self.coefficient -= 0.5
-            }
-          }
-        )
+        FormStepperView(title: "Coefficient", value: $coefficient, range: 0.5...20, step: 0.5)
           .padding(.bottom, 10)
         
         
         // Button
-        FormButtonView(label: "Add the Grade") {
+        ButtonFullWidth(type: .primary, title: "Add The Grade") {
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
             return
           }
           
-          self.subject.addGrade(name: name, value: Double(value)!, coefficient: coefficient)
+            self.subject.addGrade(name: self.name, value: Double(self.value)!, coefficient: self.coefficient)
           self.presentationMode.wrappedValue.dismiss()
         }
       }

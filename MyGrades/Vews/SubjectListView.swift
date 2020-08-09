@@ -18,9 +18,11 @@ struct SubjectListView: View {
     HStack {
       // ----- Average grade
       ZStack {
-        subject.getColor()
+        subject.getColor().dark
         
         Text("14.5")
+          .fontWeight(.heavy)
+          .foregroundColor(.white)
       }
       .frame(width: 65, height: 65)
       .cornerRadius(15)
@@ -31,6 +33,7 @@ struct SubjectListView: View {
         HStack {
           Text(subject.name)
             .font(.headline)
+            .fontWeight(.medium)
             .padding(.bottom, 8)
           Spacer()
         }
@@ -38,9 +41,10 @@ struct SubjectListView: View {
         HStack {
           Text("coeff. \(subject.coefficient.description)")
             .font(.callout)
+            .fontWeight(.light)
             .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(subject.getColor())
+            .background(subject.getColor().light)
             .cornerRadius(7)
           Spacer()
         }
@@ -52,7 +56,7 @@ struct SubjectListView: View {
       Image("ArrowRight")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(subject.getColor())
+        .foregroundColor(subject.getColor().dark)
         .frame(width: 37, height: 37)
         .contrast(0.95)
         .brightness(0.01)

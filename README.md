@@ -11,5 +11,4 @@ MyGrades is an app built with *Swift* and the framework *SwiftUI*. The app needs
 
 ## Screenshots
 
-<img src="assets/readme/MainView.png" alt="Main Screen" width= "200">
-<img src="assets/readme/NewSubjectForm.png" alt="New Subject Form" width= "200">
+<img src="assets/readme/views.jpg" alt="All screens" width="500">

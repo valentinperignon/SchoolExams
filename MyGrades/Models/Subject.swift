@@ -56,18 +56,18 @@ class Subject: ObservableObject, Identifiable, Codable {
     grades.append(Grade(name: name, value: value, coefficient: coefficient))
   }
   
-  func getColor() -> Color {
+  func getColor() -> (light: Color, dark: Color) {
     switch color {
     case .blue:
-      return .mgGreen
+      return (.mgBlueLight, .mgBlueDark)
     case .orange:
-      return .mgOrange
+      return (.mgOrangeLight, .mgOrangeDark)
     case .red:
-      return .mgRed
+      return (.mgRedLight, .mgRedDark)
     case .yellow:
-      return .mgYellow
+      return (.mgYellowLight, .mgYellowDark)
     default:
-      return .mgPurpleLight
+      return (.mgPurpleLight, .mgPurpleDark)
     }
   }
   
@@ -79,5 +79,11 @@ class Subject: ObservableObject, Identifiable, Codable {
     try container.encode(self.color, forKey: .color)
     try container.encode(self.grades, forKey: .grades)
     try container.encode(self.coefficient, forKey: .coefficient)
+  }
+}
+
+struct Subject_Previews: PreviewProvider {
+  static var previews: some View {
+    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
   }
 }

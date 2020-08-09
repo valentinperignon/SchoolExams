@@ -20,7 +20,7 @@ struct AverageView: View {
       // ----- Icon
       Image("Calculator")
         .resizable()
-        .frame(width: 75, height: 75)
+        .frame(width: 65, height: 65)
       
       // ----- Text
       VStack {
@@ -30,7 +30,7 @@ struct AverageView: View {
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.white)
-            .padding(.bottom, 15)
+            .padding(.bottom, 5)
           Spacer()
         }
         
@@ -38,14 +38,14 @@ struct AverageView: View {
         HStack {
           Text("\(average.description)/20")
             .font(.largeTitle)
-            .bold()
+            .fontWeight(.light)
             .foregroundColor(.white)
           Spacer()
         }
       }
     }
-    .padding(.horizontal, 15)
-    .padding(.vertical, 18)
+    .padding(.horizontal, 12)
+    .padding(.vertical, 16)
     .frame(maxWidth: .infinity)
     .background(Color.mgPurpleDark)
     .cornerRadius(20)
