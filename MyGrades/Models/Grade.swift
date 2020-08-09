@@ -17,6 +17,7 @@ class Grade: ObservableObject, Identifiable, Codable {
   @Published var name: String
   @Published var value: Double
   @Published var coefficient: Double
+  @Published var date: Date
   
   // MARK: CodingKey
   
@@ -25,14 +26,16 @@ class Grade: ObservableObject, Identifiable, Codable {
     case name
     case value
     case coefficient
+    case date
   }
   
   // MARK: Initializer
   
-  init(name: String, value: Double, coefficient: Double) {
+  init(name: String, value: Double, coefficient: Double, date: Date) {
     self.name = name
     self.value = value
     self.coefficient = coefficient
+    self.date = date
   }
   
   required init(from decoder: Decoder) throws {
@@ -42,6 +45,7 @@ class Grade: ObservableObject, Identifiable, Codable {
     self.name = try values.decode(String.self, forKey: .name)
     self.value = try values.decode(Double.self, forKey: .value)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
+    self.date = try values.decode(Date.self, forKey: .date)
   }
   
   func encode(to encoder: Encoder) throws {
@@ -51,5 +55,6 @@ class Grade: ObservableObject, Identifiable, Codable {
     try container.encode(self.name, forKey: .name)
     try container.encode(self.value, forKey: .value)
     try container.encode(self.coefficient, forKey: .coefficient)
+    try container.encode(self.date, forKey: .date)
   }
 }

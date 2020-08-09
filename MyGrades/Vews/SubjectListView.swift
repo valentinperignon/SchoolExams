@@ -39,7 +39,11 @@ struct SubjectListView: View {
         }
         
         HStack {
-          Text("coeff. \(subject.coefficient.description)")
+          Text(
+            (subject.coefficient.rounded() == subject.coefficient)
+            ? "coeff. \(Int(subject.coefficient))"
+            : "coeff \(subject.coefficient.description)"
+          )
             .font(.callout)
             .fontWeight(.light)
             .padding(.horizontal, 8)

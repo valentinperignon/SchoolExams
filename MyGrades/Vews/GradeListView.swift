@@ -21,7 +21,11 @@ struct GradeListView: View {
       ZStack {
         subject.getColor().dark
         
-        Text("14.5")
+        Text(
+          (grade.value.rounded() == grade.value)
+          ? "\(Int(grade.value))"
+          : "\(grade.value.description)"
+        )
           .fontWeight(.heavy)
           .foregroundColor(.white)
       }
@@ -40,7 +44,11 @@ struct GradeListView: View {
         }
         
         HStack {
-          Text("coeff. \(grade.coefficient.description)")
+          Text(
+            (grade.coefficient.rounded() == grade.coefficient)
+            ? "coeff. \(Int(grade.coefficient))"
+            : "coeff \(grade.coefficient.description)"
+          )
             .font(.callout)
             .fontWeight(.light)
             .padding(.horizontal, 8)
@@ -69,7 +77,7 @@ struct GradeListView_Previews: PreviewProvider {
   static var previews: some View {
     GradeListView(
       subject: Subject(name: "Anglais", color: .red, coefficient: 3),
-      grade: Grade(name: "Exposé", value: 18, coefficient: 2)
+      grade: Grade(name: "Exposé", value: 18, coefficient: 2, date: Date())
     )
   }
 }

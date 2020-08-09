@@ -13,9 +13,9 @@ struct NewSubjectView: View {
   
   @Environment(\.presentationMode) var presentationMode
   
-  // MARK: Properties
+  @EnvironmentObject var allSubjects: SubjectStore
   
-  @ObservedObject var allSubjects: SubjectStore
+  // MARK: Properties
   
   @State private var name: String = ""
   @State private var coefficient: Double = 1
@@ -91,6 +91,7 @@ struct NewSubjectView: View {
 
 struct NewSubjectView_Previews: PreviewProvider {
   static var previews: some View {
-    NewSubjectView(allSubjects: SubjectStore())
+    NewSubjectView()
+    .environmentObject(SubjectStore())
   }
 }

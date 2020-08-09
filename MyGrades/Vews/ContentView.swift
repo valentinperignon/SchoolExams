@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
   // MARK: Properties
   
-  @ObservedObject var allSubjects: SubjectStore
+  @EnvironmentObject var allSubjects: SubjectStore
   
   @State private var showNewSubjectSheet = false
   
@@ -73,6 +73,7 @@ struct ContentView: View {
           ForEach(allSubjects.subjects) { subject in
             NavigationLink(destination: GradesView(subject: subject)) {
               SubjectListView(subject: subject)
+                .environmentObject(self.allSubjects)
             }.accentColor(Color.black)
           }
           
@@ -83,7 +84,8 @@ struct ContentView: View {
       
     }
     .sheet(isPresented: $showNewSubjectSheet) {
-      NewSubjectView(allSubjects: self.allSubjects)
+      NewSubjectView()
+        .environmentObject(self.allSubjects)
     }
     
   }
@@ -102,6 +104,7 @@ struct ContentViewNavigationModifier: ViewModifier {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView(allSubjects: SubjectStore.getDemoData())
+    ContentView()
+    .environmentObject(SubjectStore.getDemoData())
   }
 }

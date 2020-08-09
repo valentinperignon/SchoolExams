@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct GradesView: View {
+  // MARK: Environment
+  
+  @EnvironmentObject var allSubjects: SubjectStore
+  
   // MARK: Property
   
   @ObservedObject var subject: Subject
@@ -78,7 +82,11 @@ struct GradesView: View {
           
       }
     }
-  .modifier(GradeViewNavigationModifier(subject: subject, editForm: $displayEditSheet, newForm: $displayNewSheet))
+    .modifier(GradeViewNavigationModifier(subject: subject, editForm: $displayEditSheet))
+    .sheet(isPresented: $displayNewSheet, content: {
+      NewGradeView(subject: self.subject)
+        .environmentObject(self.allSubjects)
+    })
   }
 }
 
@@ -86,7 +94,6 @@ struct GradeViewNavigationModifier: ViewModifier {
   @ObservedObject var subject: Subject
   
   @Binding var editForm: Bool
-  @Binding var newForm: Bool
   
   func body(content: Content) -> some View {
     content
@@ -102,9 +109,7 @@ struct GradeViewNavigationModifier: ViewModifier {
           }
         }
       )
-      .sheet(isPresented: $newForm, content: {
-        NewGradeView(subject: self.subject)
-      })
+      
   }
 }
 

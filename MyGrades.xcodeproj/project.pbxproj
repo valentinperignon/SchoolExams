@@ -16,6 +16,7 @@
 		F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController.swift */; };
 		F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */; };
 		F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112724D2125B0010A1AC /* SubjectListView.swift */; };
+		F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */; };
 		F9B6358324CE1FD00030823D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358224CE1FD00030823D /* Subject.swift */; };
 		F9B6358524CE20730030823D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358424CE20730030823D /* Grade.swift */; };
 		F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358624CE21BB0030823D /* SubjectsStore.swift */; };
@@ -46,6 +47,7 @@
 		F9A8112224D1E4610010A1AC /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
 		F9A8112724D2125B0010A1AC /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
+		F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePickerView.swift; sourceTree = "<group>"; };
 		F9B6358224CE1FD00030823D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		F9B6358424CE20730030823D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		F9B6358624CE21BB0030823D /* SubjectsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsStore.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */,
 				F9E7F47624D4B30C000744D5 /* FormStepperView.swift */,
 				F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */,
+				F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
 				F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */,
+				F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */,
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
 				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
