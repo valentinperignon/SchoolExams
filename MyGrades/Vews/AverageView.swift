@@ -11,7 +11,7 @@ import SwiftUI
 struct AverageView: View {
   // MARK: Properties
   
-  var average: Double
+  var average: String
   
   // MARK: Body
   
@@ -36,7 +36,7 @@ struct AverageView: View {
         
         // Average grade
         HStack {
-          Text("\(average.description)/20")
+          Text("\(average)/20")
             .font(.largeTitle)
             .fontWeight(.light)
             .foregroundColor(.white)
@@ -55,6 +55,6 @@ struct AverageView: View {
 
 struct AverageView_Previews: PreviewProvider {
   static var previews: some View {
-    AverageView(average: 14.5)
+    AverageView(average: "14.5")
   }
 }

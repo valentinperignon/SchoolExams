@@ -11,7 +11,7 @@ import SwiftUI
 struct SubjectListView: View {
   // MARK: Properties
   
-  var subject: Subject
+  @ObservedObject var subject: Subject
   
   // MARK: Body
   var body: some View {
@@ -20,7 +20,7 @@ struct SubjectListView: View {
       ZStack {
         subject.getColor().dark
         
-        Text("14.5")
+        Text(subject.averageToString())
           .fontWeight(.heavy)
           .foregroundColor(.white)
       }

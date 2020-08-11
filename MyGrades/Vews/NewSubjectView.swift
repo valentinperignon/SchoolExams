@@ -28,23 +28,7 @@ struct NewSubjectView: View {
   var body: some View {
     VStack {
       // ----- Title
-      VStack {
-        HStack {
-          Text("New Subject")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-          Spacer()
-        }
-        HStack {
-          Text("Add a new subject to your list")
-            .font(.callout)
-          Spacer()
-        }
-      }
-      .padding([.horizontal, .bottom])
-      .padding(.top, 60)
-      .background(Color.mgPurpleLight)
-      .padding(.bottom, 22)
+      SheetHeaderView(title: "New Subject", subtitle: "Add a new subject to your list")
       
       // ----- Form
       
@@ -56,8 +40,6 @@ struct NewSubjectView: View {
         // Coefficient
         FormStepperView(title: "Coefficient", value: $coefficient, range: 0.5...20, step: 0.5)
           .padding(.bottom, 10)
-        
-        
         
         // Accent color
         FormSegmentedPickerView(title: "Accent color", value: $accentColor)

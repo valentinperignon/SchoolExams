@@ -17,6 +17,8 @@ struct GradesView: View {
   
   @ObservedObject var subject: Subject
   
+  @State private var action: Int? = 0
+  
   @State private var displayEditSheet: Bool = false
   @State private var displayNewSheet: Bool = false
   
@@ -24,6 +26,19 @@ struct GradesView: View {
   
   var body: some View {
     Group {
+      // NavigationLink for Edit page
+      
+      NavigationLink(
+        destination:
+          EditSubjectView(subject: subject)
+            .environmentObject(allSubjects),
+        tag: 1,
+        selection: $action
+      ) {
+        EmptyView()
+      }
+      
+      // Views : empty / grades
       if subject.grades.isEmpty {
           
         VStack {
@@ -59,11 +74,11 @@ struct GradesView: View {
               .fill(Color.mgPurpleLight)
               .clipShape(RoundedRectangle(radius: 20))
             
-            AverageView(average: 14.5)
+            AverageView(average: subject.averageToString())
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
-          .padding(.bottom, 8)
+          .padding(.bottom, 4)
           
           // ----- Button -----
           ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
@@ -72,7 +87,9 @@ struct GradesView: View {
           
           // ----- Subjects -----
           ForEach(subject.grades) { grade in
-            NavigationLink(destination: EmptyView()) {
+            NavigationLink(destination:
+              EditGradeView(subject: self.subject, grade: grade, gradeValue: "\(grade.value)").environmentObject(self.allSubjects)
+            ) {
               GradeListView(subject: self.subject, grade: grade)
             }.accentColor(Color.black)
           }
@@ -82,39 +99,30 @@ struct GradesView: View {
           
       }
     }
-    .modifier(GradeViewNavigationModifier(subject: subject, editForm: $displayEditSheet))
-    .sheet(isPresented: $displayNewSheet, content: {
+    .navigationBarTitle(Text(subject.name))
+    .navigationBarItems(trailing:
+      NavigationLink(destination: EditSubjectView(subject: subject).environmentObject(allSubjects)) {
+        Button(action: {
+          self.action = 1
+        }) {
+          Image("Clogwheel")
+            .resizable()
+            .frame(width: 23, height: 23)
+        }
+      }
+    )
+    .sheet(isPresented: $displayNewSheet) {
       NewGradeView(subject: self.subject)
         .environmentObject(self.allSubjects)
-    })
-  }
-}
-
-struct GradeViewNavigationModifier: ViewModifier {
-  @ObservedObject var subject: Subject
-  
-  @Binding var editForm: Bool
-  
-  func body(content: Content) -> some View {
-    content
-      .navigationBarTitle(Text(subject.name))
-      .navigationBarItems(trailing:
-        HStack {
-          Button(action: {
-            self.editForm.toggle()
-          }) {
-            Image("Clogwheel")
-              .resizable()
-              .frame(width: 23, height: 23)
-          }
-        }
-      )
-      
+    }
   }
 }
 
 struct GradesView_Previews: PreviewProvider {
   static var previews: some View {
-    GradesView(subject: Subject(name: "Anglais", color: .red, coefficient: 3))
+    let subject = Subject(name: "Anglais", color: .red, coefficient: 3)
+    subject.grades.append(Grade(name: "Oral", value: 18, coefficient: 3, date: Date()))
+    
+    return GradesView(subject: subject).environmentObject(SubjectStore())
   }
 }

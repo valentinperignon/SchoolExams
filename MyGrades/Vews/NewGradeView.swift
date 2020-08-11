@@ -34,23 +34,7 @@ struct NewGradeView: View {
   var body: some View {
     ScrollView {
       // ----- Title
-      VStack {
-        HStack {
-          Text("New Grade")
-            .font(.largeTitle)
-            .fontWeight(.bold)
-          Spacer()
-        }
-        HStack {
-          Text("Add a new grade to \(subject.name)")
-            .font(.callout)
-          Spacer()
-        }
-      }
-      .padding([.horizontal, .bottom])
-      .padding(.top, 60)
-      .background(Color.mgPurpleLight)
-      .padding(.bottom, 22)
+      SheetHeaderView(title: "New Grade", subtitle: "Add a new grade to \(subject.name)")
       
       // ----- Form
       

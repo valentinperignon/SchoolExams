@@ -10,6 +10,8 @@
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
 		F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
+		F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67824E17A9A00476A09 /* EditSubjectView.swift */; };
+		F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */; };
 		F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */; };
 		F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4424DF0C15005B23F3 /* Button.swift */; };
 		F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112024D1D9C40010A1AC /* AverageView.swift */; };
@@ -35,12 +37,15 @@
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
 		F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */; };
 		F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F79E5124CF1D1800A10C52 /* Color.swift */; };
+		F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStoreDemo.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
+		F96AB67824E17A9A00476A09 /* EditSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectView.swift; sourceTree = "<group>"; };
+		F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderView.swift; sourceTree = "<group>"; };
 		F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFullWidth.swift; sourceTree = "<group>"; };
 		F99E3D4424DF0C15005B23F3 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		F9A8112024D1D9C40010A1AC /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSegmentedPickerView.swift; sourceTree = "<group>"; };
 		F9F79E5124CF1D1800A10C52 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */,
+				F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -179,9 +186,11 @@
 				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
 				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
 				F91BB61C24D373640044C2E6 /* NewSubjectView.swift */,
+				F96AB67824E17A9A00476A09 /* EditSubjectView.swift */,
 				F9DB0DFC24D57D3D0023E369 /* GradesView.swift */,
 				F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */,
 				F9DB0DFE24D59C390023E369 /* NewGradeView.swift */,
+				F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */,
 				F99E3D4124DF08E9005B23F3 /* Elements */,
 				F90F700324D4B1C500D06FD9 /* Forms */,
 			);
@@ -278,6 +287,7 @@
 			files = (
 				F9B6358324CE1FD00030823D /* Subject.swift in Sources */,
 				F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */,
+				F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */,
 				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
 				F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */,
@@ -285,12 +295,14 @@
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
 				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
+				F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
+				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
 				F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,

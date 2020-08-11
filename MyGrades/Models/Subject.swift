@@ -10,7 +10,7 @@ import SwiftUI
 import Foundation
 
 /// A school subject
-class Subject: ObservableObject, Identifiable, Codable {
+class Subject: ObservableObject, Identifiable, Codable, Equatable {
   // MARK: Properties
   
   var id: UUID = UUID()
@@ -71,6 +71,26 @@ class Subject: ObservableObject, Identifiable, Codable {
     }
   }
   
+  func averageToString() -> String {
+    if grades.isEmpty {
+      return "/"
+    }
+    
+    let avgValue = getAverage()
+    return avgValue == avgValue.rounded() ? "\(Int(avgValue))" : "\(avgValue.description)"
+  }
+  
+  func getAverage() -> Double {
+    var average: Double = 0
+    var coefficients: Double = 0
+    for grade in grades {
+      average += grade.value * grade.coefficient
+      coefficients += grade.coefficient
+    }
+    
+    return average / coefficients
+  }
+  
   func encode(to encoder: Encoder) throws {
     var container = encoder.container(keyedBy: CodingKeys.self)
     
@@ -79,6 +99,10 @@ class Subject: ObservableObject, Identifiable, Codable {
     try container.encode(self.color, forKey: .color)
     try container.encode(self.grades, forKey: .grades)
     try container.encode(self.coefficient, forKey: .coefficient)
+  }
+  
+  static func == (lhs: Subject, rhs: Subject) -> Bool {
+    lhs.id == rhs.id
   }
 }
 

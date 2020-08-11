@@ -11,7 +11,7 @@ import SwiftUI
 struct GradeListView: View {
   // MARK: Properties
   
-  var subject: Subject
+  @ObservedObject var subject: Subject
   var grade: Grade
   
   // MARK: Body

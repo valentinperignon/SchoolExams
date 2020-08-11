@@ -27,6 +27,29 @@ class SubjectStore: ObservableObject {
   
   // MARK: Functions
   
+  func averageToString() -> String {
+    let average = getAverage()
+    if average.rounded() == average {
+      return "\(Int(average))"
+    }
+    return "\(average.description)"
+  }
+  
+  func getAverage() -> Double {
+    var average: Double = 0
+    var coefficients: Double = 0
+    
+    for subject in subjects where !subject.grades.isEmpty {
+      average += subject.getAverage() * subject.coefficient
+      coefficients += subject.coefficient
+    }
+    
+    if coefficients == 0 {
+      return 0
+    }
+    return average / coefficients
+  }
+  
   /// Load all subjects from a JSON file
   func loadJSON() {
     // Check  if file exists

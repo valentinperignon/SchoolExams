@@ -16,11 +16,6 @@ extension Color {
   
   // MARK: MyGrades other colors
   
-  static let mgGreen = Color(red: 240/255, green: 255/255, blue: 233/255)
-  static let mgOrange = Color(red: 255/255, green: 244/255, blue: 233/255)
-  static let mgRed = Color(red: 255/255, green: 233/255, blue: 233/255)
-  static let mgYellow = Color(red: 255/255, green: 244/251, blue: 237/255)
-  
   // Blue
   static let mgBlueLight = Color(red: 181/255, green: 221/255, blue: 255/255)
   static let mgBlueDark = Color(red: 40/255, green: 151/255, blue: 243/255)

@@ -41,7 +41,11 @@ struct ButtonFullWidth: View {
       return AnyView(Image(systemName: iconSys))
     }
     if let icon = iconName {
-      return AnyView(Image(icon))
+      return AnyView(
+        Image(icon)
+          .resizable()
+          .frame(width: 22, height: 22)
+      )
     }
     return AnyView(EmptyView())
   }
@@ -50,20 +54,26 @@ struct ButtonFullWidth: View {
     switch type {
     case .primary:
       return (.mgPurpleLight, .black)
+    case .warning:
+      return (.mgOrangeLight, .black)
     case .alert:
-      return (.red, .white)
+      return (.mgRedDark, .white)
     }
   }
   
   // MARK: Enum
   
   enum buttonType {
-    case primary, alert
+    case primary, warning, alert
   }
 }
 
 struct ButtonFullWidth_Previews: PreviewProvider {
   static var previews: some View {
-    ButtonFullWidth(type: .primary, title: "Get Weather", iconName: "cloud", action: {})
+    VStack {
+      ButtonFullWidth(type: .primary, title: "Get Weather", iconSysName: "cloud.sun", action: {})
+      ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "arrow.left", action: {})
+      ButtonFullWidth(type: .alert, title: "Remove", iconName: "Bin", action: {})
+    }
   }
 }

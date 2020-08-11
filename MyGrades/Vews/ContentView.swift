@@ -57,7 +57,7 @@ struct ContentView: View {
               .fill(Color.mgPurpleLight)
               .clipShape(RoundedRectangle(radius: 20))
             
-            AverageView(average: 14.5)
+            AverageView(average: allSubjects.averageToString())
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
