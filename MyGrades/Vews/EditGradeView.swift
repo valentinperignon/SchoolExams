@@ -67,6 +67,9 @@ struct EditGradeView: View {
           }
           self.grade.value = gradeValue
           
+          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+          hapticFeedback.impactOccurred()
+          
           self.allSubjects.saveJSON()
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
@@ -87,6 +90,9 @@ struct EditGradeView: View {
       
       // Button remove
       ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
+        let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
+        hapticFeedback.impactOccurred()
+        
         self.subject.grades.remove(at:
           self.subject.grades.firstIndex(of: self.grade)!
         )

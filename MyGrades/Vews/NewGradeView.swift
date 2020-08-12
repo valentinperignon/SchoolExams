@@ -71,6 +71,9 @@ struct NewGradeView: View {
             return
           }
           
+          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+          hapticFeedback.impactOccurred()
+          
           self.subject.addGrade(
             name: self.name, value: valueDouble, coefficient: self.coefficient, date: self.date
           )

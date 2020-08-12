@@ -40,6 +40,9 @@ struct EditSubjectView: View {
         // Buttons Save & Cancel
         GeometryReader { geometry in
           ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
+            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+            hapticFeedback.impactOccurred()
+            
             self.allSubjects.saveJSON()
             self.presentationMode.wrappedValue.dismiss()
           }
@@ -57,6 +60,9 @@ struct EditSubjectView: View {
         
         // Button Remove
         ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
+          let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
+          hapticFeedback.impactOccurred()
+          
           self.allSubjects.subjects.remove(at:
             self.allSubjects.subjects.firstIndex(of: self.subject)!
           )

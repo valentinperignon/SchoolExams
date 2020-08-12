@@ -52,6 +52,9 @@ struct NewSubjectView: View {
             return
           }
           
+          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
+          hapticFeedback.impactOccurred()
+          
           self.allSubjects.subjects.append(
             Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient)
           )
