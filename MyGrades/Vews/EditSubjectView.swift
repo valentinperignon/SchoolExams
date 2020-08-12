@@ -13,7 +13,7 @@ struct EditSubjectView: View {
   
   @Environment(\.presentationMode) var presentationMode
   
-  @EnvironmentObject var allSujects: SubjectStore
+  @EnvironmentObject var allSubjects: SubjectStore
   
   // MARK: Property
   
@@ -40,25 +40,28 @@ struct EditSubjectView: View {
         // Buttons Save & Cancel
         GeometryReader { geometry in
           ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
-            self.allSujects.saveJSON()
+            self.allSubjects.saveJSON()
             self.presentationMode.wrappedValue.dismiss()
           }
-            .frame(width: geometry.size.width/2+7.5)
+            .frame(width: geometry.size.width/2+7.5, height: 50)
             .padding(.bottom, 20)
           ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
-            self.allSujects.loadJSON()
+            self.allSubjects.loadJSON()
             self.presentationMode.wrappedValue.dismiss()
           }
-            .frame(width: geometry.size.width/2+7.5)
+            .frame(width: geometry.size.width/2+7.5, height: 50)
             .offset(x: geometry.size.width/2-7.5)
             .padding(.bottom, 20)
         }
+        .frame(height: 60)
         
         // Button Remove
         ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
-          self.allSujects.subjects.remove(at:
-            self.allSujects.subjects.firstIndex(of: self.subject)!
+          self.allSubjects.subjects.remove(at:
+            self.allSubjects.subjects.firstIndex(of: self.subject)!
           )
+          self.allSubjects.computeAverage()
+          
           self.presentationMode.wrappedValue.dismiss()
         }
       }
@@ -66,7 +69,7 @@ struct EditSubjectView: View {
       
       Spacer(minLength: 20)
     }
-    .navigationBarTitle(Text("Edit the subject"))
+    .navigationBarTitle(Text("Edit The Subject"))
     .navigationBarBackButtonHidden(true)
   }
 }

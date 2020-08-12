@@ -21,6 +21,8 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
   
   @Published var coefficient: Double
   
+  @Published var average: String = "0"
+  
   // MARK: CodingKeys
   
   enum CodingKeys: CodingKey {
@@ -48,6 +50,7 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
     self.color = try values.decode(SubjectColor.self, forKey: .color)
     self.grades = try values.decode([Grade].self, forKey: .grades)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
+    self.average = averageToString()
   }
   
   // MARK: Function
@@ -71,13 +74,17 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
     }
   }
   
+  func computeAverage() {
+    average = averageToString()
+  }
+  
   func averageToString() -> String {
     if grades.isEmpty {
       return "/"
     }
     
     let avgValue = getAverage()
-    return avgValue == avgValue.rounded() ? "\(Int(avgValue))" : "\(avgValue.description)"
+    return avgValue == avgValue.rounded() ? "\(Int(avgValue))" : String(format: "%.2f", avgValue)
   }
   
   func getAverage() -> Double {
@@ -103,11 +110,5 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
   
   static func == (lhs: Subject, rhs: Subject) -> Bool {
     lhs.id == rhs.id
-  }
-}
-
-struct Subject_Previews: PreviewProvider {
-  static var previews: some View {
-    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
   }
 }

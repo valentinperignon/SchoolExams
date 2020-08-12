@@ -13,7 +13,7 @@ struct EditGradeView: View {
   
   @Environment(\.presentationMode) var presentationMode
   
-  @EnvironmentObject var allSujects: SubjectStore
+  @EnvironmentObject var allSubjects: SubjectStore
   
   // MARK: Property
   
@@ -22,10 +22,17 @@ struct EditGradeView: View {
   
   @State var gradeValue: String
   
+  @State private var displayAlert = false
+  @State private var alertType = 0
+  private let alertName = 1
+  private let alertValue = 2
+  
   // MARK: Body
   
   var body: some View {
-    VStack {
+    ScrollView {
+      Spacer(minLength: 20)
+      
       // ----- Form
       
       // Name
@@ -42,28 +49,69 @@ struct EditGradeView: View {
       
       // Date
       FormDatePickerView(title: "Date", selectedDate: $grade.date)
-        .padding(.bottom, 15)
       
       // Buttons Save & Cancel
       GeometryReader { geometry in
+        // save
         ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
-          self.allSujects.saveJSON()
+          guard !self.grade.name.isEmpty else {
+            self.alertType = self.alertName
+            self.displayAlert.toggle()
+            return
+          }
+          
+          guard let gradeValue = Double(self.gradeValue) else {
+            self.alertType = self.alertValue
+            self.displayAlert.toggle()
+            return
+          }
+          self.grade.value = gradeValue
+          
+          self.allSubjects.saveJSON()
+          self.subject.computeAverage()
+          self.allSubjects.computeAverage()
+          
           self.presentationMode.wrappedValue.dismiss()
         }
-          .frame(width: geometry.size.width/2+7.5)
-          .padding(.bottom, 20)
+          .frame(width: geometry.size.width/2+7.5, height: 70)
+        // cancel
         ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
-          self.allSujects.loadJSON()
+          self.allSubjects.loadJSON()
           self.presentationMode.wrappedValue.dismiss()
         }
-          .frame(width: geometry.size.width/2+7.5)
+          .frame(width: geometry.size.width/2+7.5, height: 70)
           .offset(x: geometry.size.width/2-7.5)
-          .padding(.bottom, 20)
       }
+      
+      Spacer(minLength: 65)
+      
+      // Button remove
+      ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
+        self.subject.grades.remove(at:
+          self.subject.grades.firstIndex(of: self.grade)!
+        )
+        self.allSubjects.saveJSON()
+        
+        self.presentationMode.wrappedValue.dismiss()
+      }
+      .padding(.bottom, 15)
     }
-    .padding(.top, 20)
-    .navigationBarTitle(Text("Edit the grade"))
+    .navigationBarTitle(Text("Edit The Grade"))
     .navigationBarBackButtonHidden(true)
+    .alert(isPresented: $displayAlert) {
+      var message: Text
+      if self.alertType == self.alertName {
+        message = Text("The name of your grade can't be empty")
+      } else {
+        message = Text("The value can't be empty and must be a number")
+      }
+      
+      return Alert(
+        title: Text("Something went wrong"),
+        message: message,
+        dismissButton: .default(Text("OK"))
+      )
+    }
   }
 }
 

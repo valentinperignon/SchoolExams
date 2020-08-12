@@ -54,7 +54,7 @@ struct NewGradeView: View {
         // Date
         FormDatePickerView(title: "Date", selectedDate: $date)
         
-        // Button
+        // Button Add
         ButtonFullWidth(type: .primary, title: "Add The Grade") {
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
@@ -75,6 +75,8 @@ struct NewGradeView: View {
             name: self.name, value: valueDouble, coefficient: self.coefficient, date: self.date
           )
           self.allSubjects.saveJSON()
+          self.subject.computeAverage()
+          self.allSubjects.computeAverage()
           
           self.presentationMode.wrappedValue.dismiss()
         }

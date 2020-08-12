@@ -12,7 +12,7 @@ struct GradeListView: View {
   // MARK: Properties
   
   @ObservedObject var subject: Subject
-  var grade: Grade
+  @ObservedObject var grade: Grade
   
   // MARK: Body
   var body: some View {
@@ -24,7 +24,7 @@ struct GradeListView: View {
         Text(
           (grade.value.rounded() == grade.value)
           ? "\(Int(grade.value))"
-          : "\(grade.value.description)"
+            : String(format: "%.2f", grade.value)
         )
           .fontWeight(.heavy)
           .foregroundColor(.white)

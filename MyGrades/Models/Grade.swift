@@ -9,7 +9,7 @@
 import Foundation
 
 /// A  grade
-class Grade: ObservableObject, Identifiable, Codable {
+class Grade: ObservableObject, Identifiable, Codable, Equatable {
   // MARK: Properties
   
   var id: UUID = UUID()
@@ -46,6 +46,12 @@ class Grade: ObservableObject, Identifiable, Codable {
     self.value = try values.decode(Double.self, forKey: .value)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
     self.date = try values.decode(Date.self, forKey: .date)
+  }
+  
+  // MARK: Functions
+  
+  static func == (lhs: Grade, rhs: Grade) -> Bool {
+    lhs.id == rhs.id
   }
   
   func encode(to encoder: Encoder) throws {

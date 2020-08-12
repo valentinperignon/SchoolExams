@@ -18,21 +18,27 @@ class SubjectStore: ObservableObject {
       saveJSON()
     }
   }
+  @Published var average: String = "0"
   
   // MARK: Initializer
   
   init() {
     loadJSON()
+    average = averageToString()
   }
   
   // MARK: Functions
+  
+  func computeAverage() {
+    average = averageToString()
+  }
   
   func averageToString() -> String {
     let average = getAverage()
     if average.rounded() == average {
       return "\(Int(average))"
     }
-    return "\(average.description)"
+    return String(format: "%.2f", average)
   }
   
   func getAverage() -> Double {

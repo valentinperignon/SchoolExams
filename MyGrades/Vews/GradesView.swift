@@ -13,6 +13,8 @@ struct GradesView: View {
   
   @EnvironmentObject var allSubjects: SubjectStore
   
+  @Environment(\.presentationMode) var presentationMode
+  
   // MARK: Property
   
   @ObservedObject var subject: Subject
@@ -74,7 +76,7 @@ struct GradesView: View {
               .fill(Color.mgPurpleLight)
               .clipShape(RoundedRectangle(radius: 20))
             
-            AverageView(average: subject.averageToString())
+            AverageView(average: subject.average)
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
@@ -88,7 +90,11 @@ struct GradesView: View {
           // ----- Subjects -----
           ForEach(subject.grades) { grade in
             NavigationLink(destination:
-              EditGradeView(subject: self.subject, grade: grade, gradeValue: "\(grade.value)").environmentObject(self.allSubjects)
+              EditGradeView(
+                subject: self.subject,
+                grade: grade,
+                gradeValue: "\(grade.value)"
+              ).environmentObject(self.allSubjects)
             ) {
               GradeListView(subject: self.subject, grade: grade)
             }.accentColor(Color.black)
