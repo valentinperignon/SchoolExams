@@ -43,7 +43,7 @@ struct SubjectListView: View {
             
           Spacer()
         }
-        .padding(.bottom, 6)
+        .padding(.bottom, subject.average < 10.0 ? 0 : 6)
         
         HStack {
           Text(

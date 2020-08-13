@@ -56,9 +56,14 @@ struct NewGradeView: View {
         
         // Button Add
         ButtonFullWidth(type: .primary, title: "Add The Grade") {
+          let feedbackGenerator = UINotificationFeedbackGenerator()
+          feedbackGenerator.prepare()
+          
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
             self.alertType = self.alertName
+            
+            feedbackGenerator.notificationOccurred(.error)
             return
           }
           
@@ -68,11 +73,12 @@ struct NewGradeView: View {
           else {
             self.showAlert.toggle()
             self.alertType = self.alertValue
+            
+            feedbackGenerator.notificationOccurred(.error)
             return
           }
           
-          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-          hapticFeedback.impactOccurred()
+          feedbackGenerator.notificationOccurred(.success)
           
           self.subject.addGrade(
             name: self.name, value: valueDouble, coefficient: self.coefficient, date: self.date

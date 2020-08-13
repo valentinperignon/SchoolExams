@@ -54,21 +54,27 @@ struct EditGradeView: View {
       GeometryReader { geometry in
         // save
         ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
+          let feedbackGenerator = UINotificationFeedbackGenerator()
+          feedbackGenerator.prepare()
+          
           guard !self.grade.name.isEmpty else {
             self.alertType = self.alertName
             self.displayAlert.toggle()
+            
+            feedbackGenerator.notificationOccurred(.error)
             return
           }
           
           guard let gradeValue = Double(self.gradeValue.replacingOccurrences(of: ",", with: ".")) else {
             self.alertType = self.alertValue
             self.displayAlert.toggle()
+            
+            feedbackGenerator.notificationOccurred(.error)
             return
           }
           self.grade.value = gradeValue
           
-          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-          hapticFeedback.impactOccurred()
+          feedbackGenerator.notificationOccurred(.success)
           
           self.allSubjects.saveJSON()
           self.subject.computeAverage()

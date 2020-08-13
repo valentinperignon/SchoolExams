@@ -62,8 +62,8 @@ struct GradesView: View {
           Spacer()
           
           ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
-            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-            hapticFeedback.impactOccurred()
+            let feedbackGenerator = UISelectionFeedbackGenerator()
+            feedbackGenerator.selectionChanged()
             
             self.displayNewSheet.toggle()
           }
@@ -87,8 +87,8 @@ struct GradesView: View {
           
           // ----- Button -----
           ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
-            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-            hapticFeedback.impactOccurred()
+            let feedbackGenerator = UISelectionFeedbackGenerator()
+            feedbackGenerator.selectionChanged()
             
             self.displayNewSheet.toggle()
           }

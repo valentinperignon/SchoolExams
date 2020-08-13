@@ -43,13 +43,17 @@ struct EditSubjectView: View {
         GeometryReader { geometry in
           // save
           ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
+            let feedbackGenerator = UINotificationFeedbackGenerator()
+            feedbackGenerator.prepare()
+            
             guard !self.subject.name.isEmpty else {
               self.showAlert.toggle()
+              
+              feedbackGenerator.notificationOccurred(.error)
               return
             }
             
-            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-            hapticFeedback.impactOccurred()
+            feedbackGenerator.notificationOccurred(.success)
             
             self.allSubjects.saveJSON()
             self.presentationMode.wrappedValue.dismiss()

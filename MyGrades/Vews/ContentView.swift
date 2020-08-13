@@ -42,8 +42,8 @@ struct ContentView: View {
           Spacer()
           
           ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
-            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-            hapticFeedback.impactOccurred()
+            let feedbackGenerator = UISelectionFeedbackGenerator()
+            feedbackGenerator.selectionChanged()
             
             self.showNewSubjectSheet.toggle()
           }
@@ -69,8 +69,8 @@ struct ContentView: View {
           // ----- New Subject -----
           
           ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
-            let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-            hapticFeedback.impactOccurred()
+            let feedbackGenerator = UISelectionFeedbackGenerator()
+            feedbackGenerator.selectionChanged()
             
             self.showNewSubjectSheet.toggle()
           }

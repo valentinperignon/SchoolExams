@@ -47,13 +47,17 @@ struct NewSubjectView: View {
         
         // Button
         ButtonFullWidth(type: .primary, title: "Add The Subject") {
+          let feedbackGenerator = UINotificationFeedbackGenerator()
+          feedbackGenerator.prepare()
+          
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
+            
+            feedbackGenerator.notificationOccurred(.error)
             return
           }
           
-          let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
-          hapticFeedback.impactOccurred()
+          feedbackGenerator.notificationOccurred(.success)
           
           self.allSubjects.subjects.append(
             Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient)
