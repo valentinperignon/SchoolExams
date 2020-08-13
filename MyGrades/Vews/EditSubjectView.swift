@@ -89,6 +89,9 @@ struct EditSubjectView: View {
       
       Spacer(minLength: 20)
     }
+    .onTapGesture {
+      self.hideKeyboard()
+    }
     .navigationBarTitle(Text("Edit The Subject"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $showAlert) {

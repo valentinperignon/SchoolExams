@@ -68,6 +68,9 @@ struct NewSubjectView: View {
       
       Spacer()
     }
+    .onTapGesture {
+      self.hideKeyboard()
+    }
     .alert(isPresented: $showAlert) {
       Alert(
         title: Text("Something went wrong"),

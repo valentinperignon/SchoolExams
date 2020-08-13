@@ -15,6 +15,7 @@ struct GradeListView: View {
   @ObservedObject var grade: Grade
   
   // MARK: Body
+  
   var body: some View {
     HStack {
       // ----- Average grade
@@ -35,11 +36,12 @@ struct GradeListView: View {
       
       // ----- About
       VStack {
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
           Text(grade.name)
             .font(.headline)
             .fontWeight(.medium)
             .padding(.bottom, 8)
+          
           Spacer()
         }
         
@@ -55,6 +57,7 @@ struct GradeListView: View {
             .padding(.vertical, 5)
             .background(subject.getColor().light)
             .cornerRadius(7)
+          
           Spacer()
         }
       }

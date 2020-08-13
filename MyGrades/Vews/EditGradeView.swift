@@ -108,6 +108,9 @@ struct EditGradeView: View {
       }
       .padding(.bottom, 15)
     }
+    .onTapGesture {
+      self.hideKeyboard()
+    }
     .navigationBarTitle(Text("Edit The Grade"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $displayAlert) {

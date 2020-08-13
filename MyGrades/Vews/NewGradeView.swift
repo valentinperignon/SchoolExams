@@ -94,6 +94,9 @@ struct NewGradeView: View {
       
       Spacer()
     }
+    .onTapGesture {
+      self.hideKeyboard()
+    }
     .alert(isPresented: $showAlert) {
       let message: Text
       

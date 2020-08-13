@@ -10,6 +10,7 @@
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
 		F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
+		F9501D8424E55F8F003169E2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8324E55F8F003169E2 /* View.swift */; };
 		F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67824E17A9A00476A09 /* EditSubjectView.swift */; };
 		F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */; };
 		F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */; };
@@ -44,6 +45,7 @@
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStoreDemo.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
+		F9501D8324E55F8F003169E2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F96AB67824E17A9A00476A09 /* EditSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectView.swift; sourceTree = "<group>"; };
 		F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderView.swift; sourceTree = "<group>"; };
 		F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFullWidth.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				F9B6358924CE22010030823D /* File.swift */,
 				F9F79E5124CF1D1800A10C52 /* Color.swift */,
 				F99E3D4424DF0C15005B23F3 /* Button.swift */,
+				F9501D8324E55F8F003169E2 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
 				F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */,
 				F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */,
+				F9501D8424E55F8F003169E2 /* View.swift in Sources */,
 				F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */,
 				F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */,
 				F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */,
