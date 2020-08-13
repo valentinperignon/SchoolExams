@@ -79,7 +79,7 @@ struct GradesView: View {
               .fill(Color.mgPurpleLight)
               .clipShape(RoundedRectangle(radius: 20))
             
-            AverageView(average: subject.average)
+            AverageView(average: subject.averageDisplay)
               .padding(.top, 5)
               .padding(.bottom, 18)
           }

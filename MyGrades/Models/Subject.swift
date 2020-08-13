@@ -21,7 +21,8 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
   
   @Published var coefficient: Double
   
-  @Published var average: String = "0"
+  @Published var average: Double = 0
+  @Published var averageDisplay: String = "0"
   
   // MARK: CodingKeys
   
@@ -40,6 +41,8 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
     self.color = color
     
     self.coefficient = coefficient
+    
+    computeAverage()
   }
   
   required init(from decoder: Decoder) throws {
@@ -50,7 +53,8 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
     self.color = try values.decode(SubjectColor.self, forKey: .color)
     self.grades = try values.decode([Grade].self, forKey: .grades)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
-    self.average = averageToString()
+    
+    computeAverage()
   }
   
   // MARK: Function
@@ -75,27 +79,23 @@ class Subject: ObservableObject, Identifiable, Codable, Equatable {
   }
   
   func computeAverage() {
-    average = averageToString()
+   var averageValue: Double = 0
+    var coefficients: Double = 0
+    for grade in grades {
+      averageValue += grade.value * grade.coefficient
+      coefficients += grade.coefficient
+    }
+    
+    average = averageValue / coefficients
+    averageDisplay = averageToString()
   }
   
-  func averageToString() -> String {
+  private func averageToString() -> String {
     if grades.isEmpty {
       return "/"
     }
     
-    let avgValue = getAverage()
-    return avgValue == avgValue.rounded() ? "\(Int(avgValue))" : String(format: "%.2f", avgValue)
-  }
-  
-  func getAverage() -> Double {
-    var average: Double = 0
-    var coefficients: Double = 0
-    for grade in grades {
-      average += grade.value * grade.coefficient
-      coefficients += grade.coefficient
-    }
-    
-    return average / coefficients
+    return average == average.rounded() ? "\(Int(average))" : String(format: "%.2f", average)
   }
   
   func encode(to encoder: Encoder) throws {

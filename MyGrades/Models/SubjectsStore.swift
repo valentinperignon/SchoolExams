@@ -13,47 +13,48 @@ class SubjectStore: ObservableObject {
   // MARK: Properties
   
   let dataURL = URL(fileURLWithPath: "SubjectsStore", relativeTo: FileManager.userDocumentsURL).appendingPathExtension("json")
+  
   @Published var subjects: [Subject] = [] {
     didSet {
       saveJSON()
     }
   }
-  @Published var average: String = "0"
+  
+  @Published var average: Double = 0
+  @Published var averageDisplay: String = "0"
   
   // MARK: Initializer
   
   init() {
     loadJSON()
-    average = averageToString()
+    computeAverage()
   }
   
   // MARK: Functions
   
   func computeAverage() {
-    average = averageToString()
-  }
-  
-  func averageToString() -> String {
-    let average = getAverage()
-    if average.rounded() == average {
-      return "\(Int(average))"
-    }
-    return String(format: "%.2f", average)
-  }
-  
-  func getAverage() -> Double {
-    var average: Double = 0
+    var averageValue: Double = 0
     var coefficients: Double = 0
     
     for subject in subjects where !subject.grades.isEmpty {
-      average += subject.getAverage() * subject.coefficient
+      averageValue += subject.average * subject.coefficient
       coefficients += subject.coefficient
     }
     
     if coefficients == 0 {
-      return 0
+      average = 0
+      averageDisplay = "0"
+      return
     }
-    return average / coefficients
+    average = averageValue / coefficients
+    averageDisplay = averageToString()
+  }
+  
+  func averageToString() -> String {
+    if average.rounded() == average {
+      return "\(Int(average))"
+    }
+    return String(format: "%.2f", average)
   }
   
   /// Load all subjects from a JSON file

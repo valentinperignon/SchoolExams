@@ -60,7 +60,7 @@ struct ContentView: View {
               .fill(Color.mgPurpleLight)
               .clipShape(RoundedRectangle(radius: 20))
             
-            AverageView(average: allSubjects.average)
+            AverageView(average: allSubjects.averageDisplay)
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
@@ -87,7 +87,7 @@ struct ContentView: View {
         }
         .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
       }
-      
+        
     }
     .sheet(isPresented: $showNewSubjectSheet) {
       NewSubjectView()
@@ -111,6 +111,6 @@ struct ContentViewNavigationModifier: ViewModifier {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
-    .environmentObject(SubjectStore.getDemoData())
+      .environmentObject(SubjectStore())
   }
 }

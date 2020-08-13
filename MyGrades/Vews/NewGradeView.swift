@@ -20,7 +20,7 @@ struct NewGradeView: View {
   @ObservedObject var subject: Subject
   
   @State private var name: String = ""
-  @State private var value: String = "0.0"
+  @State private var value: String = ""
   @State private var coefficient: Double = 1
   @State private var date: Date = Date()
   

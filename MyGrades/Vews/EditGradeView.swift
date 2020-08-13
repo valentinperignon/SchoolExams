@@ -60,7 +60,7 @@ struct EditGradeView: View {
             return
           }
           
-          guard let gradeValue = Double(self.gradeValue) else {
+          guard let gradeValue = Double(self.gradeValue.replacingOccurrences(of: ",", with: ".")) else {
             self.alertType = self.alertValue
             self.displayAlert.toggle()
             return

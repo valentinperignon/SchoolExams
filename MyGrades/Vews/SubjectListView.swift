@@ -20,7 +20,7 @@ struct SubjectListView: View {
       ZStack {
         subject.getColor().dark
         
-        Text(subject.averageToString())
+        Text(subject.averageDisplay)
           .fontWeight(.heavy)
           .foregroundColor(.white)
       }
@@ -31,12 +31,19 @@ struct SubjectListView: View {
       // ----- About
       VStack {
         HStack {
+          if subject.average < 10.0 {
+            Image(systemName: "exclamationmark.circle")
+              .font(.headline)
+              .foregroundColor(.mgOrangeDark)
+          }
           Text(subject.name)
             .font(.headline)
             .fontWeight(.medium)
-            .padding(.bottom, 8)
+            .foregroundColor(subject.average < 10.0 ? .mgOrangeDark : .black)
+            
           Spacer()
         }
+        .padding(.bottom, 6)
         
         HStack {
           Text(
@@ -71,8 +78,12 @@ struct SubjectListView: View {
 
 struct SubjectListView_Previews: PreviewProvider {
   static var previews: some View {
-    SubjectListView(subject:
-      Subject(name: "Langages du Web", color: .purple, coefficient: 6)
+    let subject = Subject(name: "Langages du Web", color: .purple, coefficient: 6)
+    subject.addGrade(name: "Test", value: 5.5, coefficient: 1, date: Date())
+    subject.computeAverage()
+    
+    return SubjectListView(subject:
+      subject
     )
   }
 }

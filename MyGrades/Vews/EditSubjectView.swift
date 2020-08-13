@@ -19,6 +19,8 @@ struct EditSubjectView: View {
   
   @ObservedObject var subject: Subject
   
+  @State private var showAlert = false
+  
   // MARK: Body
   
   var body: some View {
@@ -39,7 +41,13 @@ struct EditSubjectView: View {
         
         // Buttons Save & Cancel
         GeometryReader { geometry in
+          // save
           ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
+            guard !self.subject.name.isEmpty else {
+              self.showAlert.toggle()
+              return
+            }
+            
             let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
             hapticFeedback.impactOccurred()
             
@@ -48,6 +56,8 @@ struct EditSubjectView: View {
           }
             .frame(width: geometry.size.width/2+7.5, height: 50)
             .padding(.bottom, 20)
+          
+          // cancel
           ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
             self.allSubjects.loadJSON()
             self.presentationMode.wrappedValue.dismiss()
@@ -77,6 +87,13 @@ struct EditSubjectView: View {
     }
     .navigationBarTitle(Text("Edit The Subject"))
     .navigationBarBackButtonHidden(true)
+    .alert(isPresented: $showAlert) {
+      Alert(
+        title: Text("Something went wrong"),
+        message: Text("The subject must have a title"),
+        dismissButton: .default(Text("OK"))
+      )
+    }
   }
 }
 
