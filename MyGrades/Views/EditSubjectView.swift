@@ -47,6 +47,7 @@ struct EditSubjectView: View {
             feedbackGenerator.prepare()
             
             guard !self.subject.name.isEmpty else {
+              Alert.mgType = .nameError
               self.showAlert.toggle()
               
               feedbackGenerator.notificationOccurred(.error)
@@ -74,31 +75,40 @@ struct EditSubjectView: View {
         
         // Button Remove
         ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
-          let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
-          hapticFeedback.impactOccurred()
+          let feedbackGenerator = UINotificationFeedbackGenerator()
+          feedbackGenerator.notificationOccurred(.warning)
           
-          self.allSubjects.subjects.remove(at:
-            self.allSubjects.subjects.firstIndex(of: self.subject)!
-          )
-          self.allSubjects.computeAverage()
-          
-          self.presentationMode.wrappedValue.dismiss()
+          Alert.mgType = .removeWarning
+          self.showAlert.toggle()
         }
       }
       .padding(.top, 20)
       
       Spacer(minLength: 20)
     }
-    .onTapGesture {
-      self.hideKeyboard()
-    }
     .navigationBarTitle(Text("Edit the Subject"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $showAlert) {
-      Alert(
-        title: Text("Something went wrong"),
-        message: Text("The name of the subject can't be empty."),
-        dismissButton: .default(Text("OK"))
+      if Alert.mgType == .nameError {
+        return Alert(
+          title: Text("Something went wrong"),
+          message: Text("The name of the subject can't be empty."),
+          dismissButton: .default(Text("OK"))
+        )
+      }
+      
+      return Alert(
+        title: Text("Are you sure?"),
+        message: Text("Do you really want to remove this subject?"),
+        primaryButton: .destructive(Text("Remove"), action: {
+          self.allSubjects.subjects.remove(at:
+            self.allSubjects.subjects.firstIndex(of: self.subject)!
+          )
+          self.allSubjects.computeAverage()
+          
+          self.presentationMode.wrappedValue.dismiss()
+        }),
+        secondaryButton: .cancel()
       )
     }
   }

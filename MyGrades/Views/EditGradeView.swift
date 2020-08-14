@@ -22,8 +22,7 @@ struct EditGradeView: View {
   
   @State var gradeValue: String
   
-  @State private var displayAlert = false
-  @State private var alertType: Alert.MyGradeType?
+  @State private var showAlert = false
   
   // MARK: Body
   
@@ -56,8 +55,8 @@ struct EditGradeView: View {
           feedbackGenerator.prepare()
           
           guard !self.grade.name.isEmpty else {
-            self.alertType = .nameError
-            self.displayAlert.toggle()
+            Alert.mgType = .nameError
+            self.showAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -69,8 +68,8 @@ struct EditGradeView: View {
             gradeValue >= 0,
             gradeValue <= 20
           else {
-            self.alertType = .valueError
-            self.displayAlert.toggle()
+            Alert.mgType = .valueError
+            self.showAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -102,20 +101,17 @@ struct EditGradeView: View {
         let feedbackGenerator = UINotificationFeedbackGenerator()
         feedbackGenerator.notificationOccurred(.warning)
         
-        self.displayAlert.toggle()
-        self.alertType = .removeWarning
+        self.showAlert.toggle()
+        Alert.mgType = .removeWarning
       }
       .padding(.bottom, 15)
     }
-    .onTapGesture {
-      self.hideKeyboard()
-    }
     .navigationBarTitle(Text("Edit The Grade"))
     .navigationBarBackButtonHidden(true)
-    .alert(isPresented: $displayAlert) {
-      if self.alertType != .removeWarning {
+    .alert(isPresented: $showAlert) {
+      if Alert.mgType != .removeWarning {
         var message: Text
-        if self.alertType == .nameError {
+        if Alert.mgType == .nameError {
           message = Text("The grade description can't be empty.")
         } else {
           message = Text("The value can't be empty and must be a number between 0 and 20.")

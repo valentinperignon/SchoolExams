@@ -9,6 +9,8 @@
 import SwiftUI
 
 extension Alert {
+  static var mgType: MyGradeType?
+  
   enum MyGradeType {
     case nameError
     case valueError

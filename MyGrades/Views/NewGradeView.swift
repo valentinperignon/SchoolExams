@@ -25,9 +25,6 @@ struct NewGradeView: View {
   @State private var date: Date = Date()
   
   @State private var showAlert = false
-  @State private var alertType: Int = 0
-  private let alertName = 1
-  private let alertValue = 2
   
   // MARK: Body
   
@@ -61,7 +58,7 @@ struct NewGradeView: View {
           
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
-            self.alertType = self.alertName
+            Alert.mgType = .nameError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -74,7 +71,7 @@ struct NewGradeView: View {
             valueDouble <= 20
           else {
             self.showAlert.toggle()
-            self.alertType = self.alertValue
+            Alert.mgType = .valueError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -96,13 +93,10 @@ struct NewGradeView: View {
       
       Spacer()
     }
-    .onTapGesture {
-      self.hideKeyboard()
-    }
     .alert(isPresented: $showAlert) {
       let message: Text
       
-      if self.alertType == self.alertName {
+      if Alert.mgType == .nameError {
         message = Text("The grade description can't be empty.")
       } else {
         message = Text("The value can't be empty and must be a number between 0 and 20.")
