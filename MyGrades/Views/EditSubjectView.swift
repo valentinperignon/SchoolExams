@@ -20,11 +20,17 @@ struct EditSubjectView: View {
   @ObservedObject var subject: Subject
   
   @State private var showAlert = false
+  @State private var action: Int? = 0
   
   // MARK: Body
   
   var body: some View {
     VStack {
+      // Navigation link to ContentView
+      NavigationLink(destination: ContentView(), tag: 1, selection: $action) {
+        EmptyView()
+      }.navigationBarHidden(true)
+      
       // ----- Form
       VStack {
         // Name
