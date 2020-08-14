@@ -106,7 +106,7 @@ struct EditGradeView: View {
       }
       .padding(.bottom, 15)
     }
-    .navigationBarTitle(Text("Edit The Grade"))
+    .navigationBarTitle(Text("Edit the Grade"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $showAlert) {
       if Alert.mgType != .removeWarning {

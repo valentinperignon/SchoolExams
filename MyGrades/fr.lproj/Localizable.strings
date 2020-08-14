@@ -67,6 +67,8 @@
 
 "Add a new grade to" = "Ajouter une nouvelle note à";
 
+"Edit the Grade" = "Modifier la Note";
+
 /* Form */
 
 "Grade Description" = "Description de la note";
