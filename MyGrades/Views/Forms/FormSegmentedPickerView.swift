@@ -23,7 +23,7 @@ struct FormSegmentedPickerView: View {
       
       Picker("", selection: $value) {
         ForEach(SubjectColor.allCases, id: \.self) { element in
-          Text(element.rawValue)
+          Text(NSLocalizedString(element.rawValue, comment: ""))
         }
       }
     .pickerStyle(SegmentedPickerStyle())

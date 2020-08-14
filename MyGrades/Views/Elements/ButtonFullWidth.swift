@@ -23,7 +23,7 @@ struct ButtonFullWidth: View {
     Button(action: action) {
       HStack {
         getIcon()
-        Text(title)
+        Text(NSLocalizedString(title, comment: ""))
       }
       .padding(.vertical)
       .frame(maxWidth: .infinity)

@@ -19,13 +19,13 @@ struct SheetHeaderView: View {
   var body: some View {
     VStack {
       HStack {
-        Text(title)
+        Text(NSLocalizedString(title, comment: ""))
           .font(.largeTitle)
           .fontWeight(.bold)
         Spacer()
       }
       HStack {
-        Text(subtitle)
+        Text(NSLocalizedString(subtitle, comment: ""))
           .font(.callout)
         Spacer()
       }

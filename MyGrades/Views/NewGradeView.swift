@@ -34,17 +34,17 @@ struct NewGradeView: View {
   var body: some View {
     ScrollView {
       // ----- Title
-      SheetHeaderView(title: "New Grade", subtitle: "Add a new grade to \(subject.name)")
+      SheetHeaderView(title: "New Grade", subtitle: NSLocalizedString("Add a new grade to", comment: "") + " \(subject.name)")
       
       // ----- Form
       
       VStack {
         // Name
-        FormTextFieldView(keyboardType: .default, title: "Grade Name", textValue: $name)
+        FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $name, onEditing: {_ in}, onCommit: {})
           .padding(.bottom, 10)
         
         // Value
-        FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value)
+        FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value, onEditing: {_ in}, onCommit: {})
           .padding(.bottom, 10)
         
         // Coefficient
@@ -55,7 +55,7 @@ struct NewGradeView: View {
         FormDatePickerView(title: "Date", selectedDate: $date)
         
         // Button Add
-        ButtonFullWidth(type: .primary, title: "Add The Grade") {
+        ButtonFullWidth(type: .primary, title: "Add the Grade") {
           let feedbackGenerator = UINotificationFeedbackGenerator()
           feedbackGenerator.prepare()
           
@@ -69,7 +69,9 @@ struct NewGradeView: View {
           
           guard
             !self.value.isEmpty,
-            let valueDouble = Double(self.value.replacingOccurrences(of: ",", with: "."))
+            let valueDouble = Double(self.value.replacingOccurrences(of: ",", with: ".")),
+            valueDouble >= 0,
+            valueDouble <= 20
           else {
             self.showAlert.toggle()
             self.alertType = self.alertValue
@@ -101,9 +103,9 @@ struct NewGradeView: View {
       let message: Text
       
       if self.alertType == self.alertName {
-        message = Text("The grade must have a title")
+        message = Text("The grade description can't be empty.")
       } else {
-        message = Text("The grade must have a value and must be a number")
+        message = Text("The value can't be empty and must be a number between 0 and 20.")
       }
       
       return Alert(

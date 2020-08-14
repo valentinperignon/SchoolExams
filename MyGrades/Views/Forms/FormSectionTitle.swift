@@ -17,7 +17,7 @@ struct FormSectionTitle: View {
   
   var body: some View {
       HStack {
-        Text(title.uppercased())
+        Text(NSLocalizedString(title, comment: "").uppercased())
           .font(.caption)
           .fontWeight(.bold)
           .foregroundColor(.mgPurpleDark)

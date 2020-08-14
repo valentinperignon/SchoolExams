@@ -1,0 +1,127 @@
+/* 
+  Localizable.strings
+  MyGrades
+
+  Created by Valentin Perignon on 14/08/2020.
+  Copyright © 2020 Valentin Perignon. All rights reserved.
+*/
+
+/* ---------------------------------------- */
+/* VIEWS                                    */
+/* ---------------------------------------- */
+
+/* ---------- ContentView ---------- */
+
+/* Title */
+
+"My Subjects" = "Mes Matières";
+
+/* No Subject */
+
+"No Subject" = "Aucune Matière";
+"You need to add at least one subject" = "Vous devez ajouter au moins une matière";
+
+/* Buttons */
+
+"New Subject" = "Nouvelle Matière";
+
+/* ---------- AverageView ---------- */
+
+
+/* Title */
+
+"Average" = "Moyenne";
+
+/* ---------- NewSubjectListView & EditSubjectListView ---------- */
+
+/* Header */
+
+"Add a new subject to your list" = "Ajouter une nouvelle matière dans votre liste";
+
+"Edit the Subject" = "Modifier la Matière";
+
+/* Form */
+
+"Subject name" = "Nom de la matière";
+"Coefficient" = "Coefficient";
+"Accent color" = "Couleur d'accentuation";
+
+/* Button */
+
+"Add the Subject" = "Ajouter la Matière";
+
+/* ---------- GradesView ---------- */
+
+/* No Grade */
+
+"No Grade" = "Aucune Note";
+"You can add a grade to this subject" = "Vous pouvez ajouter une note à cette matière";
+
+/* Button */
+
+"New Grade" = "Nouvelle Note";
+
+/* ---------- NewGradeView & EditGradeView ---------- */
+
+/* Header */
+
+"Add a new grade to" = "Ajouter une nouvelle note à";
+
+/* Form */
+
+"Grade Description" = "Description de la note";
+"Value" = "Valeur";
+"Date" = "Date";
+
+/* Button */
+
+"Add the Grade" = "Ajouter la Note";
+
+/* ---------------------------------------- */
+/* ELEMENTS                                 */
+/* ---------------------------------------- */
+
+/* ---------- Alerts ---------- */
+
+/* Title */
+
+"Something went wrong" = "Oh oh... Une erreur s'est produite";
+
+"Are you sure?" = "Êtes-vous sûr ?";
+
+/* Messages */
+
+"The name of the subject can't be empty." = "Le nom de la matière ne peut pas être vide.";
+
+"The grade description can't be empty." = "La description de la note ne peut pas être vide.";
+"The value can't be empty and must be a number between 0 and 20." = "La valeur ne peut pas être vide et doit être un nombre compris entre 0 et 20.";
+
+"Do you really want to remove this grade?" = "Voulez-vous vraiment supprimer cette note ?";
+
+/* Buttons */
+
+"OK" = "OK";
+
+/* ---------- Buttons ---------- */
+
+/* Labels */
+
+"Save" = "Valider";
+"Cancel" = "Annuler";
+"Remove" = "Supprimer";
+
+/* ---------- SubjectColor ---------- */
+
+/* Colors */
+
+"blue" = "bleu";
+"orange" = "orange";
+"purple" = "violet";
+"red" = "rouge";
+"yellow" = "jaune";
+
+/* ---------- Form ----------*/
+
+/* TextField */
+
+"Type something here" = "Taper quelque-chose ici";

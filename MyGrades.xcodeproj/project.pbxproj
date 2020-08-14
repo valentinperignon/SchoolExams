@@ -11,6 +11,7 @@
 		F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
 		F9501D8424E55F8F003169E2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8324E55F8F003169E2 /* View.swift */; };
+		F9501D8624E583C5003169E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8524E583C5003169E2 /* Alert.swift */; };
 		F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67824E17A9A00476A09 /* EditSubjectView.swift */; };
 		F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */; };
 		F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */; };
@@ -34,6 +35,7 @@
 		F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */; };
 		F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFC24D57D3D0023E369 /* GradesView.swift */; };
 		F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFE24D59C390023E369 /* NewGradeView.swift */; };
+		F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */; };
 		F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47624D4B30C000744D5 /* FormStepperView.swift */; };
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
 		F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */; };
@@ -46,6 +48,7 @@
 		F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStoreDemo.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		F9501D8324E55F8F003169E2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F9501D8524E583C5003169E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F96AB67824E17A9A00476A09 /* EditSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectView.swift; sourceTree = "<group>"; };
 		F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderView.swift; sourceTree = "<group>"; };
 		F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFullWidth.swift; sourceTree = "<group>"; };
@@ -71,6 +74,9 @@
 		F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListView.swift; sourceTree = "<group>"; };
 		F9DB0DFC24D57D3D0023E369 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		F9DB0DFE24D59C390023E369 /* NewGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGradeView.swift; sourceTree = "<group>"; };
+		F9E7A4B924E6CAD40084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F9E7A4BD24E6CAF80084DA8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9E7A4BF24E6CAFD0084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSegmentedPickerView.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				F9F79E5124CF1D1800A10C52 /* Color.swift */,
 				F99E3D4424DF0C15005B23F3 /* Button.swift */,
 				F9501D8324E55F8F003169E2 /* View.swift */,
+				F9501D8524E583C5003169E2 /* Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,12 +159,13 @@
 				F9B6358824CE21F50030823D /* Extensions */,
 				F9A8112424D1E8CB0010A1AC /* Shapes */,
 				F9CFFDE824CC6C95007E57C1 /* Models */,
-				F9CFFDE924CC6C9B007E57C1 /* Vews */,
+				F9CFFDE924CC6C9B007E57C1 /* Views */,
 				F9CFFDEB24CC6CB9007E57C1 /* Content */,
 				F9CFFDDC24CC6C68007E57C1 /* Preview Content */,
 				F9CFFDEA24CC6CA2007E57C1 /* Delegates */,
 				F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */,
 				F9CFFDE224CC6C68007E57C1 /* Info.plist */,
+				F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */,
 			);
 			path = MyGrades;
 			sourceTree = "<group>";
@@ -182,7 +190,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F9CFFDE924CC6C9B007E57C1 /* Vews */ = {
+		F9CFFDE924CC6C9B007E57C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
@@ -197,7 +205,7 @@
 				F99E3D4124DF08E9005B23F3 /* Elements */,
 				F90F700324D4B1C500D06FD9 /* Forms */,
 			);
-			path = Vews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F9CFFDEA24CC6CA2007E57C1 /* Delegates */ = {
@@ -259,6 +267,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = F9CFFDC824CC6C68007E57C1;
 			productRefGroup = F9CFFDD224CC6C68007E57C1 /* Products */;
@@ -276,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */,
+				F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */,
 				F9CFFDDE24CC6C68007E57C1 /* Preview Assets.xcassets in Resources */,
 				F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */,
 			);
@@ -306,6 +316,7 @@
 				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
 				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
+				F9501D8624E583C5003169E2 /* Alert.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
 				F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
@@ -327,8 +338,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9CFFDE024CC6C68007E57C1 /* Base */,
+				F9E7A4B924E6CAD40084DA8B /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9E7A4BD24E6CAF80084DA8B /* en */,
+				F9E7A4BF24E6CAFD0084DA8B /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -338,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -399,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

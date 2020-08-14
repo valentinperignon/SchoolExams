@@ -23,9 +23,7 @@ struct EditGradeView: View {
   @State var gradeValue: String
   
   @State private var displayAlert = false
-  @State private var alertType = 0
-  private let alertName = 1
-  private let alertValue = 2
+  @State private var alertType: Alert.MyGradeType?
   
   // MARK: Body
   
@@ -36,11 +34,11 @@ struct EditGradeView: View {
       // ----- Form
       
       // Name
-      FormTextFieldView(keyboardType: .default, title: "Name", textValue: $grade.name)
+      FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $grade.name, onEditing: {_ in}, onCommit: {})
         .padding(.bottom, 10)
       
       // Value
-      FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $gradeValue)
+      FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $gradeValue, onEditing: {_ in}, onCommit: {})
         .padding(.bottom, 10)
       
       // Coefficient
@@ -58,15 +56,20 @@ struct EditGradeView: View {
           feedbackGenerator.prepare()
           
           guard !self.grade.name.isEmpty else {
-            self.alertType = self.alertName
+            self.alertType = .nameError
             self.displayAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
             return
           }
           
-          guard let gradeValue = Double(self.gradeValue.replacingOccurrences(of: ",", with: ".")) else {
-            self.alertType = self.alertValue
+          guard
+            !self.gradeValue.isEmpty,
+            let gradeValue = Double(self.gradeValue.replacingOccurrences(of: ",", with: ".")),
+            gradeValue >= 0,
+            gradeValue <= 20
+          else {
+            self.alertType = .valueError
             self.displayAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
@@ -96,15 +99,11 @@ struct EditGradeView: View {
       
       // Button remove
       ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "trash") {
-        let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
-        hapticFeedback.impactOccurred()
+        let feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator.notificationOccurred(.warning)
         
-        self.subject.grades.remove(at:
-          self.subject.grades.firstIndex(of: self.grade)!
-        )
-        self.allSubjects.saveJSON()
-        
-        self.presentationMode.wrappedValue.dismiss()
+        self.displayAlert.toggle()
+        self.alertType = .removeWarning
       }
       .padding(.bottom, 15)
     }
@@ -114,17 +113,36 @@ struct EditGradeView: View {
     .navigationBarTitle(Text("Edit The Grade"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $displayAlert) {
-      var message: Text
-      if self.alertType == self.alertName {
-        message = Text("The name of your grade can't be empty")
-      } else {
-        message = Text("The value can't be empty and must be a number")
+      if self.alertType != .removeWarning {
+        var message: Text
+        if self.alertType == .nameError {
+          message = Text("The grade description can't be empty.")
+        } else {
+          message = Text("The value can't be empty and must be a number between 0 and 20.")
+        }
+        
+        return Alert(
+          title: Text("Something went wrong"),
+          message: message,
+          dismissButton: .default(Text("OK"))
+        )
       }
       
       return Alert(
-        title: Text("Something went wrong"),
-        message: message,
-        dismissButton: .default(Text("OK"))
+        title: Text("Are you sure?"),
+        message: Text("Do you really want to remove this grade?"),
+        primaryButton: .destructive(Text("Remove"), action: {
+          self.subject.grades.remove(at:
+            self.subject.grades.firstIndex(of: self.grade)!
+          )
+          self.allSubjects.saveJSON()
+          
+          self.subject.computeAverage()
+          self.allSubjects.computeAverage()
+          
+          self.presentationMode.wrappedValue.dismiss()
+        }),
+        secondaryButton: .cancel()
       )
     }
   }

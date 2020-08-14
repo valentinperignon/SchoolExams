@@ -28,7 +28,7 @@ struct EditSubjectView: View {
       // ----- Form
       VStack {
         // Name
-        FormTextFieldView(keyboardType: .default, title: "Name", textValue: $subject.name)
+        FormTextFieldView(keyboardType: .default, title: "Subject name", textValue: $subject.name, onEditing: {_ in}, onCommit: {})
           .padding(.bottom, 10)
         
         // Coefficient
@@ -36,7 +36,7 @@ struct EditSubjectView: View {
           .padding(.bottom, 10)
         
         // Color
-        FormSegmentedPickerView(title: "Color", value: $subject.color)
+        FormSegmentedPickerView(title: "Accent color", value: $subject.color)
           .padding(.bottom, 15)
         
         // Buttons Save & Cancel
@@ -92,12 +92,12 @@ struct EditSubjectView: View {
     .onTapGesture {
       self.hideKeyboard()
     }
-    .navigationBarTitle(Text("Edit The Subject"))
+    .navigationBarTitle(Text("Edit the Subject"))
     .navigationBarBackButtonHidden(true)
     .alert(isPresented: $showAlert) {
       Alert(
         title: Text("Something went wrong"),
-        message: Text("The subject must have a title"),
+        message: Text("The name of the subject can't be empty."),
         dismissButton: .default(Text("OK"))
       )
     }
