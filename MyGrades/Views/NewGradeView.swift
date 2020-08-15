@@ -37,11 +37,11 @@ struct NewGradeView: View {
       
       VStack {
         // Value
-        FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value, onEditing: {_ in}, onCommit: {})
+        FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value)
           .padding(.bottom, 10)
         
         // Name
-        FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $name, onEditing: {_ in}, onCommit: {})
+        FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $name)
           .padding(.bottom, 10)
         
         // Coefficient

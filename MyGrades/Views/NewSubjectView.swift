@@ -23,8 +23,6 @@ struct NewSubjectView: View {
   
   @State private var showAlert = false
   
-  @State private var keyboardIsDisplayed = false
-  
   // MARK: Body
   
   var body: some View {
@@ -37,7 +35,7 @@ struct NewSubjectView: View {
         
         VStack {
           // Name
-          FormTextFieldView(keyboardType: .default, title: "Subject name", textValue: $name, onEditing: {_ in self.keyboardIsDisplayed = true}, onCommit: {self.keyboardIsDisplayed = false; print("\(self.keyboardIsDisplayed)")})
+          FormTextFieldView(keyboardType: .default, title: "Subject name", textValue: $name)
             .padding(.bottom, 10)
           
           // Coefficient
@@ -77,29 +75,6 @@ struct NewSubjectView: View {
           message: Text("The name of the subject can't be empty."),
           dismissButton: .default(Text("OK"))
         )
-      }
-      
-      if keyboardIsDisplayed {
-        HStack {
-          Spacer()
-          
-          Button(action: {
-            self.hideKeyboard()
-            self.keyboardIsDisplayed.toggle()
-          }) {
-            Image(systemName: "keyboard.chevron.compact.down")
-              .renderingMode(.template)
-              .foregroundColor(.white)
-              .padding(.horizontal)
-              .padding(.top, 20)
-              .padding(.bottom, 15)
-          }
-          .background(Color.mgPurpleDark)
-          .cornerRadius(5)
-          .shadow(radius: 2)
-          .padding(.top, 25)
-          .padding(.trailing, 20)
-        }
       }
     }
   }

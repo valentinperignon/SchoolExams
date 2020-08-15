@@ -34,7 +34,7 @@ struct EditSubjectView: View {
       // ----- Form
       VStack {
         // Name
-        FormTextFieldView(keyboardType: .default, title: "Subject name", textValue: $subject.name, onEditing: {_ in}, onCommit: {})
+        FormTextFieldView(keyboardType: .default, title: "Subject name", textValue: $subject.name)
           .padding(.bottom, 10)
         
         // Coefficient

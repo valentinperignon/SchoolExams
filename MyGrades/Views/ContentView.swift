@@ -103,7 +103,7 @@ struct ContentView: View {
             .padding(.horizontal, 15)
           }
           
-          Spacer(minLength: 15)
+          Spacer(minLength: 25)
         }
         .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
       }

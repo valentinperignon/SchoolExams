@@ -16,9 +16,6 @@ struct FormTextFieldView: View {
   var title: String
   @Binding var textValue: String
   
-  var onEditing: (Bool) -> Void
-  var onCommit: () -> Void
-  
   // MARK: Body
   
   var body: some View {
@@ -27,7 +24,7 @@ struct FormTextFieldView: View {
       FormSectionTitle(title: title)
       
       // ----- Field
-      TextField("Type something here", text: $textValue, onEditingChanged: onEditing, onCommit: onCommit)
+      TextField("Type something here", text: $textValue)
         .keyboardType(keyboardType)
         .padding(.horizontal)
         .padding(.vertical, 12)
@@ -40,6 +37,6 @@ struct FormTextFieldView: View {
 
 struct FormTextFieldView_Previews: PreviewProvider {
   static var previews: some View {
-    FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""), onEditing: {_ in}, onCommit: {})
+    FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
   }
 }

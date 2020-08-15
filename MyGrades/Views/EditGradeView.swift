@@ -33,11 +33,11 @@ struct EditGradeView: View {
       // ----- Form
       
       // Value
-      FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $gradeValue, onEditing: {_ in}, onCommit: {})
+      FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $gradeValue)
         .padding(.bottom, 10)
       
       // Name
-           FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $grade.name, onEditing: {_ in}, onCommit: {})
+           FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $grade.name)
              .padding(.bottom, 10)
       
       // Coefficient
