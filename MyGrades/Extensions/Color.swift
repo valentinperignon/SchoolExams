@@ -12,13 +12,13 @@ extension Color {
   // MARK: MyGrades puprle
   
   static let mgPurpleLight = Color(red: 239/255, green: 237/255, blue: 255/255)
-  static let mgPurpleDark = Color(red: 133/255, green: 117/255, blue: 250/255)
+  static let mgPurpleDark = Color(red: 114/255, green: 91/255, blue: 255/255)
   
   // MARK: MyGrades other colors
   
   // Blue
   static let mgBlueLight = Color(red: 181/255, green: 221/255, blue: 255/255)
-  static let mgBlueDark = Color(red: 40/255, green: 151/255, blue: 243/255)
+  static let mgBlueDark = Color(red: 12/255, green: 120/255, blue: 210/255)
   
   // Orange
   static let mgOrangeLight = Color(red: 255/255, green: 222/255, blue: 192/255)

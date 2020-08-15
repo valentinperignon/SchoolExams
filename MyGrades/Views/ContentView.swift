@@ -38,6 +38,7 @@ struct ContentView: View {
             .fontWeight(.bold)
           Text("You need to add at least one subject")
             .foregroundColor(.mgPurpleDark)
+            .multilineTextAlignment(.center)
           
           Spacer()
           
@@ -49,6 +50,7 @@ struct ContentView: View {
           }
           .padding(.bottom, 30)
         }
+        .padding(.horizontal, 15)
         .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
         
       } else {
@@ -77,7 +79,7 @@ struct ContentView: View {
           
           // ----- Subjects -----
           ForEach(allSubjects.subjects) { subject in
-            NavigationLink(destination: GradesView(subject: subject)) {
+            NavigationLink(destination: GradesView(subject: subject).environmentObject(self.allSubjects)) {
               SubjectListView(subject: subject)
                 .environmentObject(self.allSubjects)
             }.accentColor(Color.black)

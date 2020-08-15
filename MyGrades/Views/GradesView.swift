@@ -56,8 +56,11 @@ struct GradesView: View {
           Text("No Grade")
             .font(.title)
             .fontWeight(.bold)
+            .padding(.horizontal, 15)
           Text("You can add a grade to this subject")
             .foregroundColor(.mgPurpleDark)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 15)
           
           Spacer()
           
@@ -117,7 +120,7 @@ struct GradesView: View {
         Button(action: {
           self.action = 1
         }) {
-          Image("Clogwheel")
+          Image("Clogwheel", label: Text("Edit the Grade"))
             .resizable()
             .frame(width: 23, height: 23)
         }

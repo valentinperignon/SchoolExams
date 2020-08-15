@@ -23,10 +23,16 @@ struct SubjectListView: View {
         Text(subject.averageDisplay)
           .fontWeight(.heavy)
           .foregroundColor(.white)
+          .accessibility(label:
+            subject.averageDisplay == "/"
+              ? Text("No Grade In This Subject.")
+              : Text(NSLocalizedString("Subject Average", comment: "") + ": \(subject.averageDisplay) " + NSLocalizedString("over 20", comment: "") + ".")
+          )
       }
       .frame(width: 65, height: 65)
       .cornerRadius(15)
       .padding(.trailing, 5)
+      .accessibility(sortPriority: 2)
       
       // ----- About
       VStack {
@@ -35,11 +41,13 @@ struct SubjectListView: View {
             Image(systemName: "exclamationmark.circle")
               .font(.headline)
               .foregroundColor(.mgOrangeDark)
+              .accessibility(hidden: true)
           }
           Text(subject.name)
             .font(.headline)
             .fontWeight(.medium)
             .foregroundColor(subject.average < 10.0 ? .mgOrangeDark : .black)
+            .accessibility(label: Text("\(subject.name)."))
             
           Spacer()
         }
@@ -57,6 +65,7 @@ struct SubjectListView: View {
             .padding(.vertical, 5)
             .background(subject.getColor().light)
             .cornerRadius(7)
+            .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
           Spacer()
         }
       }
@@ -71,8 +80,11 @@ struct SubjectListView: View {
         .frame(width: 37, height: 37)
         .contrast(0.95)
         .brightness(0.01)
+        .accessibility(hidden: true)
     }
     .padding(.horizontal, 15)
+    .accessibilityElement(children: .combine)
+    .accessibility(hint: Text("View More About This Subject"))
   }
 }
 

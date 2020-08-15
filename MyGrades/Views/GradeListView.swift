@@ -29,6 +29,7 @@ struct GradeListView: View {
         )
           .fontWeight(.heavy)
           .foregroundColor(.white)
+          .accessibility(label: Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
       }
       .frame(width: 65, height: 65)
       .cornerRadius(15)
@@ -41,6 +42,7 @@ struct GradeListView: View {
             .font(.headline)
             .fontWeight(.medium)
             .padding(.bottom, 8)
+            .accessibility(label: Text("\(grade.name)."))
           
           Spacer()
         }
@@ -57,6 +59,7 @@ struct GradeListView: View {
             .padding(.vertical, 5)
             .background(subject.getColor().light)
             .cornerRadius(7)
+            .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))
           
           Spacer()
         }
@@ -71,8 +74,11 @@ struct GradeListView: View {
         .foregroundColor(subject.getColor().dark)
         .frame(width: 40, height: 40)
         .contrast(0.80)
+        .accessibility(hidden: true)
     }
     .padding(.horizontal, 15)
+    .accessibilityElement(children: .combine)
+    .accessibility(hint: Text("View More About This Grade"))
   }
 }
 

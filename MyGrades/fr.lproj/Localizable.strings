@@ -127,3 +127,29 @@
 /* TextField */
 
 "Type something here" = "Taper quelque-chose ici";
+
+/* ---------------------------------------- */
+/* ACCESSIBILITY                            */
+/* ---------------------------------------- */
+
+/* ---------- AverageView ---------- */
+
+
+/* Value */
+
+"over 20" = "sur 20";
+
+/* ---------- SubjectListView ---------- */
+
+/* Labels */
+
+"No Grade In This Subject." = "Aucune Note Pour Cette Matière.";
+"Subject Average" = "Moyenne de la Matière";
+"View More About This Subject" = "Voir Plus À Propos De Cette Matière";
+
+/* ---------- GradeListView ---------- */
+
+/* Labels */
+
+"Grade Value" = "Valeur de la Note";
+"View More About This Grade" = "Voir Plus À Propos de Cette Note";

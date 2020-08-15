@@ -21,6 +21,7 @@ struct AverageView: View {
       Image("Calculator")
         .resizable()
         .frame(width: 65, height: 65)
+        .accessibility(hidden: true)
       
       // ----- Text
       VStack {
@@ -40,6 +41,7 @@ struct AverageView: View {
             .font(.largeTitle)
             .fontWeight(.light)
             .foregroundColor(.white)
+            .accessibility(label: Text("\(average) " + NSLocalizedString("over 20", comment: "")))
           Spacer()
         }
       }
@@ -49,6 +51,7 @@ struct AverageView: View {
     .frame(maxWidth: .infinity)
     .background(Color.mgPurpleDark)
     .cornerRadius(20)
+    .accessibilityElement(children: .combine)
     .padding(.horizontal, 15)
   }
 }
