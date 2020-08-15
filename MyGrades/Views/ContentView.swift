@@ -82,7 +82,25 @@ struct ContentView: View {
             NavigationLink(destination: GradesView(subject: subject).environmentObject(self.allSubjects)) {
               SubjectListView(subject: subject)
                 .environmentObject(self.allSubjects)
-            }.accentColor(Color.black)
+                .contextMenu(
+                  ContextMenu {
+                    Button(action: {
+                      let feedbackGenerator = UINotificationFeedbackGenerator()
+                      feedbackGenerator.notificationOccurred(.success)
+                      
+                      self.allSubjects.subjects.remove(at:
+                        self.allSubjects.subjects.firstIndex(of: subject)!
+                      )
+                      self.allSubjects.computeAverage()
+                    }) {
+                      Text("Remove")
+                      Image(systemName: "trash")
+                    }
+                  }
+                )
+            }
+            .accentColor(Color.black)
+            .padding(.horizontal, 15)
           }
           
           Spacer(minLength: 15)

@@ -106,7 +106,28 @@ struct GradesView: View {
               ).environmentObject(self.allSubjects)
             ) {
               GradeListView(subject: self.subject, grade: grade)
-            }.accentColor(Color.black)
+                .contextMenu(
+                  ContextMenu {
+                    Button(action: {
+                      let feedbackGenerator = UINotificationFeedbackGenerator()
+                      feedbackGenerator.notificationOccurred(.success)
+                      
+                      self.subject.grades.remove(at:
+                        self.subject.grades.firstIndex(of: grade)!
+                      )
+                      self.allSubjects.saveJSON()
+                      
+                      self.subject.computeAverage()
+                      self.allSubjects.computeAverage()
+                    }) {
+                      Text("Remove")
+                      Image(systemName: "trash")
+                    }
+                  }
+                )
+            }
+            .accentColor(Color.black)
+            .padding(.horizontal, 15)
           }
           
           Spacer(minLength: 15)

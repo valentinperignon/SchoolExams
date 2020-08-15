@@ -82,7 +82,6 @@ struct SubjectListView: View {
         .brightness(0.01)
         .accessibility(hidden: true)
     }
-    .padding(.horizontal, 15)
     .accessibilityElement(children: .combine)
     .accessibility(hint: Text("View More About This Subject"))
   }
