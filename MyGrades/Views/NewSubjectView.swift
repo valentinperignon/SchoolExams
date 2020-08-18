@@ -19,7 +19,7 @@ struct NewSubjectView: View {
   
   @State private var name: String = ""
   @State private var coefficient: Double = 1
-  @State private var accentColor: SubjectColor = .purple
+  @State private var accentColor: Subject.CustomColor = .purple
   
   @State private var showAlert = false
   
@@ -61,7 +61,7 @@ struct NewSubjectView: View {
             feedbackGenerator.notificationOccurred(.success)
             
             self.allSubjects.subjects.append(
-              Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient)
+              Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient, tag: self.allSubjects.subjects.count)
             )
             self.presentationMode.wrappedValue.dismiss()
           }

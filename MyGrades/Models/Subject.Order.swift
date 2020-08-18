@@ -1,0 +1,18 @@
+//
+//  Subject.Order.swift
+//  SchoolExams
+//
+//  Created by Valentin Perignon on 18/08/2020.
+//  Copyright © 2020 Valentin Perignon. All rights reserved.
+//
+
+import Foundation
+
+extension Subject {
+  enum Order: String, CaseIterable, Codable {
+    case custom = "custom"
+    case lowToHigh = "- to +"
+    case highToLow = "+ to -"
+    case date = "date"
+  }
+}

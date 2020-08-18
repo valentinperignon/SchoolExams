@@ -19,6 +19,8 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
   @Published var coefficient: Double
   @Published var date: Date
   
+  var tag: Int
+  
   // MARK: CodingKey
   
   enum CodingKeys: CodingKey {
@@ -27,15 +29,18 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     case value
     case coefficient
     case date
+    case tag
   }
   
   // MARK: Initializer
   
-  init(name: String, value: Double, coefficient: Double, date: Date) {
+  init(name: String, value: Double, coefficient: Double, date: Date, tag: Int) {
     self.name = name
     self.value = value
     self.coefficient = coefficient
     self.date = date
+    
+    self.tag = tag
   }
   
   required init(from decoder: Decoder) throws {
@@ -46,6 +51,7 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     self.value = try values.decode(Double.self, forKey: .value)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
     self.date = try values.decode(Date.self, forKey: .date)
+    self.tag = try values.decode(Int.self, forKey: .tag)
   }
   
   // MARK: Functions
@@ -62,5 +68,6 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     try container.encode(self.value, forKey: .value)
     try container.encode(self.coefficient, forKey: .coefficient)
     try container.encode(self.date, forKey: .date)
+    try container.encode(self.tag, forKey: .tag)
   }
 }

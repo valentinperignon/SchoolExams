@@ -9,29 +9,42 @@
 import Foundation
 
 /// All the subjects
-class SubjectStore: ObservableObject {
+class SubjectStore: Average, ObservableObject {
   // MARK: Properties
   
   let dataURL = URL(fileURLWithPath: "SubjectsStore", relativeTo: FileManager.userDocumentsURL).appendingPathExtension("json")
   
-  @Published var subjects: [Subject] = [] {
+  @Published var subjects: [Subject] {
     didSet {
       saveJSON()
     }
   }
   
-  @Published var average: Double = 0
-  @Published var averageDisplay: String = "0"
+  @Published var average: Double
+  @Published var averageDisplay: String
+  
+  @Published var sortBy: SubjectStore.Order {
+    didSet {
+      sortSubjects()
+      saveJSON()
+    }
+  }
   
   // MARK: Initializer
   
   init() {
+    subjects = []
+    average = 0
+    averageDisplay = "0"
+    sortBy = .custom
+    
     loadJSON()
     computeAverage()
   }
   
   // MARK: Functions
   
+  /// Compute overall average
   func computeAverage() {
     var averageValue: Double = 0
     var coefficients: Double = 0
@@ -50,11 +63,26 @@ class SubjectStore: ObservableObject {
     averageDisplay = averageToString()
   }
   
+  /// Transform the average into a string
   func averageToString() -> String {
     if average.rounded() == average {
       return "\(Int(average))"
     }
     return String(format: "%.2f", average)
+  }
+  
+  /// Sort subjects according to user choice
+  func sortSubjects() {
+    subjects.sort { first, second in
+      switch self.sortBy {
+      case .custom:
+        return first.tag < second.tag
+      case .lowToHigh:
+        return first.average < second.average
+      case .highToLow:
+        return first.average > second.average
+      }
+    }
   }
   
   /// Load all subjects from a JSON file
@@ -70,6 +98,7 @@ class SubjectStore: ObservableObject {
     // Load JSON
     do {
       let data = try Data(contentsOf: dataURL)
+      
       subjects = try decoder.decode([Subject].self, from: data)
     } catch let error {
       print(error)

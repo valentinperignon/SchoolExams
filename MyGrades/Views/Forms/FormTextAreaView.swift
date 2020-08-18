@@ -24,7 +24,7 @@ struct FormTextFieldView: View {
       FormSectionTitle(title: title)
       
       // ----- Field
-      TextField("Type something here", text: $textValue)
+      TextField("Write something here", text: $textValue)
         .keyboardType(keyboardType)
         .padding(.horizontal)
         .padding(.vertical, 12)

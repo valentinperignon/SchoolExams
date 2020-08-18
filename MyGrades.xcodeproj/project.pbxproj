@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
-		F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
+		F93FB55324EBFE4C00874D8C /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55224EBFE4C00874D8C /* Average.swift */; };
+		F93FB55524EC008800874D8C /* Subject.Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55424EC008800874D8C /* Subject.Order.swift */; };
+		F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */; };
 		F9501D8424E55F8F003169E2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8324E55F8F003169E2 /* View.swift */; };
 		F9501D8624E583C5003169E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8524E583C5003169E2 /* Alert.swift */; };
 		F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96AB67824E17A9A00476A09 /* EditSubjectView.swift */; };
@@ -25,7 +27,7 @@
 		F9B6358524CE20730030823D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358424CE20730030823D /* Grade.swift */; };
 		F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358624CE21BB0030823D /* SubjectsStore.swift */; };
 		F9B6358A24CE22010030823D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358924CE22010030823D /* File.swift */; };
-		F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358B24CE25BE0030823D /* SubjectColor.swift */; };
+		F9B6358C24CE25BE0030823D /* Subject.CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */; };
 		F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */; };
 		F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */; };
 		F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD824CC6C68007E57C1 /* ContentView.swift */; };
@@ -45,8 +47,10 @@
 
 /* Begin PBXFileReference section */
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
-		F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStoreDemo.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
+		F93FB55224EBFE4C00874D8C /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
+		F93FB55424EC008800874D8C /* Subject.Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.Order.swift; sourceTree = "<group>"; };
+		F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStore.Order.swift; sourceTree = "<group>"; };
 		F9501D8324E55F8F003169E2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F9501D8524E583C5003169E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F96AB67824E17A9A00476A09 /* EditSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectView.swift; sourceTree = "<group>"; };
@@ -62,7 +66,7 @@
 		F9B6358424CE20730030823D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		F9B6358624CE21BB0030823D /* SubjectsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsStore.swift; sourceTree = "<group>"; };
 		F9B6358924CE22010030823D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		F9B6358B24CE25BE0030823D /* SubjectColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectColor.swift; sourceTree = "<group>"; };
+		F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.CustomColor.swift; sourceTree = "<group>"; };
 		F9CFFDD124CC6C68007E57C1 /* SchoolExams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolExams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 				F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */,
 			);
 			path = Forms;
+			sourceTree = "<group>";
+		};
+		F93FB55824EC097100874D8C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F93FB55224EBFE4C00874D8C /* Average.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F99E3D4124DF08E9005B23F3 /* Elements */ = {
@@ -158,6 +170,7 @@
 			children = (
 				F9B6358824CE21F50030823D /* Extensions */,
 				F9A8112424D1E8CB0010A1AC /* Shapes */,
+				F93FB55824EC097100874D8C /* Protocols */,
 				F9CFFDE824CC6C95007E57C1 /* Models */,
 				F9CFFDE924CC6C9B007E57C1 /* Views */,
 				F9CFFDEB24CC6CB9007E57C1 /* Content */,
@@ -174,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */,
-				F90F6FFF24D4AB0200D06FD9 /* SubjectStoreDemo.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -183,8 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				F9B6358624CE21BB0030823D /* SubjectsStore.swift */,
+				F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */,
 				F9B6358224CE1FD00030823D /* Subject.swift */,
-				F9B6358B24CE25BE0030823D /* SubjectColor.swift */,
+				F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */,
+				F93FB55424EC008800874D8C /* Subject.Order.swift */,
 				F9B6358424CE20730030823D /* Grade.swift */,
 			);
 			path = Models;
@@ -303,18 +317,20 @@
 				F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */,
 				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
-				F90F700024D4AB0200D06FD9 /* SubjectStoreDemo.swift in Sources */,
 				F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */,
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
 				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
+				F93FB55524EC008800874D8C /* Subject.Order.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
+				F93FB55324EBFE4C00874D8C /* Average.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
-				F9B6358C24CE25BE0030823D /* SubjectColor.swift in Sources */,
+				F9B6358C24CE25BE0030823D /* Subject.CustomColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
+				F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */,
 				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
 				F9501D8624E583C5003169E2 /* Alert.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
@@ -478,7 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MyGrades/Preview Content\"";
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
@@ -500,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MyGrades/Preview Content\"";
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;

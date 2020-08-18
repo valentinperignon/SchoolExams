@@ -13,7 +13,7 @@ struct FormSegmentedPickerView: View {
   
   var title: String
   
-  @Binding var value: SubjectColor
+  @Binding var value: Subject.CustomColor
   
   // MARK: Body
   
@@ -22,11 +22,11 @@ struct FormSegmentedPickerView: View {
       FormSectionTitle(title: title)
       
       Picker("", selection: $value) {
-        ForEach(SubjectColor.allCases, id: \.self) { element in
+        ForEach(Subject.CustomColor.allCases, id: \.self) { element in
           Text(NSLocalizedString(element.rawValue, comment: ""))
         }
       }
-    .pickerStyle(SegmentedPickerStyle())
+      .pickerStyle(SegmentedPickerStyle())
     }
     .padding(.horizontal, 15)
   }
@@ -34,6 +34,6 @@ struct FormSegmentedPickerView: View {
 
 struct FormSegmentedPickerView_Previews: PreviewProvider {
   static var previews: some View {
-    FormSegmentedPickerView(title: "My title", value: .constant(SubjectColor.purple))
+    FormSegmentedPickerView(title: "My title", value: .constant(.purple))
   }
 }

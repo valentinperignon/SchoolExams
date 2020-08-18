@@ -26,11 +26,6 @@ struct EditSubjectView: View {
   
   var body: some View {
     VStack {
-      // Navigation link to ContentView
-      NavigationLink(destination: ContentView(), tag: 1, selection: $action) {
-        EmptyView()
-      }.navigationBarHidden(true)
-      
       // ----- Form
       VStack {
         // Name
@@ -122,7 +117,7 @@ struct EditSubjectView: View {
 
 struct EditSubjectView_Previews: PreviewProvider {
   static var previews: some View {
-    EditSubjectView(subject: Subject(name: "Anglais", color: .red, coefficient: 3))
+    EditSubjectView(subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0))
     .environmentObject(SubjectStore())
   }
 }

@@ -32,13 +32,17 @@ struct ContentView: View {
             .scaledToFit()
             .padding(.horizontal, 40)
             .foregroundColor(.mgPurpleLight)
+            .accessibility(hidden: true)
           
-          Text("No Subject")
-            .font(.title)
-            .fontWeight(.bold)
-          Text("You need to add at least one subject")
-            .foregroundColor(.mgPurpleDark)
-            .multilineTextAlignment(.center)
+          VStack {
+            Text("No Subject")
+              .font(.title)
+              .fontWeight(.bold)
+            Text("You need to add at least one subject")
+              .foregroundColor(.mgPurpleDark)
+              .multilineTextAlignment(.center)
+          }
+          .accessibilityElement(children: .combine)
           
           Spacer()
           
@@ -57,6 +61,7 @@ struct ContentView: View {
         
         ScrollView {
           // ----- Average Grade -----
+          
           ZStack {
             Rectangle()
               .fill(Color.mgPurpleLight)
@@ -76,6 +81,23 @@ struct ContentView: View {
             
             self.showNewSubjectSheet.toggle()
           }
+          
+          // ----- Sort tool -----
+          
+          HStack {
+            Text("SORT BY: ")
+              .font(.callout)
+              .foregroundColor(.mgPurpleDark)
+              .fontWeight(.bold)
+            
+            Picker("Sort by", selection: $allSubjects.sortBy) {
+              ForEach(SubjectStore.Order.allCases, id: \.self) { element in
+                Text(element.rawValue)
+              }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+          }
+          .padding(.horizontal, 15)
           
           // ----- Subjects -----
           ForEach(allSubjects.subjects) { subject in

@@ -30,6 +30,8 @@ struct SheetHeaderView: View {
         Spacer()
       }
     }
+    .accessibilityElement(children: .combine)
+    .accessibility(addTraits: .isHeader)
     .padding([.horizontal, .bottom])
     .padding(.top, 60)
     .background(Color.mgPurpleLight)

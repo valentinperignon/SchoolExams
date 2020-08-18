@@ -84,8 +84,8 @@ struct GradeListView: View {
 struct GradeListView_Previews: PreviewProvider {
   static var previews: some View {
     GradeListView(
-      subject: Subject(name: "Anglais", color: .red, coefficient: 3),
-      grade: Grade(name: "Exposé", value: 18, coefficient: 2, date: Date())
+      subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0),
+      grade: Grade(name: "Exposé", value: 18, coefficient: 2, date: Date(), tag: 0)
     )
   }
 }

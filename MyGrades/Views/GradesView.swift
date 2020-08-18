@@ -52,15 +52,19 @@ struct GradesView: View {
             .scaledToFit()
             .padding(.horizontal, 40)
             .foregroundColor(.mgPurpleLight)
+            .accessibility(hidden: true)
           
-          Text("No Grade")
-            .font(.title)
-            .fontWeight(.bold)
-            .padding(.horizontal, 15)
-          Text("You can add a grade to this subject")
-            .foregroundColor(.mgPurpleDark)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 15)
+          VStack {
+            Text("No Grade")
+              .font(.title)
+              .fontWeight(.bold)
+              .padding(.horizontal, 15)
+            Text("You can add a grade to this subject")
+              .foregroundColor(.mgPurpleDark)
+              .multilineTextAlignment(.center)
+              .padding(.horizontal, 15)
+          }
+          .accessibilityElement(children: .combine)
           
           Spacer()
           
@@ -77,6 +81,7 @@ struct GradesView: View {
           
         ScrollView {
           // ----- Average Grade -----
+          
           ZStack {
             Rectangle()
               .fill(Color.mgPurpleLight)
@@ -89,6 +94,7 @@ struct GradesView: View {
           .padding(.bottom, 4)
           
           // ----- Button -----
+          
           ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
             let feedbackGenerator = UISelectionFeedbackGenerator()
             feedbackGenerator.selectionChanged()
@@ -96,7 +102,25 @@ struct GradesView: View {
             self.displayNewSheet.toggle()
           }
           
+          // ----- Sort tool -----
+          
+          HStack {
+            Text("SORT BY: ")
+              .font(.callout)
+              .foregroundColor(.mgPurpleDark)
+              .fontWeight(.bold)
+            
+            Picker("Sort by", selection: $subject.sortBy) {
+              ForEach(Subject.Order.allCases, id: \.self) { element in
+                Text(element.rawValue)
+              }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+          }
+          .padding(.horizontal, 15)
+          
           // ----- Subjects -----
+          
           ForEach(subject.grades) { grade in
             NavigationLink(destination:
               EditGradeView(
@@ -141,7 +165,7 @@ struct GradesView: View {
         Button(action: {
           self.action = 1
         }) {
-          Image("Clogwheel", label: Text("Edit the Grade"))
+          Image("Clogwheel", label: Text("Edit the Subject"))
             .resizable()
             .frame(width: 23, height: 23)
         }
@@ -156,8 +180,8 @@ struct GradesView: View {
 
 struct GradesView_Previews: PreviewProvider {
   static var previews: some View {
-    let subject = Subject(name: "Anglais", color: .red, coefficient: 3)
-    subject.grades.append(Grade(name: "Oral", value: 18, coefficient: 3, date: Date()))
+    let subject = Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0)
+    subject.grades.append(Grade(name: "Oral", value: 18, coefficient: 3, date: Date(), tag: 0))
     
     return GradesView(subject: subject).environmentObject(SubjectStore())
   }

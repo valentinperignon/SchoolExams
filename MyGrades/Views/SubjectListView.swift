@@ -89,7 +89,7 @@ struct SubjectListView: View {
 
 struct SubjectListView_Previews: PreviewProvider {
   static var previews: some View {
-    let subject = Subject(name: "Langages du Web", color: .purple, coefficient: 6)
+    let subject = Subject(name: "Langages du Web", color: .purple, coefficient: 6, tag: 0)
     subject.addGrade(name: "Test", value: 5.5, coefficient: 1, date: Date())
     subject.computeAverage()
     
