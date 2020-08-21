@@ -85,7 +85,7 @@ struct GradesView: View {
           ZStack {
             Rectangle()
               .fill(Color.mgPurpleLight)
-              .clipShape(RoundedRectangle(radius: 20))
+              .clipShape(MGRoundedRectangle(radius: 15))
             
             AverageView(average: subject.averageDisplay)
               .padding(.top, 5)

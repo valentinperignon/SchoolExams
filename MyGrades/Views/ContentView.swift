@@ -65,13 +65,13 @@ struct ContentView: View {
           ZStack {
             Rectangle()
               .fill(Color.mgPurpleLight)
-              .clipShape(RoundedRectangle(radius: 20))
+              .clipShape(MGRoundedRectangle(radius: 15))
             
             AverageView(average: allSubjects.averageDisplay)
               .padding(.top, 5)
               .padding(.bottom, 18)
           }
-          .padding(.bottom, 4)
+          .padding(.bottom, 5)
           
           // ----- New Subject -----
           
@@ -81,14 +81,16 @@ struct ContentView: View {
             
             self.showNewSubjectSheet.toggle()
           }
+          .padding(.bottom, 1)
           
           // ----- Sort tool -----
           
           HStack {
-            Text("SORT BY: ")
+            Text("SORT BY")
               .font(.callout)
               .foregroundColor(.mgPurpleDark)
-              .fontWeight(.bold)
+              .fontWeight(.medium)
+              .padding(.trailing, 1)
             
             Picker("Sort by", selection: $allSubjects.sortBy) {
               ForEach(SubjectStore.Order.allCases, id: \.self) { element in
@@ -152,7 +154,10 @@ struct ContentViewNavigationModifier: ViewModifier {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
-      .environmentObject(SubjectStore())
+    let store = SubjectStore()
+    store.subjects.append(Subject(name: "Test", color: .blue, coefficient: 1, tag: 1))
+    
+    return ContentView()
+      .environmentObject(store)
   }
 }

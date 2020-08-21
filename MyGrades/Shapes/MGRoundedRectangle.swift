@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RoundedRectangle: Shape {
+struct MGRoundedRectangle: Shape {
   // MARK: Property
   
   let radius: CGFloat

@@ -20,7 +20,7 @@
 		F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E3D4424DF0C15005B23F3 /* Button.swift */; };
 		F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112024D1D9C40010A1AC /* AverageView.swift */; };
 		F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController.swift */; };
-		F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */; };
+		F9A8112624D1E8F10010A1AC /* MGRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* MGRoundedRectangle.swift */; };
 		F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112724D2125B0010A1AC /* SubjectListView.swift */; };
 		F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */; };
 		F9B6358324CE1FD00030823D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358224CE1FD00030823D /* Subject.swift */; };
@@ -59,7 +59,7 @@
 		F99E3D4424DF0C15005B23F3 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		F9A8112024D1D9C40010A1AC /* AverageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageView.swift; sourceTree = "<group>"; };
 		F9A8112224D1E4610010A1AC /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
+		F9A8112524D1E8F10010A1AC /* MGRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRoundedRectangle.swift; sourceTree = "<group>"; };
 		F9A8112724D2125B0010A1AC /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
 		F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePickerView.swift; sourceTree = "<group>"; };
 		F9B6358224CE1FD00030823D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -99,6 +99,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F9099FCC24F029B400C011BD /* Subjects */ = {
+			isa = PBXGroup;
+			children = (
+				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
+				F91BB61C24D373640044C2E6 /* NewSubjectView.swift */,
+				F96AB67824E17A9A00476A09 /* EditSubjectView.swift */,
+			);
+			path = Subjects;
+			sourceTree = "<group>";
+		};
+		F9099FCD24F029D200C011BD /* Grades */ = {
+			isa = PBXGroup;
+			children = (
+				F9DB0DFC24D57D3D0023E369 /* GradesView.swift */,
+				F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */,
+				F9DB0DFE24D59C390023E369 /* NewGradeView.swift */,
+				F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */,
+			);
+			path = Grades;
+			sourceTree = "<group>";
+		};
 		F90F700324D4B1C500D06FD9 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +143,7 @@
 		F99E3D4124DF08E9005B23F3 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
 				F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */,
 				F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */,
 			);
@@ -131,7 +153,7 @@
 		F9A8112424D1E8CB0010A1AC /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				F9A8112524D1E8F10010A1AC /* RoundedRectangle.swift */,
+				F9A8112524D1E8F10010A1AC /* MGRoundedRectangle.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -208,14 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
-				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
-				F9A8112724D2125B0010A1AC /* SubjectListView.swift */,
-				F91BB61C24D373640044C2E6 /* NewSubjectView.swift */,
-				F96AB67824E17A9A00476A09 /* EditSubjectView.swift */,
-				F9DB0DFC24D57D3D0023E369 /* GradesView.swift */,
-				F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */,
-				F9DB0DFE24D59C390023E369 /* NewGradeView.swift */,
-				F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */,
+				F9099FCC24F029B400C011BD /* Subjects */,
+				F9099FCD24F029D200C011BD /* Grades */,
 				F99E3D4124DF08E9005B23F3 /* Elements */,
 				F90F700324D4B1C500D06FD9 /* Forms */,
 			);
@@ -333,7 +349,7 @@
 				F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */,
 				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
 				F9501D8624E583C5003169E2 /* Alert.swift in Sources */,
-				F9A8112624D1E8F10010A1AC /* RoundedRectangle.swift in Sources */,
+				F9A8112624D1E8F10010A1AC /* MGRoundedRectangle.swift in Sources */,
 				F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */,
 				F9B6358524CE20730030823D /* Grade.swift in Sources */,
 				F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */,

@@ -19,8 +19,10 @@ struct AverageView: View {
     HStack(alignment: .center) {
       // ----- Icon
       Image("Calculator")
+        .renderingMode(.template)
         .resizable()
-        .frame(width: 65, height: 65)
+        .foregroundColor(.mgPurpleDark)
+        .frame(width: 60, height: 60)
         .accessibility(hidden: true)
       
       // ----- Text
@@ -30,8 +32,8 @@ struct AverageView: View {
           Text("Average")
             .font(.headline)
             .fontWeight(.bold)
-            .foregroundColor(.white)
-            .padding(.bottom, 5)
+            .foregroundColor(.mgPurpleDark)
+            .padding(.bottom, 4)
           Spacer()
         }
         
@@ -40,17 +42,21 @@ struct AverageView: View {
           Text("\(average)/20")
             .font(.largeTitle)
             .fontWeight(.light)
-            .foregroundColor(.white)
+            .foregroundColor(.mgPurpleDark)
             .accessibility(label: Text("\(average) " + NSLocalizedString("over 20", comment: "")))
           Spacer()
         }
       }
     }
     .padding(.horizontal, 12)
-    .padding(.vertical, 16)
+    .padding(.vertical, 14)
     .frame(maxWidth: .infinity)
-    .background(Color.mgPurpleDark)
-    .cornerRadius(20)
+    .background(Color.mgPurpleLight)
+    .cornerRadius(15)
+    .overlay(
+      RoundedRectangle(cornerRadius: 15)
+        .stroke(Color.mgPurpleDark, lineWidth: 1)
+    )
     .accessibilityElement(children: .combine)
     .padding(.horizontal, 15)
   }

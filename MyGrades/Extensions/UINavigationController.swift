@@ -12,13 +12,14 @@ extension UINavigationController {
   open override func viewDidLoad() {
     super.viewDidLoad()
     
-    let backgroundColor = UIColor(red: 239/255, green: 237/255, blue: 255/255, alpha: 1)
+    let backgroundColor = UIColor(red: 227/255, green: 222/255, blue: 255/255, alpha: 1)
+    let textColor = UIColor(red: 73/255, green: 34/255, blue: 211/255, alpha: 1)
     
     let barAppearence = UINavigationBarAppearance()
     barAppearence.backgroundColor = backgroundColor
     barAppearence.shadowColor = backgroundColor
-    barAppearence.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-    barAppearence.titleTextAttributes = [.foregroundColor: UIColor.black]
+    barAppearence.largeTitleTextAttributes = [.foregroundColor: textColor]
+    barAppearence.titleTextAttributes = [.foregroundColor: textColor]
     
     navigationBar.standardAppearance = barAppearence
     navigationBar.scrollEdgeAppearance = barAppearence

@@ -15,6 +15,6 @@ extension Subject {
     case orange = "orange"
     case purple = "purple"
     case red = "red"
-    case yellow = "yellow"
+    case green = "green"
   }
 }

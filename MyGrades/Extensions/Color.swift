@@ -11,26 +11,26 @@ import SwiftUI
 extension Color {
   // MARK: MyGrades puprle
   
-  static let mgPurpleLight = Color(red: 239/255, green: 237/255, blue: 255/255)
-  static let mgPurpleDark = Color(red: 114/255, green: 91/255, blue: 255/255)
+  static let mgPurpleLight = Color(red: 227/255, green: 222/255, blue: 255/255)
+  static let mgPurpleDark = Color(red: 73/255, green: 34/255, blue: 211/255)
   
   // MARK: MyGrades other colors
   
   // Blue
-  static let mgBlueLight = Color(red: 181/255, green: 221/255, blue: 255/255)
-  static let mgBlueDark = Color(red: 12/255, green: 120/255, blue: 210/255)
+  static let mgBlueLight = Color(red: 226/255, green: 241/255, blue: 255/255)
+  static let mgBlueDark = Color(red: 48/255, green: 167/255, blue: 249/255)
+  
+  // Green
+  static let mgGreenLight = Color(red: 221/255, green: 248/255, blue: 234/255)
+  static let mgGreenDark = Color(red: 20/255, green: 152/255, blue: 132/255)
   
   // Orange
-  static let mgOrangeLight = Color(red: 255/255, green: 222/255, blue: 192/255)
-  static let mgOrangeDark = Color(red: 243/255, green: 142/255, blue: 44/255)
+  static let mgOrangeLight = Color(red: 255/255, green: 237/255, blue: 228/255)
+  static let mgOrangeDark = Color(red: 248/255, green: 115/255, blue: 27/255)
   
   // Red
-  static let mgRedLight = Color(red: 251/255, green: 208/255, blue: 208/255)
-  static let mgRedDark = Color(red: 232/255, green: 48/255, blue: 48/255)
-  
-  // Yellow
-  static let mgYellowLight = Color(red: 252/255, green: 241/255, blue: 199/255)
-  static let mgYellowDark = Color(red: 231/255, green: 193/255, blue: 4/255)
+  static let mgRedLight = Color(red: 255/255, green: 225/255, blue: 233/255)
+  static let mgRedDark = Color(red: 239/255, green: 0/255, blue: 38/255)
   
   // MARK: Apple colors
   

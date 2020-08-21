@@ -94,8 +94,8 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
       return (.mgOrangeLight, .mgOrangeDark)
     case .red:
       return (.mgRedLight, .mgRedDark)
-    case .yellow:
-      return (.mgYellowLight, .mgYellowDark)
+    case .green:
+      return (.mgGreenLight, .mgGreenDark)
     default:
       return (.mgPurpleLight, .mgPurpleDark)
     }

@@ -23,9 +23,11 @@ struct ButtonFullWidth: View {
     Button(action: action) {
       HStack {
         getIcon()
-        Text(NSLocalizedString(title, comment: ""))
+        Text(NSLocalizedString(title, comment: "").uppercased())
+          .font(Font.system(.body, design: .rounded))
+          .fontWeight(.light)
       }
-      .padding(.vertical)
+      .padding(.vertical, 15)
       .frame(maxWidth: .infinity)
     }
     .background(getColors().bg)
@@ -53,9 +55,9 @@ struct ButtonFullWidth: View {
   func getColors() -> (bg: Color, fg: Color) {
     switch type {
     case .primary:
-      return (.mgPurpleLight, .black)
+      return (.mgPurpleLight, .mgPurpleDark)
     case .warning:
-      return (.mgOrangeLight, .black)
+      return (.mgOrangeLight, .mgOrangeDark)
     case .alert:
       return (.mgRedDark, .white)
     }

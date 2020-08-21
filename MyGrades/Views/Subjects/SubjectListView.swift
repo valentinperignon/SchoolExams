@@ -21,8 +21,8 @@ struct SubjectListView: View {
         subject.getColor().dark
         
         Text(subject.averageDisplay)
-          .fontWeight(.heavy)
-          .foregroundColor(.white)
+          .fontWeight(.semibold)
+          .foregroundColor(subject.getColor().light)
           .accessibility(label:
             subject.averageDisplay == "/"
               ? Text("No Grade In This Subject.")
@@ -61,9 +61,10 @@ struct SubjectListView: View {
           )
             .font(.callout)
             .fontWeight(.light)
-            .padding(.horizontal, 8)
+            .padding(.horizontal, 12)
             .padding(.vertical, 5)
             .background(subject.getColor().light)
+            .foregroundColor(subject.getColor().dark)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
           Spacer()
@@ -90,7 +91,7 @@ struct SubjectListView: View {
 struct SubjectListView_Previews: PreviewProvider {
   static var previews: some View {
     let subject = Subject(name: "Langages du Web", color: .purple, coefficient: 6, tag: 0)
-    subject.addGrade(name: "Test", value: 5.5, coefficient: 1, date: Date())
+    subject.addGrade(name: "Test", value: 15.5, coefficient: 1, date: Date())
     subject.computeAverage()
     
     return SubjectListView(subject:
