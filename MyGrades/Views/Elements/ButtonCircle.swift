@@ -19,12 +19,13 @@ struct ButtonCircle: View {
     Button(action: action) {
       Image(systemName: "plus")
         .font(.title)
+        .padding()
+        .background(Color.mgPurpleDark)
+        .foregroundColor(.mgPurpleLight)
+        .clipShape(Circle())
+        .shadow(radius: 10)
     }
-    .padding()
-    .background(Color.mgPurpleDark)
-    .foregroundColor(.mgPurpleLight)
-    .clipShape(Circle())
-    .shadow(radius: 10)
+    .buttonStyle(MGButtonStyle())
     .padding(.trailing, 22)
     .padding(.bottom, 20)
   }

@@ -29,10 +29,11 @@ struct ButtonFullWidth: View {
       }
       .padding(.vertical, 15)
       .frame(maxWidth: .infinity)
+      .background(getColors().bg)
+      .foregroundColor(getColors().fg)
+      .cornerRadius(10)
     }
-    .background(getColors().bg)
-    .foregroundColor(getColors().fg)
-    .cornerRadius(10)
+    .buttonStyle(MGButtonStyle())
     .padding(.horizontal, 15)
   }
   

@@ -170,9 +170,7 @@ struct GradesView: View {
           self.action = 1
         }) {
           Image(systemName: "gear")
-            .renderingMode(.template)
             .resizable()
-            .foregroundColor(.mgPurpleDark)
             .frame(width: 23, height: 23)
             .accessibility(label: Text("Edit the subject"))
         }

@@ -149,7 +149,7 @@ struct ContentViewNavigationModifier: ViewModifier {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     let store = SubjectStore()
-    //store.subjects.append(Subject(name: "Test", color: .orange, coefficient: 1, tag: 1))
+    store.subjects.append(Subject(name: "Test", color: .orange, coefficient: 1, tag: 1))
     
     return ContentView()
       .environmentObject(store)
