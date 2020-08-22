@@ -43,8 +43,8 @@ struct NewSubjectView: View {
             .padding(.bottom, 10)
           
           // Accent color
-          FormSegmentedPickerView(title: "Accent color", value: $accentColor)
-            .padding(.bottom, 15)
+          FormColorPickerView(title: "Accent color", value: $accentColor)
+            .padding(.bottom, 12)
           
           // Button
           ButtonFullWidth(type: .primary, title: "Add the Subject", iconSysName: "checkmark") {

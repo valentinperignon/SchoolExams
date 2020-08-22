@@ -25,7 +25,7 @@ struct ButtonCircle: View {
         .clipShape(Circle())
         .shadow(radius: 10)
     }
-    .buttonStyle(MGButtonStyle())
+    .buttonStyle(ButtonCircleStyle())
     .padding(.trailing, 22)
     .padding(.bottom, 20)
   }

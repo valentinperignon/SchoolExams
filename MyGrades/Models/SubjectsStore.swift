@@ -36,7 +36,7 @@ class SubjectStore: Average, ObservableObject {
     subjects = []
     average = 0
     averageDisplay = "0"
-    sortBy = .custom
+    sortBy = .defaultOrder
     
     loadJSON()
     computeAverage()
@@ -75,7 +75,7 @@ class SubjectStore: Average, ObservableObject {
   func sortSubjects() {
     subjects.sort { first, second in
       switch self.sortBy {
-      case .custom:
+      case .defaultOrder:
         return first.tag < second.tag
       case .lowToHigh:
         return first.average < second.average

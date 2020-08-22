@@ -53,7 +53,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     self.coefficient = coefficient
     self.average = 0
     self.averageDisplay = "0"
-    self.sortBy = .custom
+    self.sortBy = .defaultOrder
     
     self.tag = tag
     
@@ -71,7 +71,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
     self.average = 0
     self.averageDisplay = "0"
-    self.sortBy = .custom
+    self.sortBy = .defaultOrder
     
     self.tag = try values.decode(Int.self, forKey: .tag)
     
@@ -86,8 +86,8 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   }
   
   /// Get dark and light colors
-  func getColor() -> (light: Color, dark: Color) {
-    switch color {
+  static func getColor(subjectColor: Subject.CustomColor) -> (light: Color, dark: Color) {
+    switch subjectColor {
     case .blue:
       return (.mgBlueLight, .mgBlueDark)
     case .orange:
@@ -100,6 +100,12 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
       return (.mgPurpleLight, .mgPurpleDark)
     }
   }
+  
+  func getColor() -> (light: Color, dark: Color) {
+    return Subject.getColor(subjectColor: self.color)
+  }
+  
+  
   
   /// Compute subject average
   func computeAverage() {
@@ -127,7 +133,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   func sortGrades() {
     grades.sort { first, second in
       switch self.sortBy {
-      case .custom:
+      case .defaultOrder:
         return first.tag < second.tag
       case .lowToHigh:
         return first.value < second.value

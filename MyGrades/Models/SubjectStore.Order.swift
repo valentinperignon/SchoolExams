@@ -11,7 +11,7 @@ import Foundation
 
 extension SubjectStore {
   enum Order: String, CaseIterable, Codable {
-    case custom = "custom"
+    case defaultOrder = "default"
     case lowToHigh = "- to +"
     case highToLow = "+ to -"
   }

@@ -124,7 +124,16 @@
 
 /* ---------- Sort tools ---------- */
 
+/* Title */
+
 "SORT BY" = "TRIER";
+
+/* Labels */
+
+"default" = "défaut";
+"- to +" = "- vers +";
+"+ to -" = "+ vers -";
+"date" = "date";
 
 /* ---------- Form ----------*/
 

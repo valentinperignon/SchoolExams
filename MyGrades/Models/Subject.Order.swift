@@ -10,7 +10,7 @@ import Foundation
 
 extension Subject {
   enum Order: String, CaseIterable, Codable {
-    case custom = "custom"
+    case defaultOrder = "default"
     case lowToHigh = "- to +"
     case highToLow = "+ to -"
     case date = "date"

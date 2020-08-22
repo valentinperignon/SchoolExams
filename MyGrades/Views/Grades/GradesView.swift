@@ -105,7 +105,7 @@ struct GradesView: View {
               
               Picker("Sort by", selection: $subject.sortBy) {
                 ForEach(Subject.Order.allCases, id: \.self) { element in
-                  Text(element.rawValue)
+                  Text(NSLocalizedString(element.rawValue, comment: ""))
                 }
               }
               .pickerStyle(SegmentedPickerStyle())

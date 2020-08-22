@@ -76,7 +76,7 @@ struct ContentView: View {
               
               Picker("Sort by", selection: $allSubjects.sortBy) {
                 ForEach(SubjectStore.Order.allCases, id: \.self) { element in
-                  Text(element.rawValue)
+                  Text(NSLocalizedString(element.rawValue, comment: ""))
                 }
               }
               .pickerStyle(SegmentedPickerStyle())

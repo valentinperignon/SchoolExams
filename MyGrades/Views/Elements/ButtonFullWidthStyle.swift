@@ -1,5 +1,5 @@
 //
-//  ButtonCircleStyle.swift
+//  ButtonFullWidthStyle.swift
 //  SchoolExams
 //
 //  Created by Valentin Perignon on 22/08/2020.
@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct MGButtonStyle: ButtonStyle {
+struct ButtonFullWidthStyle: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
-      .scaleEffect(configuration.isPressed ? 0.9 : 1)
+      .scaleEffect(configuration.isPressed ? 0.95 : 1)
   }
 }

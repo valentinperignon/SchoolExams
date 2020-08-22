@@ -33,7 +33,7 @@ struct ButtonFullWidth: View {
       .foregroundColor(getColors().fg)
       .cornerRadius(10)
     }
-    .buttonStyle(MGButtonStyle())
+    .buttonStyle(ButtonFullWidthStyle())
     .padding(.horizontal, 15)
   }
   
