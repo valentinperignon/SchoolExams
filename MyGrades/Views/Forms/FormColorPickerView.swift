@@ -39,7 +39,7 @@ struct FormColorPickerView: View {
           .clipShape(Circle())
           .overlay(
             Circle()
-              .stroke(Color.mgBlueLight, lineWidth: 3)
+              .stroke(Subject.getColor(subjectColor: element).light, lineWidth: 3)
           )
           .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
             self.value = element

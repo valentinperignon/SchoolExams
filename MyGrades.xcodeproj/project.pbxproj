@@ -43,7 +43,6 @@
 		F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */; };
 		F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47624D4B30C000744D5 /* FormStepperView.swift */; };
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
-		F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */; };
 		F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F79E5124CF1D1800A10C52 /* Color.swift */; };
 		F9F9600024F16CB700B0CB2B /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */; };
 		F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */; };
@@ -90,7 +89,6 @@
 		F9E7A4BF24E6CAFD0084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
-		F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSegmentedPickerView.swift; sourceTree = "<group>"; };
 		F9F79E5124CF1D1800A10C52 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
 		F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGradeView.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */,
 				F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */,
 				F9E7F47624D4B30C000744D5 /* FormStepperView.swift */,
-				F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */,
 				F98A78A124F1B6E2001770C7 /* FormColorPickerView.swift */,
 				F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */,
 			);
@@ -341,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9B6358324CE1FD00030823D /* Subject.swift in Sources */,
-				F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */,
 				F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */,
 				F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */,
 				F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */,
@@ -526,7 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MyGrades/Preview Content\"";
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
@@ -548,7 +544,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MyGrades/Preview Content\"";
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
