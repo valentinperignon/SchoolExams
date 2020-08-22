@@ -22,11 +22,13 @@ struct SheetHeaderView: View {
         Text(NSLocalizedString(title, comment: ""))
           .font(.largeTitle)
           .fontWeight(.bold)
+          .foregroundColor(.mgPurpleDark)
         Spacer()
       }
       HStack {
         Text(NSLocalizedString(subtitle, comment: ""))
           .font(.callout)
+          .foregroundColor(.mgPurpleDark)
         Spacer()
       }
     }

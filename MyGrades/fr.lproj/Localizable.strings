@@ -122,6 +122,10 @@
 "red" = "rouge";
 "yellow" = "jaune";
 
+/* ---------- Sort tools ---------- */
+
+"SORT BY" = "TRIER";
+
 /* ---------- Form ----------*/
 
 /* TextField */

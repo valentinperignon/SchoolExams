@@ -47,7 +47,7 @@ struct NewSubjectView: View {
             .padding(.bottom, 15)
           
           // Button
-          ButtonFullWidth(type: .primary, title: "Add the Subject") {
+          ButtonFullWidth(type: .primary, title: "Add the Subject", iconSysName: "checkmark") {
             let feedbackGenerator = UINotificationFeedbackGenerator()
             feedbackGenerator.prepare()
             

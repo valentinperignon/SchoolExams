@@ -59,77 +59,71 @@ struct ContentView: View {
         
       } else {
         
-        ScrollView {
-          // ----- Average Grade -----
-          
-          ZStack {
-            Rectangle()
-              .fill(Color.mgPurpleLight)
-              .clipShape(MGRoundedRectangle(radius: 15))
+        ZStack(alignment: .bottomTrailing) {
+          ScrollView {
+            // ----- Average Grade -----
             
             AverageView(average: allSubjects.averageDisplay)
-              .padding(.top, 5)
-              .padding(.bottom, 18)
+            
+            // ----- Sort tool -----
+            
+            HStack {
+              Text("SORT BY")
+                .font(.callout)
+                .foregroundColor(.mgPurpleDark)
+                .fontWeight(.medium)
+                .padding(.trailing, 1)
+              
+              Picker("Sort by", selection: $allSubjects.sortBy) {
+                ForEach(SubjectStore.Order.allCases, id: \.self) { element in
+                  Text(element.rawValue)
+                }
+              }
+              .pickerStyle(SegmentedPickerStyle())
+            }
+            .padding(.horizontal, 15)
+            .padding(.top, -10)
+            
+            // ----- Subjects -----
+            
+            ForEach(allSubjects.subjects) { subject in
+              NavigationLink(destination: GradesView(subject: subject).environmentObject(self.allSubjects)) {
+                SubjectListView(subject: subject)
+                  .environmentObject(self.allSubjects)
+                  .contextMenu(
+                    ContextMenu {
+                      Button(action: {
+                        let feedbackGenerator = UINotificationFeedbackGenerator()
+                        feedbackGenerator.notificationOccurred(.success)
+                        
+                        self.allSubjects.subjects.remove(at:
+                          self.allSubjects.subjects.firstIndex(of: subject)!
+                        )
+                        self.allSubjects.computeAverage()
+                      }) {
+                        Text("Remove")
+                        Image(systemName: "trash")
+                      }
+                    }
+                  )
+              }
+              .accentColor(Color.black)
+              .padding(.horizontal, 15)
+            }
+            
+            Spacer(minLength: 25)
           }
-          .padding(.bottom, 5)
+          .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
           
-          // ----- New Subject -----
+          // ----- New Subject Button -----
           
-          ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
+          ButtonCircle {
             let feedbackGenerator = UISelectionFeedbackGenerator()
             feedbackGenerator.selectionChanged()
             
             self.showNewSubjectSheet.toggle()
           }
-          .padding(.bottom, 1)
-          
-          // ----- Sort tool -----
-          
-          HStack {
-            Text("SORT BY")
-              .font(.callout)
-              .foregroundColor(.mgPurpleDark)
-              .fontWeight(.medium)
-              .padding(.trailing, 1)
-            
-            Picker("Sort by", selection: $allSubjects.sortBy) {
-              ForEach(SubjectStore.Order.allCases, id: \.self) { element in
-                Text(element.rawValue)
-              }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-          }
-          .padding(.horizontal, 15)
-          
-          // ----- Subjects -----
-          ForEach(allSubjects.subjects) { subject in
-            NavigationLink(destination: GradesView(subject: subject).environmentObject(self.allSubjects)) {
-              SubjectListView(subject: subject)
-                .environmentObject(self.allSubjects)
-                .contextMenu(
-                  ContextMenu {
-                    Button(action: {
-                      let feedbackGenerator = UINotificationFeedbackGenerator()
-                      feedbackGenerator.notificationOccurred(.success)
-                      
-                      self.allSubjects.subjects.remove(at:
-                        self.allSubjects.subjects.firstIndex(of: subject)!
-                      )
-                      self.allSubjects.computeAverage()
-                    }) {
-                      Text("Remove")
-                      Image(systemName: "trash")
-                    }
-                  }
-                )
-            }
-            .accentColor(Color.black)
-            .padding(.horizontal, 15)
-          }
-          
-          Spacer(minLength: 25)
         }
-        .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
       }
         
     }
@@ -155,7 +149,7 @@ struct ContentViewNavigationModifier: ViewModifier {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     let store = SubjectStore()
-    store.subjects.append(Subject(name: "Test", color: .blue, coefficient: 1, tag: 1))
+    //store.subjects.append(Subject(name: "Test", color: .orange, coefficient: 1, tag: 1))
     
     return ContentView()
       .environmentObject(store)

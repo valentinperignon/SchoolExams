@@ -27,12 +27,16 @@ struct GradeListView: View {
           ? "\(Int(grade.value))"
             : String(format: "%.2f", grade.value)
         )
-          .fontWeight(.heavy)
-          .foregroundColor(.white)
+          .fontWeight(.semibold)
+          .foregroundColor(subject.getColor().light)
           .accessibility(label: Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
       }
+      .clipShape(Circle())
+      .overlay(
+        Circle()
+          .stroke(subject.getColor().light, lineWidth: 3)
+      )
       .frame(width: 65, height: 65)
-      .cornerRadius(15)
       .padding(.trailing, 5)
       
       // ----- About
@@ -55,8 +59,9 @@ struct GradeListView: View {
           )
             .font(.callout)
             .fontWeight(.light)
-            .padding(.horizontal, 8)
+            .padding(.horizontal, 12)
             .padding(.vertical, 5)
+            .foregroundColor(subject.getColor().dark)
             .background(subject.getColor().light)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))

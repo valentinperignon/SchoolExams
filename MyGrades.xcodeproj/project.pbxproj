@@ -42,6 +42,7 @@
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
 		F9E7F47B24D4B540000744D5 /* FormSegmentedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */; };
 		F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F79E5124CF1D1800A10C52 /* Color.swift */; };
+		F9F9600024F16CB700B0CB2B /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */; };
 		F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9E7F47A24D4B540000744D5 /* FormSegmentedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSegmentedPickerView.swift; sourceTree = "<group>"; };
 		F9F79E5124CF1D1800A10C52 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
 		F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			children = (
 				F9A8112024D1D9C40010A1AC /* AverageView.swift */,
 				F99E3D4224DF08FF005B23F3 /* ButtonFullWidth.swift */,
+				F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */,
 				F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */,
 			);
 			path = Elements;
@@ -348,6 +351,7 @@
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
 				F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */,
 				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
+				F9F9600024F16CB700B0CB2B /* ButtonCircle.swift in Sources */,
 				F9501D8624E583C5003169E2 /* Alert.swift in Sources */,
 				F9A8112624D1E8F10010A1AC /* MGRoundedRectangle.swift in Sources */,
 				F99E3D4524DF0C15005B23F3 /* Button.swift in Sources */,

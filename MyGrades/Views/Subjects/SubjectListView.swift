@@ -29,10 +29,13 @@ struct SubjectListView: View {
               : Text(NSLocalizedString("Subject Average", comment: "") + ": \(subject.averageDisplay) " + NSLocalizedString("over 20", comment: "") + ".")
           )
       }
+      .clipShape(Circle())
+      .overlay(
+        Circle()
+          .stroke(subject.getColor().light, lineWidth: 3)
+      )
       .frame(width: 65, height: 65)
-      .cornerRadius(15)
       .padding(.trailing, 5)
-      .accessibility(sortPriority: 2)
       
       // ----- About
       VStack {

@@ -52,7 +52,7 @@ struct NewGradeView: View {
         FormDatePickerView(title: "Date", selectedDate: $date)
         
         // Button Add
-        ButtonFullWidth(type: .primary, title: "Add the Grade") {
+        ButtonFullWidth(type: .primary, title: "Add the Grade", iconSysName: "checkmark") {
           let feedbackGenerator = UINotificationFeedbackGenerator()
           feedbackGenerator.prepare()
           

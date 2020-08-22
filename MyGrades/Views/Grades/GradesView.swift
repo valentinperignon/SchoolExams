@@ -79,82 +79,86 @@ struct GradesView: View {
           
       } else {
           
-        ScrollView {
-          // ----- Average Grade -----
-          
-          ZStack {
-            Rectangle()
-              .fill(Color.mgPurpleLight)
-              .clipShape(MGRoundedRectangle(radius: 15))
+        ZStack(alignment: .bottomTrailing) {
+          ScrollView {
+            // ----- Average Grade -----
             
             AverageView(average: subject.averageDisplay)
-              .padding(.top, 5)
-              .padding(.bottom, 18)
+            
+            // ----- Button -----
+            
+            /*ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
+              let feedbackGenerator = UISelectionFeedbackGenerator()
+              feedbackGenerator.selectionChanged()
+              
+              self.displayNewSheet.toggle()
+            }*/
+            
+            // ----- Sort tool -----
+            
+            HStack {
+              Text("SORT BY")
+                .font(.callout)
+                .foregroundColor(.mgPurpleDark)
+                .fontWeight(.medium)
+                .padding(.trailing, 1)
+              
+              Picker("Sort by", selection: $subject.sortBy) {
+                ForEach(Subject.Order.allCases, id: \.self) { element in
+                  Text(element.rawValue)
+                }
+              }
+              .pickerStyle(SegmentedPickerStyle())
+            }
+            .padding(.horizontal, 15)
+            .padding(.top, -10)
+            
+            // ----- Subjects -----
+            
+            ForEach(subject.grades) { grade in
+              NavigationLink(destination:
+                EditGradeView(
+                  subject: self.subject,
+                  grade: grade,
+                  gradeValue: "\(grade.value)"
+                ).environmentObject(self.allSubjects)
+              ) {
+                GradeListView(subject: self.subject, grade: grade)
+                  .contextMenu(
+                    ContextMenu {
+                      Button(action: {
+                        let feedbackGenerator = UINotificationFeedbackGenerator()
+                        feedbackGenerator.notificationOccurred(.success)
+                        
+                        self.subject.grades.remove(at:
+                          self.subject.grades.firstIndex(of: grade)!
+                        )
+                        self.allSubjects.saveJSON()
+                        
+                        self.subject.computeAverage()
+                        self.allSubjects.computeAverage()
+                      }) {
+                        Text("Remove")
+                        Image(systemName: "trash")
+                      }
+                    }
+                  )
+              }
+              .accentColor(Color.black)
+              .padding(.horizontal, 15)
+            }
+            
+            Spacer(minLength: 15)
           }
-          .padding(.bottom, 4)
           
-          // ----- Button -----
+          // ----- New Grade Button -----
           
-          ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
+          ButtonCircle {
             let feedbackGenerator = UISelectionFeedbackGenerator()
             feedbackGenerator.selectionChanged()
             
             self.displayNewSheet.toggle()
           }
-          
-          // ----- Sort tool -----
-          
-          HStack {
-            Text("SORT BY: ")
-              .font(.callout)
-              .foregroundColor(.mgPurpleDark)
-              .fontWeight(.bold)
-            
-            Picker("Sort by", selection: $subject.sortBy) {
-              ForEach(Subject.Order.allCases, id: \.self) { element in
-                Text(element.rawValue)
-              }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-          }
-          .padding(.horizontal, 15)
-          
-          // ----- Subjects -----
-          
-          ForEach(subject.grades) { grade in
-            NavigationLink(destination:
-              EditGradeView(
-                subject: self.subject,
-                grade: grade,
-                gradeValue: "\(grade.value)"
-              ).environmentObject(self.allSubjects)
-            ) {
-              GradeListView(subject: self.subject, grade: grade)
-                .contextMenu(
-                  ContextMenu {
-                    Button(action: {
-                      let feedbackGenerator = UINotificationFeedbackGenerator()
-                      feedbackGenerator.notificationOccurred(.success)
-                      
-                      self.subject.grades.remove(at:
-                        self.subject.grades.firstIndex(of: grade)!
-                      )
-                      self.allSubjects.saveJSON()
-                      
-                      self.subject.computeAverage()
-                      self.allSubjects.computeAverage()
-                    }) {
-                      Text("Remove")
-                      Image(systemName: "trash")
-                    }
-                  }
-                )
-            }
-            .accentColor(Color.black)
-            .padding(.horizontal, 15)
-          }
-          
-          Spacer(minLength: 15)
         }
           
       }
@@ -165,9 +169,12 @@ struct GradesView: View {
         Button(action: {
           self.action = 1
         }) {
-          Image("Clogwheel", label: Text("Edit the Subject"))
+          Image(systemName: "gear")
+            .renderingMode(.template)
             .resizable()
+            .foregroundColor(.mgPurpleDark)
             .frame(width: 23, height: 23)
+            .accessibility(label: Text("Edit the subject"))
         }
       }
     )
