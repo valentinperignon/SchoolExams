@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct SubjectListView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   @ObservedObject var subject: Subject
@@ -49,7 +53,7 @@ struct SubjectListView: View {
           Text(subject.name)
             .font(.headline)
             .fontWeight(.medium)
-            .foregroundColor(subject.average < 10.0 ? .mgOrangeDark : .black)
+            .foregroundColor(subject.average < 10.0 ? .mgOrangeDark : .primary)
             .accessibility(label: Text("\(subject.name)."))
             
           Spacer()
@@ -80,12 +84,14 @@ struct SubjectListView: View {
       Image("ArrowRight")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(subject.getColor().dark)
+        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColor().light)
         .frame(width: 37, height: 37)
         .contrast(0.95)
         .brightness(0.01)
         .accessibility(hidden: true)
     }
+    .padding(.vertical, 5)
+    .padding(.horizontal, 5)
     .accessibilityElement(children: .combine)
     .accessibility(hint: Text("View More About This Subject"))
   }

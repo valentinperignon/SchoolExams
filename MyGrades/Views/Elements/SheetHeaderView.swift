@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct SheetHeaderView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   var title: String
@@ -22,13 +26,13 @@ struct SheetHeaderView: View {
         Text(NSLocalizedString(title, comment: ""))
           .font(.largeTitle)
           .fontWeight(.bold)
-          .foregroundColor(.mgPurpleDark)
+          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
         Spacer()
       }
       HStack {
         Text(NSLocalizedString(subtitle, comment: ""))
           .font(.callout)
-          .foregroundColor(.mgPurpleDark)
+          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
         Spacer()
       }
     }
@@ -36,7 +40,7 @@ struct SheetHeaderView: View {
     .accessibility(addTraits: .isHeader)
     .padding([.horizontal, .bottom])
     .padding(.top, 60)
-    .background(Color.mgPurpleLight)
+    .background(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
     .padding(.bottom, 22)
   }
 }

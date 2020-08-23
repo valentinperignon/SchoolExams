@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct GradeListView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   @ObservedObject var subject: Subject
@@ -45,6 +49,7 @@ struct GradeListView: View {
           Text(grade.name)
             .font(.headline)
             .fontWeight(.medium)
+            .foregroundColor(.primary)
             .padding(.bottom, 8)
             .accessibility(label: Text("\(grade.name)."))
           
@@ -76,7 +81,7 @@ struct GradeListView: View {
       Image("Edit")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(subject.getColor().dark)
+        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColor().light)
         .frame(width: 40, height: 40)
         .contrast(0.80)
         .accessibility(hidden: true)

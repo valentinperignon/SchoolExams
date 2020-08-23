@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   @EnvironmentObject var allSubjects: SubjectStore
@@ -31,7 +35,7 @@ struct ContentView: View {
             .resizable()
             .scaledToFit()
             .padding(.horizontal, 40)
-            .foregroundColor(.mgPurpleLight)
+            .foregroundColor(colorScheme == .light ? .mgPurpleLight : .appleDarkGray5)
             .accessibility(hidden: true)
           
           VStack {
@@ -70,7 +74,7 @@ struct ContentView: View {
             HStack {
               Text("SORT BY")
                 .font(.callout)
-                .foregroundColor(.mgPurpleDark)
+                .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
                 .fontWeight(.medium)
                 .padding(.trailing, 1)
               
@@ -87,7 +91,9 @@ struct ContentView: View {
             // ----- Subjects -----
             
             ForEach(allSubjects.subjects) { subject in
-              NavigationLink(destination: GradesView(subject: subject).environmentObject(self.allSubjects)) {
+              NavigationLink(
+                destination: GradesView(subject: subject).environmentObject(self.allSubjects)
+              ) {
                 SubjectListView(subject: subject)
                   .environmentObject(self.allSubjects)
                   .contextMenu(
@@ -108,7 +114,9 @@ struct ContentView: View {
                   )
               }
               .accentColor(Color.black)
-              .padding(.horizontal, 15)
+              .buttonStyle(ButtonListStyle())
+              .padding(.horizontal, 10)
+              .padding(.bottom, -12)
             }
             
             Spacer(minLength: 25)

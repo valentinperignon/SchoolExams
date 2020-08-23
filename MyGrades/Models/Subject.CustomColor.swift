@@ -12,9 +12,9 @@ extension Subject {
   /// All possible colors for a subject
   enum CustomColor: String, CaseIterable, Codable {
     case blue = "blue"
+    case green = "green"
     case orange = "orange"
     case purple = "purple"
     case red = "red"
-    case green = "green"
   }
 }

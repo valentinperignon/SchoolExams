@@ -13,6 +13,7 @@ struct GradesView: View {
   
   @EnvironmentObject var allSubjects: SubjectStore
   
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
   @Environment(\.presentationMode) var presentationMode
   
   // MARK: Property
@@ -51,7 +52,7 @@ struct GradesView: View {
             .resizable()
             .scaledToFit()
             .padding(.horizontal, 40)
-            .foregroundColor(.mgPurpleLight)
+            .foregroundColor(colorScheme == .light ? .mgPurpleLight : .appleDarkGray5)
             .accessibility(hidden: true)
           
           VStack {
@@ -85,21 +86,12 @@ struct GradesView: View {
             
             AverageView(average: subject.averageDisplay)
             
-            // ----- Button -----
-            
-            /*ButtonFullWidth(type: .primary, title: "New Grade", iconSysName: "plus") {
-              let feedbackGenerator = UISelectionFeedbackGenerator()
-              feedbackGenerator.selectionChanged()
-              
-              self.displayNewSheet.toggle()
-            }*/
-            
             // ----- Sort tool -----
             
             HStack {
               Text("SORT BY")
                 .font(.callout)
-                .foregroundColor(.mgPurpleDark)
+                .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
                 .fontWeight(.medium)
                 .padding(.trailing, 1)
               

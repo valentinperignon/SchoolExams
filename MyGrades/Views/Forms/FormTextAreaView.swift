@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct FormTextFieldView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Property
   
   var keyboardType: UIKeyboardType
@@ -28,7 +32,7 @@ struct FormTextFieldView: View {
         .keyboardType(keyboardType)
         .padding(.horizontal)
         .padding(.vertical, 12)
-        .background(Color.appleGray)
+        .background(colorScheme == .light ? Color.appleGray : Color.appleDarkGray5)
         .cornerRadius(8)
     }
     .padding(.horizontal, 15)

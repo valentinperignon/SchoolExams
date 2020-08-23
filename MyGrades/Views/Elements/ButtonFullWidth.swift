@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ButtonFullWidth: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   var type: buttonType
@@ -29,8 +33,8 @@ struct ButtonFullWidth: View {
       }
       .padding(.vertical, 15)
       .frame(maxWidth: .infinity)
-      .background(getColors().bg)
-      .foregroundColor(getColors().fg)
+      .background(getColors(colorScheme: colorScheme).bg)
+      .foregroundColor(getColors(colorScheme: colorScheme).fg)
       .cornerRadius(10)
     }
     .buttonStyle(ButtonFullWidthStyle())
@@ -53,14 +57,25 @@ struct ButtonFullWidth: View {
     return AnyView(EmptyView())
   }
   
-  func getColors() -> (bg: Color, fg: Color) {
+  func getColors(colorScheme: ColorScheme) -> (bg: Color, fg: Color) {
+    if colorScheme == .light {
+      switch type {
+      case .primary:
+        return (.mgPurpleLight, .mgPurpleDark)
+      case .warning:
+        return (.mgOrangeLight, .mgOrangeDark)
+      case .alert:
+        return (.red, .white)
+      }
+    }
+    
     switch type {
     case .primary:
-      return (.mgPurpleLight, .mgPurpleDark)
+      return (.mgPurpleDark, .mgPurpleLight)
     case .warning:
-      return (.mgOrangeLight, .mgOrangeDark)
+      return (.orange, .white)
     case .alert:
-      return (.mgRedDark, .white)
+      return (.red, .white)
     }
   }
   
@@ -76,7 +91,7 @@ struct ButtonFullWidth_Previews: PreviewProvider {
     VStack {
       ButtonFullWidth(type: .primary, title: "Get Weather", iconSysName: "cloud.sun", action: {})
       ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "arrow.left", action: {})
-      ButtonFullWidth(type: .alert, title: "Remove", iconName: "Bin", action: {})
+      ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "bin", action: {})
     }
   }
 }

@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct AverageView: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Properties
   
   var average: String
@@ -22,12 +26,13 @@ struct AverageView: View {
       HStack(alignment: .center) {
         // ----- Icon
         ZStack {
-          Color.white
+          Rectangle()
+            .fill(colorScheme == .light ? Color.white : Color.mgPurpleLight)
           
           Image("Calculator")
             .renderingMode(.template)
             .resizable()
-            .foregroundColor(.mgPurpleDark)
+            .foregroundColor(Color.mgPurpleDark)
             .frame(width: 50, height: 50)
             .accessibility(hidden: true)
         }
@@ -42,7 +47,7 @@ struct AverageView: View {
             Text("Average")
               .font(.headline)
               .fontWeight(.bold)
-              .foregroundColor(.mgPurpleDark)
+              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
               .padding(.bottom, 4)
             Spacer()
           }
@@ -52,7 +57,7 @@ struct AverageView: View {
             Text("\(average)/20")
               .font(.largeTitle)
               .fontWeight(.light)
-              .foregroundColor(.mgPurpleDark)
+              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
               .accessibility(label: Text("\(average) " + NSLocalizedString("over 20", comment: "")))
             Spacer()
           }
@@ -64,15 +69,15 @@ struct AverageView: View {
       
       ZStack {
         Rectangle()
-          .fill(Color.mgPurpleLight)
+          .fill(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
         
         MGRoundedRectangle(radius: 15)
-          .fill(Color.white)
+          .fill(colorScheme == .light ? Color.white : Color.black)
       }
       .frame(height: 20)
     }
     .frame(maxWidth: .infinity)
-    .background(Color.mgPurpleLight)
+    .background(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
     .accessibilityElement(children: .combine)
   }
 }
@@ -80,5 +85,6 @@ struct AverageView: View {
 struct AverageView_Previews: PreviewProvider {
   static var previews: some View {
     AverageView(average: "14.5")
+      .environment(\.colorScheme, .dark)
   }
 }

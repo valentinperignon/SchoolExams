@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ButtonCircle: View {
+  // MARK; Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Property
   
   var action: () -> Void
@@ -20,8 +24,8 @@ struct ButtonCircle: View {
       Image(systemName: "plus")
         .font(.title)
         .padding()
-        .background(Color.mgPurpleDark)
-        .foregroundColor(.mgPurpleLight)
+        .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
+        .foregroundColor(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark)
         .clipShape(Circle())
         .shadow(radius: 10)
     }

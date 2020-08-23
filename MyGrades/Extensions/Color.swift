@@ -14,6 +14,8 @@ extension Color {
   static let mgPurpleLight = Color(red: 227/255, green: 222/255, blue: 255/255)
   static let mgPurpleDark = Color(red: 73/255, green: 34/255, blue: 211/255)
   
+  static let mgPurpleDark_dark = Color(red: 59/255, green: 24/255, blue: 184/255)
+  
   // MARK: MyGrades other colors
   
   // Blue
@@ -34,5 +36,12 @@ extension Color {
   
   // MARK: Apple colors
   
+  // Light colors
+  
   static let appleGray = Color(red: 242/255, green: 242/255, blue: 247/255)
+  
+  // Dark colors
+  
+  static let appleDarkGray = Color(red: 142/255, green: 142/255, blue: 147/255)
+  static let appleDarkGray5 = Color(red: 44/255, green: 44/255, blue: 46/255)
 }
