@@ -137,7 +137,9 @@ struct GradesView: View {
                   )
               }
               .accentColor(Color.black)
-              .padding(.horizontal, 15)
+              .buttonStyle(ButtonListStyle())
+              .padding(.horizontal, 10)
+              .padding(.bottom, -12)
             }
             
             Spacer(minLength: 15)

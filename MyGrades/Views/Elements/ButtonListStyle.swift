@@ -11,7 +11,6 @@ import SwiftUI
 struct ButtonListStyle: ButtonStyle {
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
-      .background(configuration.isPressed ? Color.appleGray : Color.white)
-      .cornerRadius(configuration.isPressed ? 10 : 0)
+      .scaleEffect(configuration.isPressed ? 0.98 : 1)
   }
 }

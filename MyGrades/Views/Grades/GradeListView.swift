@@ -86,6 +86,8 @@ struct GradeListView: View {
         .contrast(0.80)
         .accessibility(hidden: true)
     }
+    .padding(.vertical, 5)
+    .padding(.horizontal, 5)
     .accessibilityElement(children: .combine)
     .accessibility(hint: Text("View More About This Grade"))
   }
