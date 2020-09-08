@@ -22,11 +22,12 @@ struct SubjectListView: View {
     HStack {
       // ----- Average grade
       ZStack {
-        subject.getColor().dark
+        Rectangle()
+          .fill(subject.includedInOverall ? subject.getColor().dark : subject.getColor().light)
         
         Text(subject.averageDisplay)
           .fontWeight(.semibold)
-          .foregroundColor(subject.getColor().light)
+          .foregroundColor(subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
           .accessibility(label:
             subject.averageDisplay == "/"
               ? Text("No Grade In This Subject.")
@@ -36,7 +37,7 @@ struct SubjectListView: View {
       .clipShape(Circle())
       .overlay(
         Circle()
-          .stroke(subject.getColor().light, lineWidth: 3)
+          .stroke(subject.includedInOverall ? subject.getColor().light : subject.getColor().dark, lineWidth: subject.includedInOverall ? 3 : 2)
       )
       .frame(width: 65, height: 65)
       .padding(.trailing, 5)

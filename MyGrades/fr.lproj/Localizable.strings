@@ -45,6 +45,8 @@
 "Subject name" = "Nom de la matière";
 "Coefficient" = "Coefficient";
 "Accent color" = "Couleur d'accentuation";
+"Option" = "Option";
+"Include in overall average" = "Prendre en compte dans la moyenne générale";
 
 /* Button */
 
@@ -112,7 +114,7 @@
 /* Labels */
 
 "Save" = "Valider";
-"Cancel" = "Annuler";
+"Back" = "Retour";
 "Remove" = "Supprimer";
 
 /* ---------- SubjectColor ---------- */

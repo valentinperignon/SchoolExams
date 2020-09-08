@@ -49,14 +49,14 @@ class SubjectStore: Average, ObservableObject {
     var averageValue: Double = 0
     var coefficients: Double = 0
     
-    for subject in subjects where !subject.grades.isEmpty {
+    for subject in subjects where !subject.grades.isEmpty && subject.includedInOverall {
       averageValue += subject.average * subject.coefficient
       coefficients += subject.coefficient
     }
     
     if coefficients == 0 {
       average = 0
-      averageDisplay = "0"
+      averageDisplay = "-"
       return
     }
     average = averageValue / coefficients

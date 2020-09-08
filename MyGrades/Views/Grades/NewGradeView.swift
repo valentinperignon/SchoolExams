@@ -83,6 +83,7 @@ struct NewGradeView: View {
             return
           }
           
+          // Grade value can't be empty and must be a number
           guard
             !self.value.isEmpty,
             let valueDouble = Double(self.value.replacingOccurrences(of: ",", with: ".")),

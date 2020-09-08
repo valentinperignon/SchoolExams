@@ -16,11 +16,16 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   var id: UUID
   
   @Published var name: String
+  
   @Published var color: CustomColor
+  
   @Published var grades: [Grade]
   @Published var coefficient: Double
+  
   @Published var average: Double
   @Published var averageDisplay: String
+  @Published var includedInOverall: Bool
+  
   @Published var sortBy: Subject.Order {
     didSet {
       sortGrades()
@@ -38,6 +43,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     case color
     case grades
     case coefficient
+    case includedInOverall
     
     case tag
   }
@@ -53,6 +59,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     self.coefficient = coefficient
     self.average = 0
     self.averageDisplay = "0"
+    self.includedInOverall = true
     self.sortBy = .defaultOrder
     
     self.tag = tag
@@ -71,6 +78,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
     self.average = 0
     self.averageDisplay = "0"
+    self.includedInOverall = try values.decode(Bool.self, forKey: .includedInOverall)
     self.sortBy = .defaultOrder
     
     self.tag = try values.decode(Int.self, forKey: .tag)
@@ -153,6 +161,7 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     try container.encode(self.color, forKey: .color)
     try container.encode(self.grades, forKey: .grades)
     try container.encode(self.coefficient, forKey: .coefficient)
+    try container.encode(self.includedInOverall, forKey: .includedInOverall)
     
     try container.encode(self.tag, forKey: .tag)
   }

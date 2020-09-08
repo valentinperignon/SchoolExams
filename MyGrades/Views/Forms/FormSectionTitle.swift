@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct FormSectionTitle: View {
+  // MARK: Environment
+  
+  @Environment(\.colorScheme) var colorScheme: ColorScheme
+  
   // MARK: Property
   
   var title: String
@@ -20,7 +24,7 @@ struct FormSectionTitle: View {
         Text(NSLocalizedString(title, comment: "").uppercased())
           .font(.caption)
           .fontWeight(.bold)
-          .foregroundColor(.mgPurpleDark)
+          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
         Spacer()
       }
   }

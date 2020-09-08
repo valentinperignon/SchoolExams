@@ -30,6 +30,7 @@ struct ButtonFullWidth: View {
         Text(NSLocalizedString(title, comment: "").uppercased())
           .font(Font.system(.body, design: .rounded))
           .fontWeight(.light)
+        .lineLimit(nil)
       }
       .padding(.vertical, 15)
       .frame(maxWidth: .infinity)

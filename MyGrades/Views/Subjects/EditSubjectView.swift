@@ -38,12 +38,22 @@ struct EditSubjectView: View {
        
        // Accent color
        FormColorPickerView(title: "Accent color", value: $subject.color)
-         .padding(.bottom, 12)
-       
+         .padding(.bottom, 10)
+      
+      // Options
+      FormSectionTitle(title: "Option")
+        .padding(.horizontal, 15)
+      // Toggle
+      Toggle(isOn: $subject.includedInOverall) {
+        Text("Include in overall average")
+      }
+      .padding(.horizontal, 15)
+      .padding(.bottom, 10)
+
        // Buttons Save & Cancel
        GeometryReader { geometry in
           // cancel
-          ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
+          ButtonFullWidth(type: .warning, title: "Back", iconSysName: "gobackward") {
             self.allSubjects.loadJSON()
             self.presentationMode.wrappedValue.dismiss()
           }
@@ -65,6 +75,7 @@ struct EditSubjectView: View {
            
            feedbackGenerator.notificationOccurred(.success)
            
+           self.allSubjects.computeAverage()
            self.allSubjects.saveJSON()
            self.presentationMode.wrappedValue.dismiss()
          }

@@ -55,7 +55,7 @@ struct EditGradeView: View {
       // Buttons Save & Cancel
       GeometryReader { geometry in
         // cancel
-        ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
+        ButtonFullWidth(type: .warning, title: "Back", iconSysName: "gobackward") {
           self.allSubjects.loadJSON()
           self.presentationMode.wrappedValue.dismiss()
         }
@@ -74,11 +74,25 @@ struct EditGradeView: View {
             return
           }
           
+          // Scale can't be empty and must be a number
+          guard
+            !self.scaleValue.isEmpty,
+            let scaleDouble = Double(self.scaleValue.replacingOccurrences(of: ",", with: ".")),
+            scaleDouble > 0
+          else {
+            self.showAlert.toggle()
+            Alert.mgType = .scaleError
+            
+            feedbackGenerator.notificationOccurred(.error)
+            return
+          }
+          
+          // Grade value can't be empty and must be a number
           guard
             !self.gradeValue.isEmpty,
             let gradeValue = Double(self.gradeValue.replacingOccurrences(of: ",", with: ".")),
             gradeValue >= 0,
-            gradeValue <= 20
+            gradeValue <= scaleDouble
           else {
             Alert.mgType = .valueError
             self.showAlert.toggle()
@@ -86,6 +100,7 @@ struct EditGradeView: View {
             feedbackGenerator.notificationOccurred(.error)
             return
           }
+          self.grade.scale = scaleDouble
           self.grade.value = gradeValue
           
           feedbackGenerator.notificationOccurred(.success)
@@ -144,9 +159,6 @@ struct EditGradeView: View {
           
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
-          if self.subject.sortBy != .defaultOrder {
-            self.subject.sortGrades()
-          }
           
           self.presentationMode.wrappedValue.dismiss()
         }),
