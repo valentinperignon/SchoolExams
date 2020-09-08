@@ -112,7 +112,8 @@ struct GradesView: View {
                 EditGradeView(
                   subject: self.subject,
                   grade: grade,
-                  gradeValue: "\(grade.value)"
+                  gradeValue: "\(grade.value)",
+                  scaleValue: "\(grade.scale)"
                 ).environmentObject(self.allSubjects)
               ) {
                 GradeListView(subject: self.subject, grade: grade)
@@ -180,7 +181,7 @@ struct GradesView: View {
 struct GradesView_Previews: PreviewProvider {
   static var previews: some View {
     let subject = Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0)
-    subject.grades.append(Grade(name: "Oral", value: 18, coefficient: 3, date: Date(), tag: 0))
+    subject.grades.append(Grade(name: "Oral", value: 18, scale: 20, coefficient: 3, date: Date(), tag: 0))
     
     return GradesView(subject: subject).environmentObject(SubjectStore())
   }

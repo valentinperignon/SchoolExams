@@ -27,9 +27,9 @@ struct GradeListView: View {
         subject.getColor().dark
         
         Text(
-          (grade.value.rounded() == grade.value)
-          ? "\(Int(grade.value))"
-            : String(format: "%.2f", grade.value)
+          (grade.getGradesOver20().rounded() == grade.getGradesOver20())
+          ? "\(Int(grade.getGradesOver20()))"
+            : String(format: "%.2f", grade.getGradesOver20())
         )
           .fontWeight(.semibold)
           .foregroundColor(subject.getColor().light)
@@ -97,7 +97,7 @@ struct GradeListView_Previews: PreviewProvider {
   static var previews: some View {
     GradeListView(
       subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0),
-      grade: Grade(name: "Exposé", value: 18, coefficient: 2, date: Date(), tag: 0)
+      grade: Grade(name: "Exposé", value: 18, scale: 20, coefficient: 2, date: Date(), tag: 0)
     )
   }
 }

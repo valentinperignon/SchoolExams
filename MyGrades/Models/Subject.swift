@@ -81,8 +81,8 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   // MARK: Function
   
   /// Add a new grade
-  func addGrade(name: String, value: Double, coefficient: Double, date: Date) {
-    grades.append(Grade(name: name, value: value, coefficient: coefficient, date: date, tag: grades.count))
+  func addGrade(name: String, value: Double, scale: Double, coefficient: Double, date: Date) {
+    grades.append(Grade(name: name, value: value, scale: scale, coefficient: coefficient, date: date, tag: grades.count))
   }
   
   /// Get dark and light colors
@@ -105,14 +105,12 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     return Subject.getColor(subjectColor: self.color)
   }
   
-  
-  
   /// Compute subject average
   func computeAverage() {
    var averageValue: Double = 0
     var coefficients: Double = 0
     for grade in grades {
-      averageValue += grade.value * grade.coefficient
+      averageValue += grade.getGradesOver20() * grade.coefficient
       coefficients += grade.coefficient
     }
     

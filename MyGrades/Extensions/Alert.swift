@@ -14,6 +14,7 @@ extension Alert {
   enum MyGradeType {
     case nameError
     case valueError
+    case scaleError
     case removeWarning
   }
 }

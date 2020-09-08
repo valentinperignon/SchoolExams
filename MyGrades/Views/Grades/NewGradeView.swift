@@ -21,6 +21,7 @@ struct NewGradeView: View {
   
   @State private var name: String = ""
   @State private var value: String = ""
+  @State private var scale: String = "20"
   @State private var coefficient: Double = 1
   @State private var date: Date = Date()
   
@@ -40,6 +41,10 @@ struct NewGradeView: View {
         FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $value)
           .padding(.bottom, 10)
         
+        // Scale
+        FormTextFieldView(keyboardType: .decimalPad, title: "Scale", textValue: $scale)
+          .padding(.bottom, 10)
+        
         // Name
         FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $name)
           .padding(.bottom, 10)
@@ -56,9 +61,23 @@ struct NewGradeView: View {
           let feedbackGenerator = UINotificationFeedbackGenerator()
           feedbackGenerator.prepare()
           
+          // Name can"t be empty
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
             Alert.mgType = .nameError
+            
+            feedbackGenerator.notificationOccurred(.error)
+            return
+          }
+          
+          // Scale can't be empty and must be a number
+          guard
+            !self.scale.isEmpty,
+            let scaleDouble = Double(self.scale.replacingOccurrences(of: ",", with: ".")),
+            scaleDouble > 0
+          else {
+            self.showAlert.toggle()
+            Alert.mgType = .scaleError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -68,7 +87,7 @@ struct NewGradeView: View {
             !self.value.isEmpty,
             let valueDouble = Double(self.value.replacingOccurrences(of: ",", with: ".")),
             valueDouble >= 0,
-            valueDouble <= 20
+            valueDouble <= scaleDouble
           else {
             self.showAlert.toggle()
             Alert.mgType = .valueError
@@ -80,7 +99,7 @@ struct NewGradeView: View {
           feedbackGenerator.notificationOccurred(.success)
           
           self.subject.addGrade(
-            name: self.name, value: valueDouble, coefficient: self.coefficient, date: self.date
+            name: self.name, value: valueDouble, scale: scaleDouble, coefficient: self.coefficient, date: self.date
           )
           self.allSubjects.saveJSON()
           self.subject.computeAverage()
@@ -96,10 +115,16 @@ struct NewGradeView: View {
     .alert(isPresented: $showAlert) {
       let message: Text
       
-      if Alert.mgType == .nameError {
+      switch Alert.mgType {
+      case .nameError:
         message = Text("The grade description can't be empty.")
-      } else {
-        message = Text("The value can't be empty and must be a number between 0 and 20.")
+      case .valueError:
+        let scaleDouble = Double(self.scale.replacingOccurrences(of: ",", with: "."))
+        message = Text("The value can't be empty and must be a number between 0 and" + " \(scaleDouble!).")
+      case .scaleError:
+        message = Text("The scale can't be empty and must be a number greater than 0.")
+      default:
+        message = Text("Unknown error.")
       }
       
       return Alert(

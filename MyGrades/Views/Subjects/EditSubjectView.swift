@@ -42,6 +42,14 @@ struct EditSubjectView: View {
        
        // Buttons Save & Cancel
        GeometryReader { geometry in
+          // cancel
+          ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
+            self.allSubjects.loadJSON()
+            self.presentationMode.wrappedValue.dismiss()
+          }
+            .frame(width: geometry.size.width/2+7.5, height: 50)
+            .padding(.bottom, 20)
+        
          // save
          ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
            let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -61,15 +69,7 @@ struct EditSubjectView: View {
            self.presentationMode.wrappedValue.dismiss()
          }
            .frame(width: geometry.size.width/2+7.5, height: 50)
-           .padding(.bottom, 20)
-         
-         // cancel
-         ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
-           self.allSubjects.loadJSON()
-           self.presentationMode.wrappedValue.dismiss()
-         }
-           .frame(width: geometry.size.width/2+7.5, height: 50)
-           .offset(x: geometry.size.width/2-7.5)
+            .offset(x: geometry.size.width/2-7.5)
            .padding(.bottom, 20)
        }
        .frame(height: 60)

@@ -21,6 +21,7 @@ struct EditGradeView: View {
   @ObservedObject var grade: Grade
   
   @State var gradeValue: String
+  @State var scaleValue: String
   
   @State private var showAlert = false
   
@@ -36,9 +37,13 @@ struct EditGradeView: View {
       FormTextFieldView(keyboardType: .decimalPad, title: "Value", textValue: $gradeValue)
         .padding(.bottom, 10)
       
+      // Scale
+      FormTextFieldView(keyboardType: .decimalPad, title: "Scale", textValue: $scaleValue)
+        .padding(.bottom, 10)
+      
       // Name
-           FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $grade.name)
-             .padding(.bottom, 10)
+       FormTextFieldView(keyboardType: .default, title: "Grade Description", textValue: $grade.name)
+         .padding(.bottom, 10)
       
       // Coefficient
       FormStepperView(title: "Coefficient", value: $grade.coefficient, range: 0.5...20, step: 0.5)
@@ -49,6 +54,13 @@ struct EditGradeView: View {
       
       // Buttons Save & Cancel
       GeometryReader { geometry in
+        // cancel
+        ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
+          self.allSubjects.loadJSON()
+          self.presentationMode.wrappedValue.dismiss()
+        }
+        .frame(width: geometry.size.width/2+7.5, height: 70)
+        
         // save
         ButtonFullWidth(type: .primary, title: "Save", iconSysName: "checkmark") {
           let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -82,12 +94,6 @@ struct EditGradeView: View {
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
           
-          self.presentationMode.wrappedValue.dismiss()
-        }
-          .frame(width: geometry.size.width/2+7.5, height: 70)
-        // cancel
-        ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "gobackward") {
-          self.allSubjects.loadJSON()
           self.presentationMode.wrappedValue.dismiss()
         }
           .frame(width: geometry.size.width/2+7.5, height: 70)
@@ -148,8 +154,8 @@ struct EditGradeView_Previews: PreviewProvider {
   static var previews: some View {
     EditGradeView(
       subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0),
-      grade: Grade(name: "Oral", value: 18, coefficient: 1, date: Date(), tag: 0),
-      gradeValue: "18.0"
+      grade: Grade(name: "Oral", value: 18, scale: 20, coefficient: 1, date: Date(), tag: 0),
+      gradeValue: "18.0", scaleValue: "20"
     )
     .environmentObject(SubjectStore())
   }

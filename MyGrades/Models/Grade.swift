@@ -15,8 +15,12 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
   var id: UUID = UUID()
   
   @Published var name: String
+  
   @Published var value: Double
+  @Published var scale: Double
+  
   @Published var coefficient: Double
+  
   @Published var date: Date
   
   var tag: Int
@@ -27,6 +31,7 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     case id
     case name
     case value
+    case scale
     case coefficient
     case date
     case tag
@@ -34,9 +39,10 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
   
   // MARK: Initializer
   
-  init(name: String, value: Double, coefficient: Double, date: Date, tag: Int) {
+  init(name: String, value: Double, scale: Double, coefficient: Double, date: Date, tag: Int) {
     self.name = name
     self.value = value
+    self.scale = scale
     self.coefficient = coefficient
     self.date = date
     
@@ -49,12 +55,17 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     self.id = try values.decode(UUID.self, forKey: .id)
     self.name = try values.decode(String.self, forKey: .name)
     self.value = try values.decode(Double.self, forKey: .value)
+    self.scale = try values.decode(Double.self, forKey: .scale)
     self.coefficient = try values.decode(Double.self, forKey: .coefficient)
     self.date = try values.decode(Date.self, forKey: .date)
     self.tag = try values.decode(Int.self, forKey: .tag)
   }
   
   // MARK: Functions
+  
+  func getGradesOver20() -> Double {
+    (self.value * 20.0) / self.scale
+  }
   
   static func == (lhs: Grade, rhs: Grade) -> Bool {
     lhs.id == rhs.id
@@ -66,6 +77,7 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     try container.encode(self.id, forKey: .id)
     try container.encode(self.name, forKey: .name)
     try container.encode(self.value, forKey: .value)
+    try container.encode(self.scale, forKey: .scale)
     try container.encode(self.coefficient, forKey: .coefficient)
     try container.encode(self.date, forKey: .date)
     try container.encode(self.tag, forKey: .tag)
