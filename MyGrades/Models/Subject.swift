@@ -134,9 +134,9 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
       case .defaultOrder:
         return first.tag < second.tag
       case .lowToHigh:
-        return first.value < second.value
+        return first.getGradesOver20() < second.getGradesOver20()
       case .highToLow:
-        return first.value > second.value
+        return first.getGradesOver20() > second.getGradesOver20()
       case .date:
         return first.date < second.date
       }

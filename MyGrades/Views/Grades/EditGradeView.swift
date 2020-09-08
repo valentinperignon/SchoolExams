@@ -93,6 +93,9 @@ struct EditGradeView: View {
           self.allSubjects.saveJSON()
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
+          if self.subject.sortBy != .defaultOrder {
+            self.subject.sortGrades()
+          }
           
           self.presentationMode.wrappedValue.dismiss()
         }
@@ -141,6 +144,9 @@ struct EditGradeView: View {
           
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
+          if self.subject.sortBy != .defaultOrder {
+            self.subject.sortGrades()
+          }
           
           self.presentationMode.wrappedValue.dismiss()
         }),
