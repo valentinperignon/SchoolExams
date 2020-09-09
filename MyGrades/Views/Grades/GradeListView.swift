@@ -24,7 +24,9 @@ struct GradeListView: View {
     HStack {
       // ----- Average grade
       ZStack {
-        subject.getColor().dark
+        Rectangle()
+          .fill(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
+        
         
         Text(
           (grade.getGradesOver20().rounded() == grade.getGradesOver20())
@@ -32,13 +34,16 @@ struct GradeListView: View {
             : String(format: "%.2f", grade.getGradesOver20())
         )
           .fontWeight(.semibold)
-          .foregroundColor(subject.getColor().light)
+          .foregroundColor(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
           .accessibility(label: Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
       }
       .clipShape(Circle())
       .overlay(
         Circle()
-          .stroke(subject.getColor().light, lineWidth: 3)
+          .stroke(
+            colorScheme == .light ? subject.getColor().light : subject.getColorDark().light,
+            lineWidth: 3
+          )
       )
       .frame(width: 65, height: 65)
       .padding(.trailing, 5)
@@ -66,8 +71,8 @@ struct GradeListView: View {
             .fontWeight(.light)
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
-            .foregroundColor(subject.getColor().dark)
-            .background(subject.getColor().light)
+            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
+            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))
           
@@ -81,7 +86,7 @@ struct GradeListView: View {
       Image("Edit")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColor().light)
+        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
         .frame(width: 40, height: 40)
         .contrast(0.80)
         .accessibility(hidden: true)

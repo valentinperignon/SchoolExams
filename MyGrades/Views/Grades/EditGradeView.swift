@@ -55,7 +55,7 @@ struct EditGradeView: View {
       // Buttons Save & Cancel
       GeometryReader { geometry in
         // cancel
-        ButtonFullWidth(type: .warning, title: "Back", iconSysName: "gobackward") {
+        ButtonFullWidth(type: .warning, title: "Back", iconSysName: "arrow.left") {
           self.allSubjects.loadJSON()
           self.presentationMode.wrappedValue.dismiss()
         }

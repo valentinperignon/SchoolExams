@@ -32,10 +32,10 @@ extension UINavigationController {
     } else {
       barAppearence.backgroundColor = darkModePurpleColor
       barAppearence.shadowColor = darkModePurpleColor
-      barAppearence.largeTitleTextAttributes = [.foregroundColor: lightPurpleColor]
-      barAppearence.titleTextAttributes = [.foregroundColor: lightPurpleColor]
+      barAppearence.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+      barAppearence.titleTextAttributes = [.foregroundColor: UIColor.white]
       
-      navigationBar.tintColor = lightPurpleColor
+      navigationBar.tintColor = UIColor.white
     }
     
     // NavigationBar appearence

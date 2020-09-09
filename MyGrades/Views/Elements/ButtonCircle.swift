@@ -24,8 +24,8 @@ struct ButtonCircle: View {
       Image(systemName: "plus")
         .font(.title)
         .padding()
-        .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
-        .foregroundColor(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark)
+        .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight_dark)
+        .foregroundColor(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
         .clipShape(Circle())
         .shadow(radius: 10)
     }

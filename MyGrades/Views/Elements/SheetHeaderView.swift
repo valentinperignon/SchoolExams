@@ -26,13 +26,13 @@ struct SheetHeaderView: View {
         Text(NSLocalizedString(title, comment: ""))
           .font(.largeTitle)
           .fontWeight(.bold)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
+          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
         Spacer()
       }
       HStack {
         Text(NSLocalizedString(subtitle, comment: ""))
           .font(.callout)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
+          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
         Spacer()
       }
     }

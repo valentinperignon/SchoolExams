@@ -27,12 +27,12 @@ struct AverageView: View {
         // ----- Icon
         ZStack {
           Rectangle()
-            .fill(colorScheme == .light ? Color.white : Color.mgPurpleLight)
+            .fill(Color.white)
           
           Image("Calculator")
             .renderingMode(.template)
             .resizable()
-            .foregroundColor(Color.mgPurpleDark)
+            .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleDark_dark)
             .frame(width: 50, height: 50)
             .accessibility(hidden: true)
         }
@@ -47,7 +47,7 @@ struct AverageView: View {
             Text("Average")
               .font(.headline)
               .fontWeight(.bold)
-              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
+              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.white)
               .padding(.bottom, 4)
             Spacer()
           }
@@ -57,7 +57,7 @@ struct AverageView: View {
             Text("\(average)/20")
               .font(.largeTitle)
               .fontWeight(.light)
-              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight)
+              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.white)
               .accessibility(label: Text("\(average) " + NSLocalizedString("over 20", comment: "")))
             Spacer()
           }

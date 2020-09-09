@@ -91,7 +91,7 @@ struct GradesView: View {
             HStack {
               Text("SORT BY")
                 .font(.callout)
-                .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight)
+                .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
                 .fontWeight(.medium)
                 .padding(.trailing, 1)
               

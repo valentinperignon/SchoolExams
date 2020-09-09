@@ -23,11 +23,19 @@ struct SubjectListView: View {
       // ----- Average grade
       ZStack {
         Rectangle()
-          .fill(subject.includedInOverall ? subject.getColor().dark : subject.getColor().light)
+          .fill(
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().dark : subject.getColor().light)
+            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
+          )
         
         Text(subject.averageDisplay)
           .fontWeight(.semibold)
-          .foregroundColor(subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
+          .foregroundColor(
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
+            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark)
+          )
           .accessibility(label:
             subject.averageDisplay == "/"
               ? Text("No Grade In This Subject.")
@@ -37,7 +45,11 @@ struct SubjectListView: View {
       .clipShape(Circle())
       .overlay(
         Circle()
-          .stroke(subject.includedInOverall ? subject.getColor().light : subject.getColor().dark, lineWidth: subject.includedInOverall ? 3 : 2)
+          .stroke(
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
+            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark),
+            lineWidth: subject.includedInOverall ? 3 : 2)
       )
       .frame(width: 65, height: 65)
       .padding(.trailing, 5)
@@ -54,7 +66,9 @@ struct SubjectListView: View {
           Text(subject.name)
             .font(.headline)
             .fontWeight(.medium)
-            .foregroundColor(subject.average < 10.0 ? .mgOrangeDark : .primary)
+            .foregroundColor(
+              subject.average < 10.0 ? .mgOrangeDark : .primary
+            )
             .accessibility(label: Text("\(subject.name)."))
             
           Spacer()
@@ -71,8 +85,8 @@ struct SubjectListView: View {
             .fontWeight(.light)
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
-            .background(subject.getColor().light)
-            .foregroundColor(subject.getColor().dark)
+            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
+            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
           Spacer()
@@ -85,7 +99,7 @@ struct SubjectListView: View {
       Image("ArrowRight")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColor().light)
+        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
         .frame(width: 37, height: 37)
         .contrast(0.95)
         .brightness(0.01)

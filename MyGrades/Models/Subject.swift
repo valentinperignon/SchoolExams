@@ -109,8 +109,27 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     }
   }
   
+  static func getColorDark(subjectColor: Subject.CustomColor) -> (light: Color, dark: Color) {
+    switch subjectColor {
+    case .blue:
+      return (.mgBlueLight_dark, .mgBlueDark_dark)
+    case .orange:
+      return (.mgOrangeLight_dark, .mgOrangeDark_dark)
+    case .red:
+      return (.mgRedLight_dark, .mgRedDark_dark)
+    case .green:
+      return (.mgGreenLight_dark, .mgGreenDark_dark)
+    default:
+      return (.mgPurpleLight_dark, .mgPurpleDark_dark)
+    }
+  }
+  
   func getColor() -> (light: Color, dark: Color) {
     return Subject.getColor(subjectColor: self.color)
+  }
+  
+  func getColorDark() -> (light: Color, dark: Color) {
+    return Subject.getColorDark(subjectColor: self.color)
   }
   
   /// Compute subject average

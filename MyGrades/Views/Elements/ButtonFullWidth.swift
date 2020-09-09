@@ -29,7 +29,7 @@ struct ButtonFullWidth: View {
         getIcon()
         Text(NSLocalizedString(title, comment: "").uppercased())
           .font(Font.system(.body, design: .rounded))
-          .fontWeight(.light)
+          .fontWeight(colorScheme == .light ? .light : .medium)
         .lineLimit(nil)
       }
       .padding(.vertical, 15)
@@ -72,7 +72,7 @@ struct ButtonFullWidth: View {
     
     switch type {
     case .primary:
-      return (.mgPurpleDark, .mgPurpleLight)
+      return (.mgPurpleDark, .white)
     case .warning:
       return (.orange, .white)
     case .alert:
