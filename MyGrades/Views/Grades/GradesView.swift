@@ -98,6 +98,7 @@ struct GradesView: View {
               Picker("Sort by", selection: $subject.sortBy) {
                 ForEach(Subject.Order.allCases, id: \.self) { element in
                   Text(NSLocalizedString(element.rawValue, comment: ""))
+                    .accessibility(value: Text(Subject.getAccessibilityOrder(or: element)))
                 }
               }
               .pickerStyle(SegmentedPickerStyle())

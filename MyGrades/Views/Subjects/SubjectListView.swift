@@ -26,7 +26,7 @@ struct SubjectListView: View {
           .fill(
             colorScheme == .light
             ? (subject.includedInOverall ? subject.getColor().dark : subject.getColor().light)
-            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
+            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark)
           )
         
         Text(subject.averageDisplay)
@@ -34,7 +34,7 @@ struct SubjectListView: View {
           .foregroundColor(
             colorScheme == .light
             ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
-            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark)
+            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
           )
           .accessibility(label:
             subject.averageDisplay == "/"
@@ -48,8 +48,8 @@ struct SubjectListView: View {
           .stroke(
             colorScheme == .light
             ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
-            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark),
-            lineWidth: subject.includedInOverall ? 3 : 2)
+            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light),
+            lineWidth: 3)
       )
       .frame(width: 65, height: 65)
       .padding(.trailing, 5)
@@ -69,7 +69,11 @@ struct SubjectListView: View {
             .foregroundColor(
               subject.average < 10.0 ? .mgOrangeDark : .primary
             )
-            .accessibility(label: Text("\(subject.name)."))
+            .accessibility(label:
+              subject.includedInOverall
+              ? Text("\(subject.name).")
+              : Text("\(subject.name)." + NSLocalizedString("Not in overall average.", comment: ""))
+            )
             
           Spacer()
         }
@@ -85,8 +89,8 @@ struct SubjectListView: View {
             .fontWeight(.light)
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
-            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
-            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
+            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().dark)
+            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
           Spacer()

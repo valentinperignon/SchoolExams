@@ -25,8 +25,11 @@ struct GradeListView: View {
       // ----- Average grade
       ZStack {
         Rectangle()
-          .fill(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
-        
+          .fill(
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().dark : subject.getColor().light)
+            : (subject.includedInOverall ? subject.getColorDark().light : subject.getColorDark().dark)
+          )
         
         Text(
           (grade.getGradesOver20().rounded() == grade.getGradesOver20())
@@ -34,14 +37,20 @@ struct GradeListView: View {
             : String(format: "%.2f", grade.getGradesOver20())
         )
           .fontWeight(.semibold)
-          .foregroundColor(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
+          .foregroundColor(
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
+            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
+          )
           .accessibility(label: Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
       }
       .clipShape(Circle())
       .overlay(
         Circle()
           .stroke(
-            colorScheme == .light ? subject.getColor().light : subject.getColorDark().light,
+            colorScheme == .light
+            ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
+            : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light),
             lineWidth: 3
           )
       )
@@ -56,7 +65,11 @@ struct GradeListView: View {
             .fontWeight(.medium)
             .foregroundColor(.primary)
             .padding(.bottom, 8)
-            .accessibility(label: Text("\(grade.name)."))
+            .accessibility(label:
+              subject.includedInOverall
+              ? Text("\(grade.name).")
+              : Text("\(grade.name)." + NSLocalizedString("Not in overall average.", comment: ""))
+            )
           
           Spacer()
         }
@@ -71,8 +84,8 @@ struct GradeListView: View {
             .fontWeight(.light)
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
-            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().dark)
-            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().light)
+            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
+            .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().dark)
             .cornerRadius(7)
             .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))
           

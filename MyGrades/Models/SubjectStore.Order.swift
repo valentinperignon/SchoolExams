@@ -15,4 +15,18 @@ extension SubjectStore {
     case lowToHigh = "- to +"
     case highToLow = "+ to -"
   }
+  
+  static func getAccessibilityOrder(or: SubjectStore.Order) -> String {
+    let value: String
+    switch or {
+    case .defaultOrder:
+      value = "Default order."
+    case .lowToHigh:
+      value = "Ascending order."
+    case .highToLow:
+      value = "Descending order."
+    }
+    
+    return value
+  }
 }

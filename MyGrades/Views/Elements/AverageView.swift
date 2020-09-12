@@ -58,7 +58,12 @@ struct AverageView: View {
               .font(.largeTitle)
               .fontWeight(.light)
               .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.white)
-              .accessibility(label: Text("\(average) " + NSLocalizedString("over 20", comment: "")))
+              .accessibility(
+                label: Text(average != "-"
+                  ? "\(average) " + NSLocalizedString("over 20", comment: "") + "."
+                  : NSLocalizedString("No Grade.", comment: "")
+                )
+              )
             Spacer()
           }
         }
@@ -84,7 +89,7 @@ struct AverageView: View {
 
 struct AverageView_Previews: PreviewProvider {
   static var previews: some View {
-    AverageView(average: "14.5")
+    AverageView(average: "-")
       .environment(\.colorScheme, .dark)
   }
 }

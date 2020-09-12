@@ -31,6 +31,7 @@
 /* Title */
 
 "Average" = "Moyenne";
+"No Grade." = "Aucune Note.";
 
 /* ---------- NewSubjectListView & EditSubjectListView ---------- */
 
@@ -85,6 +86,13 @@
 /* ---------------------------------------- */
 /* ELEMENTS                                 */
 /* ---------------------------------------- */
+
+/* ---------- Sorting tools ---------- */
+
+"Default order." = "Order par défaut.";
+"Ascending order." = "Ordre croissant.";
+"descending order." = "Ordre décroissant.";
+"From lowest to newest." = "Du plus ancien au plus récent.";
 
 /* ---------- Alerts ---------- */
 
@@ -164,6 +172,7 @@
 "No Grade In This Subject." = "Aucune Note Pour Cette Matière.";
 "Subject Average" = "Moyenne de la Matière";
 "View More About This Subject" = "Voir Plus À Propos De Cette Matière";
+"Not in overall average." = "Pas dans la moyenne générale.";
 
 /* ---------- GradeListView ---------- */
 

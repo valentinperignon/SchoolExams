@@ -81,6 +81,7 @@ struct ContentView: View {
               Picker("Sort by", selection: $allSubjects.sortBy) {
                 ForEach(SubjectStore.Order.allCases, id: \.self) { element in
                   Text(NSLocalizedString(element.rawValue, comment: ""))
+                    .accessibility(value: Text(SubjectStore.getAccessibilityOrder(or: element)))
                 }
               }
               .pickerStyle(SegmentedPickerStyle())
