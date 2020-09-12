@@ -20,7 +20,7 @@ extension Color {
   
   // MARK: MyGrades other colors
   
-  // Blue
+  // --> Blue
   
   // Light
   static let mgBlueLight = Color(red: 226/255, green: 241/255, blue: 255/255)
@@ -29,7 +29,16 @@ extension Color {
   static let mgBlueLight_dark = Color(red: 221/255, green: 223/255, blue: 234/255)
   static let mgBlueDark_dark = Color(red: 42/255, green: 148/255, blue: 221/255)
   
-  // Green
+  // --> Gray
+  
+  // Light
+  static let mgGrayLight = Color(red: 229/255, green: 229/255, blue: 234/255)
+  static let mgGrayDark = Color(red: 142/255, green: 142/255, blue: 147/255)
+  // Dark
+  static let mgGrayLight_dark = Color(red: 174/255, green: 174/255, blue: 178/255)
+  static let mgGrayDark_dark = Color(red: 44/255, green: 44/255, blue: 46/255)
+  
+  // --> Green
   
   // Light
   static let mgGreenLight = Color(red: 221/255, green: 248/255, blue: 234/255)
@@ -38,7 +47,7 @@ extension Color {
   static let mgGreenLight_dark = Color(red: 216/255, green: 231/255, blue: 223/255)
   static let mgGreenDark_dark = Color(red: 38/255, green: 146/255, blue: 129/255)
   
-  // Orange
+  // --> Orange
   
   // Light
   static let mgOrangeLight = Color(red: 255/255, green: 237/255, blue: 228/255)
@@ -47,7 +56,7 @@ extension Color {
   static let mgOrangeLight_dark = Color(red: 244/255, green: 227/255, blue: 219/255)
   static let mgOrangeDark_dark = Color(red: 214/255, green: 99/255, blue: 23/255)
   
-  // Red
+  // --> Red
   
   // Light
   static let mgRedLight = Color(red: 255/255, green: 225/255, blue: 233/255)
@@ -55,6 +64,15 @@ extension Color {
   // Dark
   static let mgRedLight_dark = Color(red: 242/255, green: 218/255, blue: 225/255)
   static let mgRedDark_dark = Color(red: 186/255, green: 0/255, blue: 7/255)
+  
+  // --> Yellow
+  
+  // Light
+  static let mgYellowLight = Color(red: 253/255, green: 237/255, blue: 204/255)
+  static let mgYellowDark = Color(red: 242/255, green: 177/255, blue: 59/255)
+  // Dark
+  static let mgYellowLight_dark = Color(red: 254/255, green: 240/255, blue: 211/255)
+  static let mgYellowDark_dark = Color(red: 232/255, green: 167/255, blue: 48/255)
   
   // MARK: Apple colors
   

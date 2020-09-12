@@ -98,12 +98,16 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     switch subjectColor {
     case .blue:
       return (.mgBlueLight, .mgBlueDark)
+    case .gray:
+      return (.mgGrayLight, .mgGrayDark)
+    case .green:
+      return (.mgGreenLight, .mgGreenDark)
     case .orange:
       return (.mgOrangeLight, .mgOrangeDark)
     case .red:
       return (.mgRedLight, .mgRedDark)
-    case .green:
-      return (.mgGreenLight, .mgGreenDark)
+    case .yellow:
+      return (.mgYellowLight, .mgYellowDark)
     default:
       return (.mgPurpleLight, .mgPurpleDark)
     }
@@ -113,12 +117,16 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     switch subjectColor {
     case .blue:
       return (.mgBlueLight_dark, .mgBlueDark_dark)
+    case .gray:
+      return (.mgGrayLight_dark, .mgGrayDark_dark)
+    case .green:
+      return (.mgGreenLight_dark, .mgGreenDark_dark)
     case .orange:
       return (.mgOrangeLight_dark, .mgOrangeDark_dark)
     case .red:
       return (.mgRedLight_dark, .mgRedDark_dark)
-    case .green:
-      return (.mgGreenLight_dark, .mgGreenDark_dark)
+    case .yellow:
+      return (.mgYellowLight_dark, .mgYellowDark_dark)
     default:
       return (.mgPurpleLight_dark, .mgPurpleDark_dark)
     }
