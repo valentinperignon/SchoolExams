@@ -10,8 +10,8 @@
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
 		F93FB55324EBFE4C00874D8C /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55224EBFE4C00874D8C /* Average.swift */; };
-		F93FB55524EC008800874D8C /* Subject.Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55424EC008800874D8C /* Subject.Order.swift */; };
-		F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */; };
+		F93FB55524EC008800874D8C /* Subject+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55424EC008800874D8C /* Subject+Order.swift */; };
+		F93FB55724EC00C500874D8C /* SubjectStore+Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55624EC00C500874D8C /* SubjectStore+Order.swift */; };
 		F94C1BC224F32B24002853D7 /* ButtonListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94C1BC124F32B24002853D7 /* ButtonListStyle.swift */; };
 		F9501D8424E55F8F003169E2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8324E55F8F003169E2 /* View.swift */; };
 		F9501D8624E583C5003169E2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9501D8524E583C5003169E2 /* Alert.swift */; };
@@ -31,7 +31,7 @@
 		F9B6358524CE20730030823D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358424CE20730030823D /* Grade.swift */; };
 		F9B6358724CE21BB0030823D /* SubjectsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358624CE21BB0030823D /* SubjectsStore.swift */; };
 		F9B6358A24CE22010030823D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358924CE22010030823D /* File.swift */; };
-		F9B6358C24CE25BE0030823D /* Subject.CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */; };
+		F9B6358C24CE25BE0030823D /* Subject+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358B24CE25BE0030823D /* Subject+CustomColor.swift */; };
 		F9CFFDD524CC6C68007E57C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */; };
 		F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */; };
 		F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD824CC6C68007E57C1 /* ContentView.swift */; };
@@ -53,8 +53,8 @@
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		F93FB55224EBFE4C00874D8C /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
-		F93FB55424EC008800874D8C /* Subject.Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.Order.swift; sourceTree = "<group>"; };
-		F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStore.Order.swift; sourceTree = "<group>"; };
+		F93FB55424EC008800874D8C /* Subject+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+Order.swift"; sourceTree = "<group>"; };
+		F93FB55624EC00C500874D8C /* SubjectStore+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectStore+Order.swift"; sourceTree = "<group>"; };
 		F94C1BC124F32B24002853D7 /* ButtonListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonListStyle.swift; sourceTree = "<group>"; };
 		F9501D8324E55F8F003169E2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F9501D8524E583C5003169E2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		F9B6358424CE20730030823D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
 		F9B6358624CE21BB0030823D /* SubjectsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsStore.swift; sourceTree = "<group>"; };
 		F9B6358924CE22010030823D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.CustomColor.swift; sourceTree = "<group>"; };
+		F9B6358B24CE25BE0030823D /* Subject+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subject+CustomColor.swift"; sourceTree = "<group>"; };
 		F9CFFDD124CC6C68007E57C1 /* SchoolExams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolExams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,10 +229,10 @@
 			isa = PBXGroup;
 			children = (
 				F9B6358624CE21BB0030823D /* SubjectsStore.swift */,
-				F93FB55624EC00C500874D8C /* SubjectStore.Order.swift */,
+				F93FB55624EC00C500874D8C /* SubjectStore+Order.swift */,
 				F9B6358224CE1FD00030823D /* Subject.swift */,
-				F9B6358B24CE25BE0030823D /* Subject.CustomColor.swift */,
-				F93FB55424EC008800874D8C /* Subject.Order.swift */,
+				F9B6358B24CE25BE0030823D /* Subject+CustomColor.swift */,
+				F93FB55424EC008800874D8C /* Subject+Order.swift */,
 				F9B6358424CE20730030823D /* Grade.swift */,
 			);
 			path = Models;
@@ -347,7 +347,7 @@
 				F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */,
 				F9A8112324D1E4610010A1AC /* UINavigationController.swift in Sources */,
 				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
-				F93FB55524EC008800874D8C /* Subject.Order.swift in Sources */,
+				F93FB55524EC008800874D8C /* Subject+Order.swift in Sources */,
 				F978B24924F1744C00C8EA89 /* ButtonCircleStyle.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */,
@@ -357,9 +357,9 @@
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F93FB55324EBFE4C00874D8C /* Average.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
-				F9B6358C24CE25BE0030823D /* Subject.CustomColor.swift in Sources */,
+				F9B6358C24CE25BE0030823D /* Subject+CustomColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
-				F93FB55724EC00C500874D8C /* SubjectStore.Order.swift in Sources */,
+				F93FB55724EC00C500874D8C /* SubjectStore+Order.swift in Sources */,
 				F96AB67924E17A9A00476A09 /* EditSubjectView.swift in Sources */,
 				F9F9600024F16CB700B0CB2B /* ButtonCircle.swift in Sources */,
 				F9501D8624E583C5003169E2 /* Alert.swift in Sources */,

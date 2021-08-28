@@ -14,16 +14,16 @@ class SubjectStore: Average, ObservableObject {
   
   let dataURL = URL(fileURLWithPath: "SubjectsStore", relativeTo: FileManager.userDocumentsURL).appendingPathExtension("json")
   
-  @Published var subjects: [Subject] {
+  @Published var subjects = [Subject]() {
     didSet {
       saveJSON()
     }
   }
   
-  @Published var average: Double
-  @Published var averageDisplay: String
+  @Published var average = 0.0
+  @Published var averageDisplay = "0"
   
-  @Published var sortBy: SubjectStore.Order {
+  @Published var sortBy: SubjectStore.Order = .defaultOrder {
     didSet {
       sortSubjects()
       saveJSON()
@@ -33,11 +33,6 @@ class SubjectStore: Average, ObservableObject {
   // MARK: Initializer
   
   init() {
-    subjects = []
-    average = 0
-    averageDisplay = "0"
-    sortBy = .defaultOrder
-    
     loadJSON()
     computeAverage()
   }
@@ -46,8 +41,8 @@ class SubjectStore: Average, ObservableObject {
   
   /// Compute overall average
   func computeAverage() {
-    var averageValue: Double = 0
-    var coefficients: Double = 0
+    var averageValue = 0.0
+    var coefficients = 0.0
     
     for subject in subjects where !subject.grades.isEmpty && subject.includedInOverall {
       averageValue += subject.average * subject.coefficient
@@ -57,10 +52,10 @@ class SubjectStore: Average, ObservableObject {
     if coefficients == 0 {
       average = 0
       averageDisplay = "-"
-      return
+    } else {
+      average = averageValue / coefficients
+      averageDisplay = averageToString()
     }
-    average = averageValue / coefficients
-    averageDisplay = averageToString()
   }
   
   /// Transform the average into a string
@@ -74,7 +69,7 @@ class SubjectStore: Average, ObservableObject {
   /// Sort subjects according to user choice
   func sortSubjects() {
     subjects.sort { first, second in
-      switch self.sortBy {
+      switch sortBy {
       case .defaultOrder:
         return first.tag < second.tag
       case .lowToHigh:
@@ -87,35 +82,26 @@ class SubjectStore: Average, ObservableObject {
   
   /// Load all subjects from a JSON file
   func loadJSON() {
-    // Check  if file exists
-    guard FileManager.default.fileExists(atPath: dataURL.path) else {
-      return
-    }
+    guard FileManager.default.fileExists(atPath: dataURL.path) else { return }
     
-    // Get decoder
     let decoder = JSONDecoder()
-    
-    // Load JSON
     do {
       let data = try Data(contentsOf: dataURL)
-      
       subjects = try decoder.decode([Subject].self, from: data)
-    } catch let error {
-      print(error)
+    } catch {
+      print("Can't load JSON. \(error)")
     }
   }
   
   /// Save all subjects to a JSON file
   func saveJSON() {
-    // Get encoder
     let encoder = JSONEncoder()
     
-    // Save JSON
     do {
       let data = try encoder.encode(subjects)
       try data.write(to: dataURL)
-    } catch let error {
-      print(error)
+    } catch {
+      print("Can't write JSON. \(error)")
     }
   }
 }

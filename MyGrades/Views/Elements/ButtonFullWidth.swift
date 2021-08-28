@@ -27,7 +27,7 @@ struct ButtonFullWidth: View {
     Button(action: action) {
       HStack {
         getIcon()
-        Text(NSLocalizedString(title, comment: "").uppercased())
+        Text(NSLocalizedString(title, comment: "").capitalized)
           .font(Font.system(.body, design: .rounded))
           .fontWeight(colorScheme == .light ? .light : .medium)
         .lineLimit(nil)

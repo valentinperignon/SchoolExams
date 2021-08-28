@@ -9,18 +9,15 @@
 import Foundation
 
 /// A  grade
-class Grade: ObservableObject, Identifiable, Codable, Equatable {
+class Grade: ObservableObject, Identifiable, Codable {
   // MARK: Properties
   
   var id: UUID = UUID()
   
   @Published var name: String
-  
   @Published var value: Double
   @Published var scale: Double
-  
   @Published var coefficient: Double
-  
   @Published var date: Date
   
   var tag: Int
@@ -64,11 +61,7 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
   // MARK: Functions
   
   func getGradesOver20() -> Double {
-    (self.value * 20.0) / self.scale
-  }
-  
-  static func == (lhs: Grade, rhs: Grade) -> Bool {
-    lhs.id == rhs.id
+    return (self.value * 20.0) / self.scale
   }
   
   func encode(to encoder: Encoder) throws {
@@ -82,4 +75,12 @@ class Grade: ObservableObject, Identifiable, Codable, Equatable {
     try container.encode(self.date, forKey: .date)
     try container.encode(self.tag, forKey: .tag)
   }
+}
+
+// MARK: - Equatable
+
+extension Grade: Equatable {
+    static func == (lhs: Grade, rhs: Grade) -> Bool {
+      lhs.id == rhs.id
+    }
 }

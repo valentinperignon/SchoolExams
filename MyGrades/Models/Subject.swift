@@ -10,23 +10,23 @@ import SwiftUI
 import Foundation
 
 /// A school subject
-class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
+class Subject: Average, ObservableObject, Identifiable, Codable {
   // MARK: Properties
   
-  var id: UUID
+  var id = UUID()
   
   @Published var name: String
   
   @Published var color: CustomColor
   
-  @Published var grades: [Grade]
+  @Published var grades = [Grade]()
   @Published var coefficient: Double
   
-  @Published var average: Double
-  @Published var averageDisplay: String
-  @Published var includedInOverall: Bool
+  @Published var average = 0.0
+  @Published var averageDisplay = "0"
+  @Published var includedInOverall = true
   
-  @Published var sortBy: Subject.Order {
+  @Published var sortBy: Subject.Order = .defaultOrder {
     didSet {
       sortGrades()
     }
@@ -51,17 +51,9 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   // MARK: Initializer
   
   init(name: String, color: CustomColor, coefficient: Double, tag: Int) {
-    self.id = UUID()
-    
     self.name = name
     self.color = color
-    self.grades = []
     self.coefficient = coefficient
-    self.average = 0
-    self.averageDisplay = "0"
-    self.includedInOverall = true
-    self.sortBy = .defaultOrder
-    
     self.tag = tag
     
     computeAverage()
@@ -142,8 +134,8 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
   
   /// Compute subject average
   func computeAverage() {
-   var averageValue: Double = 0
-    var coefficients: Double = 0
+    var averageValue = 0.0
+    var coefficients = 0.0
     for grade in grades {
       averageValue += grade.getGradesOver20() * grade.coefficient
       coefficients += grade.coefficient
@@ -192,8 +184,11 @@ class Subject: Average, ObservableObject, Identifiable, Codable, Equatable {
     
     try container.encode(self.tag, forKey: .tag)
   }
-  
-  /// Equals
+}
+
+// MARK: - Equatable
+
+extension Subject: Equatable {
   static func == (lhs: Subject, rhs: Subject) -> Bool {
     lhs.id == rhs.id
   }

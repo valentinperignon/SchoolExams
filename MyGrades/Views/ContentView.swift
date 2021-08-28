@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct ContentView: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   
   // MARK: Properties
@@ -72,7 +70,7 @@ struct ContentView: View {
             // ----- Sort tool -----
             
             HStack {
-              Text("SORT BY")
+              Text("Sort by")
                 .font(.callout)
                 .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
                 .fontWeight(.medium)

@@ -7,12 +7,8 @@
 //
 
 protocol Average {
-  // MARK: Attributes
-  
   var average: Double { get set }
   var averageDisplay: String { get set }
-  
-  // MARK: Functions
   
   func computeAverage()
   func averageToString() -> String
