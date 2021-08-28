@@ -10,8 +10,6 @@ import Foundation
 
 /// All the subjects
 class SubjectStore: Average, ObservableObject {
-  // MARK: Properties
-  
   let dataURL = URL(fileURLWithPath: "SubjectsStore", relativeTo: FileManager.userDocumentsURL).appendingPathExtension("json")
   
   @Published var subjects = [Subject]() {
@@ -30,14 +28,10 @@ class SubjectStore: Average, ObservableObject {
     }
   }
   
-  // MARK: Initializer
-  
   init() {
     loadJSON()
     computeAverage()
   }
-  
-  // MARK: Functions
   
   /// Compute overall average
   func computeAverage() {

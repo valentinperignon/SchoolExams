@@ -9,14 +9,10 @@
 import SwiftUI
 
 struct FormColorPickerView: View {
-  // MARK:: Property
-  
   var title: String
   
   @Binding var value: Subject.CustomColor
   
-  // MARK: Body
-
   var body: some View {
     VStack {
       FormSectionTitle(title: title)

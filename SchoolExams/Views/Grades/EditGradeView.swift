@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct EditGradeView: View {
-  // MARK: Environment
-  
   @Environment(\.presentationMode) var presentationMode
   
   @EnvironmentObject var allSubjects: SubjectStore
-  
-  // MARK: Property
   
   @ObservedObject var subject: Subject
   @ObservedObject var grade: Grade
@@ -24,8 +20,6 @@ struct EditGradeView: View {
   @State var scaleValue: String
   
   @State private var showAlert = false
-  
-  // MARK: Body
   
   var body: some View {
     ScrollView {

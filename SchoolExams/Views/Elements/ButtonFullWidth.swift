@@ -9,19 +9,13 @@
 import SwiftUI
 
 struct ButtonFullWidth: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  // MARK: Properties
   
   var type: buttonType
   var title: String
   var iconSysName: String?
   var iconName: String?
   var action: () -> Void
-  
-  // MARK: Body
   
   var body: some View {
     Button(action: action) {
@@ -41,8 +35,6 @@ struct ButtonFullWidth: View {
     .buttonStyle(ButtonFullWidthStyle())
     .padding(.horizontal, 15)
   }
-  
-  // MARK: Function
   
   func getIcon() -> AnyView {
     if let iconSys = iconSysName {
@@ -79,8 +71,6 @@ struct ButtonFullWidth: View {
       return (.red, .white)
     }
   }
-  
-  // MARK: Enum
   
   enum buttonType {
     case primary, warning, alert

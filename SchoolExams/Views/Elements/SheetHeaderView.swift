@@ -9,16 +9,10 @@
 import SwiftUI
 
 struct SheetHeaderView: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  // MARK: Properties
   
   var title: String
   var subtitle: String
-  
-  // MARK: Body
   
   var body: some View {
     VStack {

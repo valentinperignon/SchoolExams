@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct FormDatePickerView: View {
-  // MARK:: Property
-  
   var title: String
   
   @Binding var selectedDate: Date
-  
-  // MARK: Body
   
   var body: some View {
     VStack {

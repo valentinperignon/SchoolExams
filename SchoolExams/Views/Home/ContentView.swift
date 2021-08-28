@@ -14,10 +14,7 @@ struct ContentView: View {
   @EnvironmentObject var allSubjects: SubjectStore
   @State var showNewSubjectSheet = false
   
-  // MARK: Body
-  
   var body: some View {
-    
     NavigationView {
       
       if allSubjects.subjects.isEmpty {
@@ -37,7 +34,7 @@ struct ContentView: View {
           }
         }
       }
-        
+      
     }
     .sheet(isPresented: $showNewSubjectSheet) {
       NewSubjectView().environmentObject(self.allSubjects)

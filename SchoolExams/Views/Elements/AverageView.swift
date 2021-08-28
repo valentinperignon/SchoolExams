@@ -9,15 +9,10 @@
 import SwiftUI
 
 struct AverageView: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   
-  // MARK: Properties
-  
   var average: String
-  
-  let radius: CGFloat = 27
+  let radius = CGFloat(27)
   
   // MARK: Body
   

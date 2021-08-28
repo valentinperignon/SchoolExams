@@ -9,14 +9,10 @@
 import SwiftUI
 
 struct GradesView: View {
-  // MARK: Environment
-  
-  @EnvironmentObject var allSubjects: SubjectStore
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   @Environment(\.presentationMode) var presentationMode
   
-  // MARK: Property
+  @EnvironmentObject var allSubjects: SubjectStore
   
   @ObservedObject var subject: Subject
   
@@ -89,7 +85,7 @@ struct GradesView: View {
             // ----- Sort tool -----
             
             HStack {
-              Text("SORT BY")
+              Text("Sort by")
                 .font(.callout)
                 .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
                 .fontWeight(.medium)

@@ -9,13 +9,9 @@
 import SwiftUI
 
 struct NewGradeView: View {
-  // MARK: Environment
-  
   @Environment(\.presentationMode) var presentationMode
   
   @EnvironmentObject var allSubjects: SubjectStore
-  
-  // MARK: Properties
   
   @ObservedObject var subject: Subject
   
@@ -26,8 +22,6 @@ struct NewGradeView: View {
   @State private var date: Date = Date()
   
   @State private var showAlert = false
-  
-  // MARK: Body
   
   var body: some View {
     ScrollView {

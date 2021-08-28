@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,28 +14,30 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScreenGradient" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-LD-k65">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Njv-a3-ujN">
-                                <rect key="frame" x="60" y="44" width="294" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Uzy-gv-aMu">
+                                <rect key="frame" x="40" y="177" width="310" height="500"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Njv-a3-ujN" secondAttribute="bottom" id="3Fo-WH-5e1"/>
+                            <constraint firstItem="Uzy-gv-aMu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4jF-gE-kPg"/>
                             <constraint firstItem="GhI-LD-k65" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="635-N6-nsg"/>
                             <constraint firstAttribute="bottom" secondItem="GhI-LD-k65" secondAttribute="bottom" id="AfE-jo-dTT"/>
                             <constraint firstItem="GhI-LD-k65" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="J6L-FP-sOc"/>
-                            <constraint firstItem="Njv-a3-ujN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QLx-dw-pcK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Njv-a3-ujN" secondAttribute="trailing" constant="60" id="kJ0-JD-G4n"/>
-                            <constraint firstItem="Njv-a3-ujN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="o9b-7a-f4x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uzy-gv-aMu" secondAttribute="trailing" constant="40" id="QfZ-B1-XGr"/>
+                            <constraint firstItem="Uzy-gv-aMu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="b8g-q6-lse"/>
+                            <constraint firstItem="Uzy-gv-aMu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="flD-Ge-yDO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Uzy-gv-aMu" secondAttribute="bottom" constant="40" id="oSO-Dw-qKy"/>
                             <constraint firstItem="GhI-LD-k65" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vMr-Lu-dmQ"/>
+                            <constraint firstItem="Uzy-gv-aMu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="vT6-tf-vmE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,5 +48,8 @@
     <resources>
         <image name="Logo" width="500" height="500"/>
         <image name="ScreenGradient" width="414" height="896"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

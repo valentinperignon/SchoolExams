@@ -9,21 +9,15 @@
 import SwiftUI
 
 struct NewSubjectView: View {
-  // MARK: Environment
-  
   @Environment(\.presentationMode) var presentationMode
   
   @EnvironmentObject var allSubjects: SubjectStore
-  
-  // MARK: Properties
   
   @State private var name: String = ""
   @State private var coefficient: Double = 1
   @State private var accentColor: Subject.CustomColor = .purple
   
   @State private var showAlert = false
-  
-  // MARK: Body
   
   var body: some View {
     ZStack(alignment: .top) {
@@ -53,7 +47,6 @@ struct NewSubjectView: View {
             
             guard !self.name.isEmpty else {
               self.showAlert.toggle()
-              
               feedbackGenerator.notificationOccurred(.error)
               return
             }

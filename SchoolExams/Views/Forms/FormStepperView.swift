@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct FormStepperView: View {
-  // Properties
-  
   var title: String
   
   @Binding var value: Double
@@ -18,7 +16,6 @@ struct FormStepperView: View {
   var range: ClosedRange<Double>
   var step: Double
   
-  // MARK: Body
   var body: some View {
     VStack {
       FormSectionTitle(title: title)

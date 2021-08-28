@@ -9,18 +9,12 @@
 import SwiftUI
 
 struct FormTextFieldView: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  // MARK: Property
   
   var keyboardType: UIKeyboardType
   
   var title: String
   @Binding var textValue: String
-  
-  // MARK: Body
   
   var body: some View {
     VStack {

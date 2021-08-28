@@ -9,15 +9,9 @@
 import SwiftUI
 
 struct ButtonCircle: View {
-  // MARK; Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   
-  // MARK: Property
-  
   var action: () -> Void
-  
-  // MARK: Body
   
   var body: some View {
     Button(action: action) {

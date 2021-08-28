@@ -9,15 +9,10 @@
 import SwiftUI
 
 struct SubjectListView: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  // MARK: Properties
   
   @ObservedObject var subject: Subject
   
-  // MARK: Body
   var body: some View {
     HStack {
       // ----- Average grade

@@ -11,8 +11,6 @@ import Foundation
 
 /// A school subject
 class Subject: Average, ObservableObject, Identifiable, Codable {
-  // MARK: Properties
-  
   var id = UUID()
   
   @Published var name: String
@@ -33,22 +31,6 @@ class Subject: Average, ObservableObject, Identifiable, Codable {
   }
   
   var tag: Int
-  
-  // MARK: CodingKeys
-  
-  enum CodingKeys: CodingKey {
-    case id
-    
-    case name
-    case color
-    case grades
-    case coefficient
-    case includedInOverall
-    
-    case tag
-  }
-  
-  // MARK: Initializer
   
   init(name: String, color: CustomColor, coefficient: Double, tag: Int) {
     self.name = name
@@ -191,5 +173,19 @@ class Subject: Average, ObservableObject, Identifiable, Codable {
 extension Subject: Equatable {
   static func == (lhs: Subject, rhs: Subject) -> Bool {
     lhs.id == rhs.id
+  }
+}
+
+extension Subject {
+  enum CodingKeys: CodingKey {
+    case id
+    
+    case name
+    case color
+    case grades
+    case coefficient
+    case includedInOverall
+    
+    case tag
   }
 }

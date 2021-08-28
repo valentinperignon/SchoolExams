@@ -9,15 +9,9 @@
 import SwiftUI
 
 struct FormSectionTitle: View {
-  // MARK: Environment
-  
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   
-  // MARK: Property
-  
   var title: String
-  
-  // MARK: Body
   
   var body: some View {
       HStack {
