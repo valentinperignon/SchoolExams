@@ -44,6 +44,8 @@
 		F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */; };
 		F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47624D4B30C000744D5 /* FormStepperView.swift */; };
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
+		F9EE73A326DAA784002B0523 /* NoSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EE73A226DAA784002B0523 /* NoSubjectView.swift */; };
+		F9EE73A526DAA844002B0523 /* ShowSubjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EE73A426DAA844002B0523 /* ShowSubjectsView.swift */; };
 		F9F79E5224CF1D1800A10C52 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F79E5124CF1D1800A10C52 /* Color.swift */; };
 		F9F9600024F16CB700B0CB2B /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */; };
 		F9FDE27824E2FE3600C1C959 /* EditGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */; };
@@ -91,6 +93,8 @@
 		F9E7A4BF24E6CAFD0084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
+		F9EE73A226DAA784002B0523 /* NoSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSubjectView.swift; sourceTree = "<group>"; };
+		F9EE73A426DAA844002B0523 /* ShowSubjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSubjectsView.swift; sourceTree = "<group>"; };
 		F9F79E5124CF1D1800A10C52 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F9F95FFF24F16CB700B0CB2B /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
 		F9FDE27724E2FE3600C1C959 /* EditGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGradeView.swift; sourceTree = "<group>"; };
@@ -241,7 +245,7 @@
 		F9CFFDE924CC6C9B007E57C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
+				F9EE739F26DAA753002B0523 /* Home */,
 				F9099FCC24F029B400C011BD /* Subjects */,
 				F9099FCD24F029D200C011BD /* Grades */,
 				F99E3D4124DF08E9005B23F3 /* Elements */,
@@ -265,6 +269,16 @@
 				F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		F9EE739F26DAA753002B0523 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F9CFFDD824CC6C68007E57C1 /* ContentView.swift */,
+				F9EE73A226DAA784002B0523 /* NoSubjectView.swift */,
+				F9EE73A426DAA844002B0523 /* ShowSubjectsView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,10 +366,12 @@
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */,
 				F98A78A024F1A99E001770C7 /* ButtonFullWidthStyle.swift in Sources */,
+				F9EE73A526DAA844002B0523 /* ShowSubjectsView.swift in Sources */,
 				F9A8112124D1D9C40010A1AC /* AverageView.swift in Sources */,
 				F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */,
 				F9B6358A24CE22010030823D /* File.swift in Sources */,
 				F93FB55324EBFE4C00874D8C /* Average.swift in Sources */,
+				F9EE73A326DAA784002B0523 /* NoSubjectView.swift in Sources */,
 				F9CFFDD724CC6C68007E57C1 /* SceneDelegate.swift in Sources */,
 				F9B6358C24CE25BE0030823D /* Subject+CustomColor.swift in Sources */,
 				F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */,
