@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F9CFFDD024CC6C68007E57C1"
                BuildableName = "SchoolExams.app"
                BlueprintName = "SchoolExams"
-               ReferencedContainer = "container:MyGrades.xcodeproj">
+               ReferencedContainer = "container:SchoolExams.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,7 +48,7 @@
             BlueprintIdentifier = "F9CFFDD024CC6C68007E57C1"
             BuildableName = "SchoolExams.app"
             BlueprintName = "SchoolExams"
-            ReferencedContainer = "container:MyGrades.xcodeproj">
+            ReferencedContainer = "container:SchoolExams.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
@@ -69,7 +69,7 @@
             BlueprintIdentifier = "F9CFFDD024CC6C68007E57C1"
             BuildableName = "SchoolExams.app"
             BlueprintName = "SchoolExams"
-            ReferencedContainer = "container:MyGrades.xcodeproj">
+            ReferencedContainer = "container:SchoolExams.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
