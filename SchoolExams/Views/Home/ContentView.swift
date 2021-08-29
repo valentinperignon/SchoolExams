@@ -39,7 +39,6 @@ struct ContentView: View {
     .sheet(isPresented: $showNewSubjectSheet) {
       NewSubjectView().environmentObject(self.allSubjects)
     }
-    
   }
 }
 
