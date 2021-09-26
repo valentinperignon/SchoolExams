@@ -19,7 +19,7 @@ struct EditSubjectView: View {
   @State private var action: Int? = 0
   
   var body: some View {
-    VStack {
+    ScrollView {
       // ----- Form
       VStack {
         // Name
