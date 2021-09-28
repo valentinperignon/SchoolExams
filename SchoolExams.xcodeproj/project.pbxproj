@@ -26,6 +26,8 @@
 		F9A8112324D1E4610010A1AC /* UINavigationController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112224D1E4610010A1AC /* UINavigationController+Appearance.swift */; };
 		F9A8112624D1E8F10010A1AC /* MGRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112524D1E8F10010A1AC /* MGRoundedRectangle.swift */; };
 		F9A8112824D2125B0010A1AC /* SubjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A8112724D2125B0010A1AC /* SubjectListView.swift */; };
+		F9A9AA09270378B1006F365B /* UIApplication+CurrentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9AA08270378B1006F365B /* UIApplication+CurrentScene.swift */; };
+		F9A9AA0C27037E68006F365B /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A9AA0B27037E68006F365B /* AppStoreReviewManager.swift */; };
 		F9B1CB4424E096FB00E6A9CF /* FormDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */; };
 		F9B6358324CE1FD00030823D /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358224CE1FD00030823D /* Subject.swift */; };
 		F9B6358524CE20730030823D /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B6358424CE20730030823D /* Grade.swift */; };
@@ -71,6 +73,8 @@
 		F9A8112224D1E4610010A1AC /* UINavigationController+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Appearance.swift"; sourceTree = "<group>"; };
 		F9A8112524D1E8F10010A1AC /* MGRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGRoundedRectangle.swift; sourceTree = "<group>"; };
 		F9A8112724D2125B0010A1AC /* SubjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListView.swift; sourceTree = "<group>"; };
+		F9A9AA08270378B1006F365B /* UIApplication+CurrentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+CurrentScene.swift"; sourceTree = "<group>"; };
+		F9A9AA0B27037E68006F365B /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		F9B1CB4324E096FB00E6A9CF /* FormDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDatePickerView.swift; sourceTree = "<group>"; };
 		F9B6358224CE1FD00030823D /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		F9B6358424CE20730030823D /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
@@ -174,6 +178,14 @@
 			path = Shapes;
 			sourceTree = "<group>";
 		};
+		F9A9AA0A27037E3F006F365B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F9A9AA0B27037E68006F365B /* AppStoreReviewManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F9B6358824CE21F50030823D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +195,7 @@
 				F99E3D4424DF0C15005B23F3 /* Button+ButtonType.swift */,
 				F9501D8324E55F8F003169E2 /* View+HideKeyboard.swift */,
 				F9501D8524E583C5003169E2 /* Alert+MGType.swift */,
+				F9A9AA08270378B1006F365B /* UIApplication+CurrentScene.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +219,7 @@
 		F9CFFDD324CC6C68007E57C1 /* SchoolExams */ = {
 			isa = PBXGroup;
 			children = (
+				F9A9AA0A27037E3F006F365B /* Utils */,
 				F9B6358824CE21F50030823D /* Extensions */,
 				F9A8112424D1E8CB0010A1AC /* Shapes */,
 				F93FB55824EC097100874D8C /* Protocols */,
@@ -363,6 +377,7 @@
 				F99E3D4324DF08FF005B23F3 /* ButtonFullWidth.swift in Sources */,
 				F93FB55524EC008800874D8C /* Subject+Order.swift in Sources */,
 				F978B24924F1744C00C8EA89 /* ButtonCircleStyle.swift in Sources */,
+				F9A9AA0C27037E68006F365B /* AppStoreReviewManager.swift in Sources */,
 				F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */,
 				F96AB67B24E17ACA00476A09 /* SheetHeaderView.swift in Sources */,
 				F98A78A024F1A99E001770C7 /* ButtonFullWidthStyle.swift in Sources */,
@@ -389,6 +404,7 @@
 				F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */,
 				F98A78A224F1B6E2001770C7 /* FormColorPickerView.swift in Sources */,
 				F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */,
+				F9A9AA09270378B1006F365B /* UIApplication+CurrentScene.swift in Sources */,
 				F94C1BC224F32B24002853D7 /* ButtonListStyle.swift in Sources */,
 				F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */,
 				F9F79E5224CF1D1800A10C52 /* Color+MainColors.swift in Sources */,
