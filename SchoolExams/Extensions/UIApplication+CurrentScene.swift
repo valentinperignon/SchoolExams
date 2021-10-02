@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIApplication {
-    var currentScene: UIWindowScene? {
-        connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
-    }
+  var currentScene: UIWindowScene? {
+    connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+  }
 }

@@ -101,6 +101,10 @@ struct NewGradeView: View {
           self.allSubjects.computeAverage()
           
           self.presentationMode.wrappedValue.dismiss()
+            
+          if valueDouble >= scaleDouble / 2.0 {
+            AppStoreReviewManager.requestReviewIfPossible()
+          }
         }
         .padding(.bottom)
       }

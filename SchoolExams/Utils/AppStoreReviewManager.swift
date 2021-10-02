@@ -10,28 +10,39 @@ import StoreKit
 import Foundation
 
 struct AppStoreReviewManager {
-    static let maxRequestNumber = 3
+  private static let worthActionNumber = 3
+  
+  private static let keyActionNumber = "APRM_ActionNumber"
+  private static let keyLastVersion = "APRM_LastVersion"
+  
+  static func requestReviewIfPossible() {
+    let defaults = UserDefaults.standard
     
-    static let defaultsKey = "RequestNumber"
+    let existsInUD = defaults.object(forKey: keyActionNumber) != nil
     
-    static func requestReviewIfPossible() {
-        let defaults = UserDefaults.standard
-        
-        var requestNumber = defaults.integer(forKey: defaultsKey)
-        guard requestNumber < maxRequestNumber else { return }
-        
-        requestNumber += 1
-        defaults.set(requestNumber, forKey: defaultsKey)
-        
-        request()
+    var actionNumber = defaults.integer(forKey: keyActionNumber)
+    actionNumber += 1
+    
+    guard actionNumber >= worthActionNumber || !existsInUD else { return }
+    
+    let bundleversionKey = kCFBundleVersionKey as String
+    let currentVersion = Bundle.main.object(forInfoDictionaryKey: bundleversionKey) as? String
+    
+    let lastVersion = defaults.string(forKey: keyLastVersion)
+    
+    guard lastVersion == nil || lastVersion != currentVersion else { return }
+    
+    request()
+    defaults.set(0, forKey: keyActionNumber)
+    defaults.set(currentVersion, forKey: keyLastVersion)
+  }
+  
+  private static func request() {
+    if #available(iOS 14.0, *) {
+      guard let scnene = UIApplication.shared.currentScene else { return }
+      SKStoreReviewController.requestReview(in: scnene)
+    } else {
+      SKStoreReviewController.requestReview()
     }
-    
-    private static func request() {
-        if #available(iOS 14.0, *) {
-            guard let scnene = UIApplication.shared.currentScene else { return }
-            SKStoreReviewController.requestReview(in: scnene)
-        } else {
-            SKStoreReviewController.requestReview()
-        }
-    }
+  }
 }
