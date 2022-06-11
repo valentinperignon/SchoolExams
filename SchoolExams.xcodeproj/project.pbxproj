@@ -225,22 +225,15 @@
 				F93FB55824EC097100874D8C /* Protocols */,
 				F9CFFDE824CC6C95007E57C1 /* Models */,
 				F9CFFDE924CC6C9B007E57C1 /* Views */,
-				F9CFFDEB24CC6CB9007E57C1 /* Content */,
-				F9CFFDDC24CC6C68007E57C1 /* Preview Content */,
-				F9CFFDEA24CC6CA2007E57C1 /* Delegates */,
+				F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */,
+				F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */,
+				F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */,
+				F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */,
 				F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */,
 				F9CFFDE224CC6C68007E57C1 /* Info.plist */,
 				F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */,
 			);
 			path = SchoolExams;
-			sourceTree = "<group>";
-		};
-		F9CFFDDC24CC6C68007E57C1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F9CFFDE824CC6C95007E57C1 /* Models */ = {
@@ -266,23 +259,6 @@
 				F90F700324D4B1C500D06FD9 /* Forms */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F9CFFDEA24CC6CA2007E57C1 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				F9CFFDD424CC6C68007E57C1 /* AppDelegate.swift */,
-				F9CFFDD624CC6C68007E57C1 /* SceneDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
-		F9CFFDEB24CC6CB9007E57C1 /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */,
-			);
-			path = Content;
 			sourceTree = "<group>";
 		};
 		F9EE739F26DAA753002B0523 /* Home */ = {
