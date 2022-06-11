@@ -8,6 +8,32 @@
 
 import SwiftUI
 
+struct SortTools: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
+    @EnvironmentObject var allSubjects: SubjectStore
+
+    var body: some View {
+        HStack {
+          Text("Sort by")
+            .font(.callout)
+            .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
+            .fontWeight(.medium)
+            .padding(.trailing, 1)
+
+          Picker("Sort by", selection: $allSubjects.sortBy) {
+            ForEach(SubjectStore.Order.allCases, id: \.self) { element in
+              Text(NSLocalizedString(element.rawValue, comment: ""))
+                .accessibility(value: Text(SubjectStore.getAccessibilityOrder(or: element)))
+            }
+          }
+          .pickerStyle(SegmentedPickerStyle())
+        }
+        .padding(.horizontal, 15)
+        .padding(.top, -10)
+    }
+}
+
 struct ShowSubjectsView: View {
   @Environment(\.colorScheme) var colorScheme: ColorScheme
   
@@ -15,38 +41,15 @@ struct ShowSubjectsView: View {
   
   var body: some View {
     ScrollView {
-      // ----- Average Grade -----
-      
       AverageView(average: allSubjects.averageDisplay)
       
-      // ----- Sort tool -----
-      
-      HStack {
-        Text("Sort by")
-          .font(.callout)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
-          .fontWeight(.medium)
-          .padding(.trailing, 1)
-        
-        Picker("Sort by", selection: $allSubjects.sortBy) {
-          ForEach(SubjectStore.Order.allCases, id: \.self) { element in
-            Text(NSLocalizedString(element.rawValue, comment: ""))
-              .accessibility(value: Text(SubjectStore.getAccessibilityOrder(or: element)))
-          }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-      }
-      .padding(.horizontal, 15)
-      .padding(.top, -10)
+      SortTools()
       
       // ----- Subjects -----
       
       ForEach(allSubjects.subjects) { subject in
-        NavigationLink(
-          destination: GradesView(subject: subject).environmentObject(self.allSubjects)
-        ) {
+        NavigationLink(destination: GradesView(subject: subject)) {
           SubjectListView(subject: subject)
-            .environmentObject(self.allSubjects)
             .contextMenu(
               ContextMenu {
                 Button(action: {
@@ -78,5 +81,6 @@ struct ShowSubjectsView: View {
 struct ShowSubjectsView_Previews: PreviewProvider {
   static var previews: some View {
     ShowSubjectsView()
+          .environmentObject(SubjectStore())
   }
 }

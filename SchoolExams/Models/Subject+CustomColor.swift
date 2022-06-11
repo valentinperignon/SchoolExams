@@ -11,12 +11,12 @@ import Foundation
 extension Subject {
   /// All possible colors for a subject
   enum CustomColor: String, CaseIterable, Codable {
-    case blue = "blue"
-    case gray = "gray"
-    case green = "green"
-    case orange = "orange"
-    case purple = "purple"
-    case red = "red"
-    case yellow = "yellow"
+    case blue
+    case gray
+    case green
+    case orange
+    case purple
+    case red
+    case yellow
   }
 }

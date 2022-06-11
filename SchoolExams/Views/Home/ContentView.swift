@@ -17,7 +17,6 @@ struct ContentView: View {
   
   var body: some View {
     NavigationView {
-        
       if allSubjects.subjects.isEmpty {
         NoSubjectView(showSheet: $showNewSubjectSheet)
           .padding(.horizontal, 15)
@@ -35,10 +34,10 @@ struct ContentView: View {
           }
         }
       }
-      
     }
     .sheet(isPresented: $showNewSubjectSheet) {
-      NewSubjectView().environmentObject(self.allSubjects)
+      NewSubjectView()
+        .environmentObject(self.allSubjects)
     }
   }
 }
