@@ -1,31 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "+ to -" : {
-      "comment" : "Sort tools – Labels",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+ a -"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+ vers -"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+ a -"
-          }
-        }
-      }
+    "" : {
+
     },
     "- to +" : {
       "comment" : "Sort tools – Labels",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -47,8 +28,39 @@
         }
       }
     },
+    "%@." : {
+
+    },
+    "%@/20" : {
+
+    },
+    "+ to -" : {
+      "comment" : "Sort tools – Labels",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+ a -"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+ vers -"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+ a -"
+          }
+        }
+      }
+    },
     "Accent color" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -95,6 +107,7 @@
     },
     "Add a new subject to your list" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Header",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -118,6 +131,7 @@
     },
     "Add the Grade" : {
       "comment" : "NewGradeView & EditGradeView – Button",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -141,6 +155,7 @@
     },
     "Add the Subject" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Button",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -187,6 +202,7 @@
     },
     "Ascending order." : {
       "comment" : "Sorting tools",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -233,6 +249,7 @@
     },
     "Back" : {
       "comment" : "Buttons – Labels",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -253,6 +270,36 @@
           }
         }
       }
+    },
+    "blue" : {
+      "comment" : "SubjectColor – Colors",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "azul"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bleu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "blu"
+          }
+        }
+      }
+    },
+    "coeff %@" : {
+
+    },
+    "coeff. %lld" : {
+
     },
     "Coefficient" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Form",
@@ -277,8 +324,33 @@
         }
       }
     },
+    "date" : {
+      "comment" : "Sort tools – Labels",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fecha"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "data"
+          }
+        }
+      }
+    },
     "Date" : {
       "comment" : "NewGradeView & EditGradeView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -300,8 +372,33 @@
         }
       }
     },
+    "default" : {
+      "comment" : "Sort tools – Labels",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "por defecto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "défaut"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "predefinito"
+          }
+        }
+      }
+    },
     "Default order." : {
       "comment" : "Sorting tools",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -319,6 +416,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ordine predefinito."
+          }
+        }
+      }
+    },
+    "descending order." : {
+      "comment" : "Sorting tools",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orden descendente."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordre décroissant."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordine decrescente."
           }
         }
       }
@@ -346,6 +467,9 @@
         }
       }
     },
+    "Do you really want to remove this subject?" : {
+
+    },
     "Edit the Grade" : {
       "comment" : "NewGradeView & EditGradeView – Header",
       "localizations" : {
@@ -368,6 +492,9 @@
           }
         }
       }
+    },
+    "Edit the subject" : {
+
     },
     "Edit the Subject" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Header",
@@ -394,6 +521,7 @@
     },
     "From lowest to newest." : {
       "comment" : "Sorting tools",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -417,6 +545,7 @@
     },
     "Grade Description" : {
       "comment" : "NewGradeView & EditGradeView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -457,6 +586,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valore del voto"
+          }
+        }
+      }
+    },
+    "green" : {
+      "comment" : "SubjectColor – Colors",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "verde"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vert"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "verde"
           }
         }
       }
@@ -509,6 +662,7 @@
     },
     "New Grade" : {
       "comment" : "GradesView – Button",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -532,6 +686,7 @@
     },
     "New Subject" : {
       "comment" : "ContentView – Buttons",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -693,6 +848,7 @@
     },
     "Option" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -710,6 +866,101 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Opzione"
+          }
+        }
+      }
+    },
+    "orange" : {
+      "comment" : "SubjectColor – Colors",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "naranja"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "orange"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "arancione"
+          }
+        }
+      }
+    },
+    "over 20" : {
+      "comment" : "AverageView – Value",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sobre 20"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sur 20"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "su 20"
+          }
+        }
+      }
+    },
+    "purple" : {
+      "comment" : "SubjectColor – Colors",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "morado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "violet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "viola"
+          }
+        }
+      }
+    },
+    "red" : {
+      "comment" : "SubjectColor – Colors",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rojo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rouge"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rosso"
           }
         }
       }
@@ -739,6 +990,7 @@
     },
     "Save" : {
       "comment" : "Buttons – Labels",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -762,6 +1014,7 @@
     },
     "Scale" : {
       "comment" : "NewGradeView & EditGradeView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -854,6 +1107,7 @@
     },
     "Subject name" : {
       "comment" : "NewSubjectListView & EditSubjectListView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -946,6 +1200,7 @@
     },
     "The value can't be empty and must be a number between 0 and" : {
       "comment" : "Alerts – Messages",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -966,6 +1221,9 @@
           }
         }
       }
+    },
+    "The value can't be empty and must be a number between 0 and 20." : {
+
     },
     "Unknown error." : {
       "comment" : "Alerts – Messages",
@@ -992,6 +1250,7 @@
     },
     "Value" : {
       "comment" : "NewGradeView & EditGradeView – Form",
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1124,213 +1383,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Devi aggiungere almeno una materia"
-          }
-        }
-      }
-    },
-    "blue" : {
-      "comment" : "SubjectColor – Colors",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "azul"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "bleu"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "blu"
-          }
-        }
-      }
-    },
-    "date" : {
-      "comment" : "Sort tools – Labels",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "fecha"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "date"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "data"
-          }
-        }
-      }
-    },
-    "default" : {
-      "comment" : "Sort tools – Labels",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "por defecto"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "défaut"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "predefinito"
-          }
-        }
-      }
-    },
-    "descending order." : {
-      "comment" : "Sorting tools",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orden descendente."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ordre décroissant."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ordine decrescente."
-          }
-        }
-      }
-    },
-    "green" : {
-      "comment" : "SubjectColor – Colors",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "verde"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "vert"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "verde"
-          }
-        }
-      }
-    },
-    "orange" : {
-      "comment" : "SubjectColor – Colors",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "naranja"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "orange"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "arancione"
-          }
-        }
-      }
-    },
-    "over 20" : {
-      "comment" : "AverageView – Value",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "sobre 20"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "sur 20"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "su 20"
-          }
-        }
-      }
-    },
-    "purple" : {
-      "comment" : "SubjectColor – Colors",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "morado"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "violet"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "viola"
-          }
-        }
-      }
-    },
-    "red" : {
-      "comment" : "SubjectColor – Colors",
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "rojo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "rouge"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "rosso"
           }
         }
       }

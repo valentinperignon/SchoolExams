@@ -63,8 +63,8 @@ struct AverageView: View {
           }
         }
       }
-      .padding(.horizontal, 15)
-      .padding(.top, 5)
+      .padding(.horizontal, 16)
+      .padding(.top, 16)
       .padding(.bottom, 10)
       
       ZStack {

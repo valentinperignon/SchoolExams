@@ -50,6 +50,7 @@ struct ContentViewNavigationModifier: ViewModifier {
       .navigationBarTitle(
         Text("My Subjects")
       )
+      .toolbarTitleDisplayMode(.inlineLarge)
   }
 }
 
