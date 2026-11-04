@@ -37,12 +37,11 @@
 		F9CFFDD524CC6C68007E57C1 /* SchoolExamsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD424CC6C68007E57C1 /* SchoolExamsApp.swift */; };
 		F9CFFDD924CC6C68007E57C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CFFDD824CC6C68007E57C1 /* ContentView.swift */; };
 		F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */; };
-		F9CFFDDE24CC6C68007E57C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */; };
 		F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */; };
 		F9DB0DFB24D57B6A0023E369 /* GradeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */; };
 		F9DB0DFD24D57D3D0023E369 /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFC24D57D3D0023E369 /* GradesView.swift */; };
 		F9DB0DFF24D59C390023E369 /* NewGradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB0DFE24D59C390023E369 /* NewGradeView.swift */; };
-		F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */; };
+		F9E7A4BC24E6CAF80084DA8B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F9E7A4BE24E6CAF80084DA8B /* Localizable.xcstrings */; };
 		F9E7F47724D4B30C000744D5 /* FormStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47624D4B30C000744D5 /* FormStepperView.swift */; };
 		F9E7F47924D4B432000744D5 /* FormSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */; };
 		F9EE73A326DAA784002B0523 /* NoSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EE73A226DAA784002B0523 /* NoSubjectView.swift */; };
@@ -53,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9E7A4BE24E6CAF80084DA8B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		F93FB55224EBFE4C00874D8C /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
@@ -84,15 +84,11 @@
 		F9CFFDD424CC6C68007E57C1 /* SchoolExamsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolExamsApp.swift; sourceTree = "<group>"; };
 		F9CFFDD824CC6C68007E57C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F9CFFDE024CC6C68007E57C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9CFFDE224CC6C68007E57C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListView.swift; sourceTree = "<group>"; };
 		F9DB0DFC24D57D3D0023E369 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		F9DB0DFE24D59C390023E369 /* NewGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGradeView.swift; sourceTree = "<group>"; };
-		F9E7A4B924E6CAD40084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F9E7A4BD24E6CAF80084DA8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F9E7A4BF24E6CAFD0084DA8B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9EE73A226DAA784002B0523 /* NoSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSubjectView.swift; sourceTree = "<group>"; };
@@ -225,10 +221,9 @@
 				F9CFFDE924CC6C9B007E57C1 /* Views */,
 				F9CFFDD424CC6C68007E57C1 /* SchoolExamsApp.swift */,
 				F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */,
-				F9CFFDDD24CC6C68007E57C1 /* Preview Assets.xcassets */,
 				F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */,
 				F9CFFDE224CC6C68007E57C1 /* Info.plist */,
-				F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */,
+				F9E7A4BE24E6CAF80084DA8B /* Localizable.xcstrings */,
 			);
 			path = SchoolExams;
 			sourceTree = "<group>";
@@ -311,6 +306,8 @@
 				en,
 				Base,
 				fr,
+				es,
+				it,
 			);
 			mainGroup = F9CFFDC824CC6C68007E57C1;
 			productRefGroup = F9CFFDD224CC6C68007E57C1 /* Products */;
@@ -328,8 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */,
-				F9E7A4BC24E6CAF80084DA8B /* Localizable.strings in Resources */,
-				F9CFFDDE24CC6C68007E57C1 /* Preview Assets.xcassets in Resources */,
+				F9E7A4BC24E6CAF80084DA8B /* Localizable.xcstrings in Resources */,
 				F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,18 +386,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F9CFFDE024CC6C68007E57C1 /* Base */,
-				F9E7A4B924E6CAD40084DA8B /* fr */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F9E7A4BE24E6CAF80084DA8B /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9E7A4BD24E6CAF80084DA8B /* en */,
-				F9E7A4BF24E6CAFD0084DA8B /* fr */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -534,6 +520,7 @@
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SchoolExams/Info.plist;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,6 +529,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentinperignon.MyGrades;
 				PRODUCT_NAME = SchoolExams;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -556,6 +544,7 @@
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SchoolExams/Info.plist;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,6 +553,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentinperignon.MyGrades;
 				PRODUCT_NAME = SchoolExams;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
