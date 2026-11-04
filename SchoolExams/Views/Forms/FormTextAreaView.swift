@@ -27,7 +27,7 @@ struct FormTextFieldView: View {
         .padding(.horizontal)
         .padding(.vertical, 12)
         .background(colorScheme == .light ? Color.appleGray : Color.appleDarkGray5)
-        .cornerRadius(8)
+        .clipShape(.rect(cornerRadius: 8))
     }
     .padding(.horizontal, 15)
   }

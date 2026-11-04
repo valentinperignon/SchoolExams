@@ -26,12 +26,12 @@ struct SubjectListView: View {
         
         Text(subject.averageDisplay)
           .fontWeight(.semibold)
-          .foregroundColor(
+          .foregroundStyle(
             colorScheme == .light
             ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
             : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
           )
-          .accessibility(label:
+          .accessibilityLabel(
             subject.averageDisplay == "/"
               ? Text("No Grade In This Subject.")
               : Text(NSLocalizedString("Subject Average", comment: "") + ": \(subject.averageDisplay) " + NSLocalizedString("over 20", comment: "") + ".")
@@ -55,16 +55,16 @@ struct SubjectListView: View {
           if subject.average < 10.0 {
             Image(systemName: "exclamationmark.circle")
               .font(.headline)
-              .foregroundColor(.mgOrangeDark)
-              .accessibility(hidden: true)
+              .foregroundStyle(Color.mgOrangeDark)
+              .accessibilityHidden(true)
           }
           Text(subject.name)
             .font(.headline)
             .fontWeight(.medium)
-            .foregroundColor(
-              subject.average < 10.0 ? .mgOrangeDark : .primary
+            .foregroundStyle(
+              subject.average < 10.0 ? Color.mgOrangeDark : .primary
             )
-            .accessibility(label:
+            .accessibilityLabel(
               subject.includedInOverall
               ? Text("\(subject.name).")
               : Text("\(subject.name)." + NSLocalizedString("Not in overall average.", comment: ""))
@@ -85,9 +85,9 @@ struct SubjectListView: View {
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
             .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().dark)
-            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
-            .cornerRadius(7)
-            .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
+            .foregroundStyle(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
+            .clipShape(.rect(cornerRadius: 7))
+            .accessibilityLabel(Text(NSLocalizedString("Coefficient", comment: "") + ":  \(subject.coefficient)."))
           Spacer()
         }
       }
@@ -98,16 +98,16 @@ struct SubjectListView: View {
       Image("ArrowRight")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
+        .foregroundStyle(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
         .frame(width: 37, height: 37)
         .contrast(0.95)
         .brightness(0.01)
-        .accessibility(hidden: true)
+        .accessibilityHidden(true)
     }
     .padding(.vertical, 5)
     .padding(.horizontal, 5)
     .accessibilityElement(children: .combine)
-    .accessibility(hint: Text("View More About This Subject"))
+    .accessibilityHint(Text("View More About This Subject"))
   }
 }
 

@@ -29,8 +29,8 @@ struct ButtonFullWidth: View {
       .padding(.vertical, 15)
       .frame(maxWidth: .infinity)
       .background(getColors(colorScheme: colorScheme).bg)
-      .foregroundColor(getColors(colorScheme: colorScheme).fg)
-      .cornerRadius(10)
+      .foregroundStyle(getColors(colorScheme: colorScheme).fg)
+      .clipShape(.rect(cornerRadius: 10))
     }
     .buttonStyle(ButtonFullWidthStyle())
     .padding(.horizontal, 15)

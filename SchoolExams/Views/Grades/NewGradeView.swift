@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NewGradeView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) private var dismiss
   
   @EnvironmentObject var allSubjects: SubjectStore
   
@@ -22,7 +22,8 @@ struct NewGradeView: View {
   @State private var date: Date = Date()
   
   @State private var showAlert = false
-  
+  @State private var alertType: MGAlertType?
+
   var body: some View {
     ScrollView {
       // ----- Title
@@ -58,7 +59,7 @@ struct NewGradeView: View {
           // Name can"t be empty
           guard !self.name.isEmpty else {
             self.showAlert.toggle()
-            Alert.mgType = .nameError
+            self.alertType = .nameError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -71,7 +72,7 @@ struct NewGradeView: View {
             scaleDouble > 0
           else {
             self.showAlert.toggle()
-            Alert.mgType = .scaleError
+            self.alertType = .scaleError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -85,7 +86,7 @@ struct NewGradeView: View {
             valueDouble <= scaleDouble
           else {
             self.showAlert.toggle()
-            Alert.mgType = .valueError
+            self.alertType = .valueError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -100,7 +101,7 @@ struct NewGradeView: View {
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
           
-          self.presentationMode.wrappedValue.dismiss()
+          self.dismiss()
             
           if valueDouble >= scaleDouble / 2.0 {
             AppStoreReviewManager.requestReviewIfPossible()
@@ -111,28 +112,22 @@ struct NewGradeView: View {
       
       Spacer()
     }
-    .alert(isPresented: $showAlert) {
-      let message: Text
-      
-      switch Alert.mgType {
+    .alert(alertType?.title ?? "", isPresented: $showAlert, presenting: alertType) { _ in
+      Button("OK") {}
+    } message: { type in
+      switch type {
       case .nameError:
-        message = Text("The grade description can't be empty.")
+        Text("The grade description can't be empty.")
       case .valueError:
-        let scaleDouble = Double(self.scale.replacingOccurrences(of: ",", with: "."))
-        message = Text("The value can't be empty and must be a number between 0 and" + " \(scaleDouble!).")
+        let scaleDouble = Double(self.scale.replacingOccurrences(of: ",", with: ".")) ?? 0
+        Text(NSLocalizedString("The value can't be empty and must be a number between 0 and", comment: "") + " \(scaleDouble).")
       case .scaleError:
-        message = Text("The scale can't be empty and must be a number greater than 0.")
-      default:
-        message = Text("Unknown error.")
+        Text("The scale can't be empty and must be a number greater than 0.")
+      case .removeWarning:
+        Text("Unknown error.")
       }
-      
-      return Alert(
-        title: Text("Something went wrong"),
-        message: message,
-        dismissButton: .default(Text("OK"))
-      )
     }
-  }
+}
 }
 
 #Preview {

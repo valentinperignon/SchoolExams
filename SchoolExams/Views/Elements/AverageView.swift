@@ -27,9 +27,9 @@ struct AverageView: View {
           Image("Calculator")
             .renderingMode(.template)
             .resizable()
-            .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleDark_dark)
+            .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleDark_dark)
             .frame(width: 50, height: 50)
-            .accessibility(hidden: true)
+            .accessibilityHidden(true)
         }
         .frame(width: 75, height: 75)
         .clipShape(Circle())
@@ -42,7 +42,7 @@ struct AverageView: View {
             Text("Average")
               .font(.headline)
               .fontWeight(.bold)
-              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.white)
+              .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
               .padding(.bottom, 4)
             Spacer()
           }
@@ -52,9 +52,9 @@ struct AverageView: View {
             Text("\(average)/20")
               .font(.largeTitle)
               .fontWeight(.light)
-              .foregroundColor(colorScheme == .light ? Color.mgPurpleDark : Color.white)
-              .accessibility(
-                label: Text(average != "-"
+              .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
+              .accessibilityLabel(
+                Text(average != "-"
                   ? "\(average) " + NSLocalizedString("over 20", comment: "") + "."
                   : NSLocalizedString("No Grade.", comment: "")
                 )
@@ -63,8 +63,8 @@ struct AverageView: View {
           }
         }
       }
-      .padding(.horizontal, 16)
-      .padding(.top, 16)
+      .padding(.horizontal, 15)
+      .padding(.top, 5)
       .padding(.bottom, 10)
       
       ZStack {

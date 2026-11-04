@@ -19,7 +19,7 @@ struct ButtonCircle: View {
         .font(.title)
         .padding()
         .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight_dark)
-        .foregroundColor(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
+        .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
         .clipShape(Circle())
         .shadow(radius: 10)
     }

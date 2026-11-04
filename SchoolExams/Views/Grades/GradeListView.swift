@@ -31,12 +31,12 @@ struct GradeListView: View {
             : String(format: "%.2f", grade.getGradesOver20())
         )
           .fontWeight(.semibold)
-          .foregroundColor(
+          .foregroundStyle(
             colorScheme == .light
             ? (subject.includedInOverall ? subject.getColor().light : subject.getColor().dark)
             : (subject.includedInOverall ? subject.getColorDark().dark : subject.getColorDark().light)
           )
-          .accessibility(label: Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
+          .accessibilityLabel(Text(NSLocalizedString("Grade Value", comment: "") + ": \(grade.value) " + NSLocalizedString("over 20", comment: "") + "."))
       }
       .clipShape(Circle())
       .overlay(
@@ -57,9 +57,9 @@ struct GradeListView: View {
           Text(grade.name)
             .font(.headline)
             .fontWeight(.medium)
-            .foregroundColor(.primary)
+            .foregroundStyle(Color.primary)
             .padding(.bottom, 8)
-            .accessibility(label:
+            .accessibilityLabel(
               subject.includedInOverall
               ? Text("\(grade.name).")
               : Text("\(grade.name)." + NSLocalizedString("Not in overall average.", comment: ""))
@@ -78,10 +78,10 @@ struct GradeListView: View {
             .fontWeight(.light)
             .padding(.horizontal, 12)
             .padding(.vertical, 5)
-            .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
+            .foregroundStyle(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
             .background(colorScheme == .light ? subject.getColor().light : subject.getColorDark().dark)
-            .cornerRadius(7)
-            .accessibility(label: Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))
+            .clipShape(.rect(cornerRadius: 7))
+            .accessibilityLabel(Text(NSLocalizedString("Coefficient", comment: "") + ": \(grade.coefficient)."))
           
           Spacer()
         }
@@ -93,15 +93,15 @@ struct GradeListView: View {
       Image("Edit")
         .resizable()
         .renderingMode(.template)
-        .foregroundColor(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
+        .foregroundStyle(colorScheme == .light ? subject.getColor().dark : subject.getColorDark().light)
         .frame(width: 40, height: 40)
         .contrast(0.80)
-        .accessibility(hidden: true)
+        .accessibilityHidden(true)
     }
     .padding(.vertical, 5)
     .padding(.horizontal, 5)
     .accessibilityElement(children: .combine)
-    .accessibility(hint: Text("View More About This Grade"))
+    .accessibilityHint(Text("View More About This Grade"))
   }
 }
 

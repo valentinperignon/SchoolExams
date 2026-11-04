@@ -10,14 +10,13 @@ import SwiftUI
 
 struct GradesView: View {
   @Environment(\.colorScheme) var colorScheme: ColorScheme
-  @Environment(\.presentationMode) var presentationMode
   
   @EnvironmentObject var allSubjects: SubjectStore
   
   @ObservedObject var subject: Subject
   
-  @State private var action: Int? = 0
-  
+  @State private var displayEditView: Bool = false
+
   @State private var displayEditSheet: Bool = false
   @State private var displayNewSheet: Bool = false
   
@@ -25,18 +24,6 @@ struct GradesView: View {
   
   var body: some View {
     Group {
-      // NavigationLink for Edit page
-      
-      NavigationLink(
-        destination:
-          EditSubjectView(subject: subject)
-            .environmentObject(allSubjects),
-        tag: 1,
-        selection: $action
-      ) {
-        EmptyView()
-      }
-      
       // Views : empty / grades
       if subject.grades.isEmpty {
           
@@ -48,8 +35,8 @@ struct GradesView: View {
             .resizable()
             .scaledToFit()
             .padding(.horizontal, 40)
-            .foregroundColor(colorScheme == .light ? .mgPurpleLight : .appleDarkGray5)
-            .accessibility(hidden: true)
+            .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : .appleDarkGray5)
+            .accessibilityHidden(true)
           
           VStack {
             Text("No Grade")
@@ -57,7 +44,7 @@ struct GradesView: View {
               .fontWeight(.bold)
               .padding(.horizontal, 15)
             Text("You can add a grade to this subject")
-              .foregroundColor(.mgPurpleDark)
+              .foregroundStyle(Color.mgPurpleDark)
               .multilineTextAlignment(.center)
               .padding(.horizontal, 15)
           }
@@ -87,14 +74,14 @@ struct GradesView: View {
             HStack {
               Text("Sort by")
                 .font(.callout)
-                .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
+                .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : .white)
                 .fontWeight(.medium)
                 .padding(.trailing, 1)
               
               Picker("Sort by", selection: $subject.sortBy) {
                 ForEach(Subject.Order.allCases, id: \.self) { element in
                   Text(NSLocalizedString(element.rawValue, comment: ""))
-                    .accessibility(value: Text(Subject.getAccessibilityOrder(or: element)))
+                    .accessibilityValue(Text(Subject.getAccessibilityOrder(or: element)))
                 }
               }
               .pickerStyle(SegmentedPickerStyle())
@@ -105,36 +92,33 @@ struct GradesView: View {
             // ----- Subjects -----
             
             ForEach(subject.grades) { grade in
-              NavigationLink(destination:
+              NavigationLink {
                 EditGradeView(
                   subject: self.subject,
                   grade: grade,
                   gradeValue: "\(grade.value)",
                   scaleValue: "\(grade.scale)"
                 ).environmentObject(self.allSubjects)
-              ) {
+              } label: {
                 GradeListView(subject: self.subject, grade: grade)
-                  .contextMenu(
-                    ContextMenu {
-                      Button(action: {
-                        let feedbackGenerator = UINotificationFeedbackGenerator()
-                        feedbackGenerator.notificationOccurred(.success)
-                        
-                        self.subject.grades.remove(at:
-                          self.subject.grades.firstIndex(of: grade)!
-                        )
-                        self.allSubjects.saveJSON()
-                        
-                        self.subject.computeAverage()
-                        self.allSubjects.computeAverage()
-                      }) {
-                        Text("Remove")
-                        Image(systemName: "trash")
-                      }
+                  .contextMenu {
+                    Button(action: {
+                      let feedbackGenerator = UINotificationFeedbackGenerator()
+                      feedbackGenerator.notificationOccurred(.success)
+                      
+                      self.subject.grades.remove(at:
+                        self.subject.grades.firstIndex(of: grade)!
+                      )
+                      self.allSubjects.saveJSON()
+                      
+                      self.subject.computeAverage()
+                      self.allSubjects.computeAverage()
+                    }) {
+                      Label("Remove", systemImage: "trash")
                     }
-                  )
+                  }
               }
-              .accentColor(Color.black)
+              .tint(Color.black)
               .buttonStyle(ButtonListStyle())
               .padding(.horizontal, 10)
               .padding(.bottom, -12)
@@ -155,19 +139,23 @@ struct GradesView: View {
           
       }
     }
-    .navigationBarTitle(Text(subject.name))
-    .navigationBarItems(trailing:
-      NavigationLink(destination: EditSubjectView(subject: subject).environmentObject(allSubjects)) {
+    .navigationTitle(Text(subject.name))
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
         Button(action: {
-          self.action = 1
+          self.displayEditView = true
         }) {
           Image(systemName: "gear")
             .resizable()
             .frame(width: 23, height: 23)
-            .accessibility(label: Text("Edit the subject"))
+            .accessibilityLabel(Text("Edit the subject"))
         }
       }
-    )
+    }
+    .navigationDestination(isPresented: $displayEditView) {
+      EditSubjectView(subject: subject)
+        .environmentObject(allSubjects)
+    }
     .sheet(isPresented: $displayNewSheet) {
       NewGradeView(subject: self.subject)
         .environmentObject(self.allSubjects)

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EditGradeView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) private var dismiss
   
   @EnvironmentObject var allSubjects: SubjectStore
   
@@ -20,7 +20,8 @@ struct EditGradeView: View {
   @State var scaleValue: String
   
   @State private var showAlert = false
-  
+  @State private var alertType: MGAlertType?
+
   var body: some View {
     ScrollView {
       Spacer(minLength: 20)
@@ -51,7 +52,7 @@ struct EditGradeView: View {
         // cancel
         ButtonFullWidth(type: .warning, title: "Back", iconSysName: "arrow.left") {
           self.allSubjects.loadJSON()
-          self.presentationMode.wrappedValue.dismiss()
+          self.dismiss()
         }
         .frame(width: geometry.size.width/2+7.5, height: 70)
         
@@ -61,7 +62,7 @@ struct EditGradeView: View {
           feedbackGenerator.prepare()
           
           guard !self.grade.name.isEmpty else {
-            Alert.mgType = .nameError
+            self.alertType = .nameError
             self.showAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
@@ -75,7 +76,7 @@ struct EditGradeView: View {
             scaleDouble > 0
           else {
             self.showAlert.toggle()
-            Alert.mgType = .scaleError
+            self.alertType = .scaleError
             
             feedbackGenerator.notificationOccurred(.error)
             return
@@ -88,7 +89,7 @@ struct EditGradeView: View {
             gradeValue >= 0,
             gradeValue <= scaleDouble
           else {
-            Alert.mgType = .valueError
+            self.alertType = .valueError
             self.showAlert.toggle()
             
             feedbackGenerator.notificationOccurred(.error)
@@ -106,7 +107,7 @@ struct EditGradeView: View {
             self.subject.sortGrades()
           }
           
-          self.presentationMode.wrappedValue.dismiss()
+          self.dismiss()
         }
           .frame(width: geometry.size.width/2+7.5, height: 70)
           .offset(x: geometry.size.width/2-7.5)
@@ -120,46 +121,43 @@ struct EditGradeView: View {
         feedbackGenerator.notificationOccurred(.warning)
         
         self.showAlert.toggle()
-        Alert.mgType = .removeWarning
+        self.alertType = .removeWarning
       }
       .padding(.bottom, 15)
     }
-    .navigationBarTitle(Text("Edit the Grade"))
+    .navigationTitle(Text("Edit the Grade"))
     .navigationBarBackButtonHidden(true)
-    .alert(isPresented: $showAlert) {
-      if Alert.mgType != .removeWarning {
-        var message: Text
-        if Alert.mgType == .nameError {
-          message = Text("The grade description can't be empty.")
-        } else {
-          message = Text("The value can't be empty and must be a number between 0 and 20.")
-        }
-        
-        return Alert(
-          title: Text("Something went wrong"),
-          message: message,
-          dismissButton: .default(Text("OK"))
-        )
-      }
-      
-      return Alert(
-        title: Text("Are you sure?"),
-        message: Text("Do you really want to remove this grade?"),
-        primaryButton: .destructive(Text("Remove"), action: {
+    .alert(alertType?.title ?? "", isPresented: $showAlert, presenting: alertType) { type in
+      if type == .removeWarning {
+        Button("Remove", role: .destructive) {
           self.subject.grades.remove(at:
             self.subject.grades.firstIndex(of: self.grade)!
           )
           self.allSubjects.saveJSON()
-          
+
           self.subject.computeAverage()
           self.allSubjects.computeAverage()
-          
-          self.presentationMode.wrappedValue.dismiss()
-        }),
-        secondaryButton: .cancel()
-      )
+
+          self.dismiss()
+        }
+        Button("Cancel", role: .cancel) {}
+      } else {
+        Button("OK") {}
+      }
+    } message: { type in
+      switch type {
+      case .nameError:
+        Text("The grade description can't be empty.")
+      case .valueError:
+        let scaleDouble = Double(self.scaleValue.replacingOccurrences(of: ",", with: ".")) ?? 0
+        Text(NSLocalizedString("The value can't be empty and must be a number between 0 and", comment: "") + " \(scaleDouble).")
+      case .scaleError:
+        Text("The scale can't be empty and must be a number greater than 0.")
+      case .removeWarning:
+        Text("Do you really want to remove this grade?")
+      }
     }
-  }
+}
 }
 
 #Preview {

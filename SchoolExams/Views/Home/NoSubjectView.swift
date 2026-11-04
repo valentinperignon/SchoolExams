@@ -21,15 +21,15 @@ struct NoSubjectView: View {
         .resizable()
         .scaledToFit()
         .padding(.horizontal, 40)
-        .foregroundColor(colorScheme == .light ? .mgPurpleLight : .appleDarkGray5)
-        .accessibility(hidden: true)
+        .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : .appleDarkGray5)
+        .accessibilityHidden(true)
       
       VStack {
         Text("No Subject")
           .font(.title)
           .fontWeight(.bold)
         Text("You need to add at least one subject")
-          .foregroundColor(.mgPurpleDark)
+          .foregroundStyle(Color.mgPurpleDark)
           .multilineTextAlignment(.center)
       }
       .accessibilityElement(children: .combine)

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NewSubjectView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) private var dismiss
   
   @EnvironmentObject var allSubjects: SubjectStore
   
@@ -56,20 +56,18 @@ struct NewSubjectView: View {
             self.allSubjects.subjects.append(
               Subject(name: self.name, color: self.accentColor, coefficient: self.coefficient, tag: self.allSubjects.subjects.count)
             )
-            self.presentationMode.wrappedValue.dismiss()
+            self.dismiss()
           }
         }
         
         Spacer()
       }
-      .alert(isPresented: $showAlert) {
-        Alert(
-          title: Text("Something went wrong"),
-          message: Text("The name of the subject can't be empty."),
-          dismissButton: .default(Text("OK"))
-        )
+      .alert("Something went wrong", isPresented: $showAlert) {
+        Button("OK") {}
+      } message: {
+        Text("The name of the subject can't be empty.")
       }
-    }
+}
   }
 }
 

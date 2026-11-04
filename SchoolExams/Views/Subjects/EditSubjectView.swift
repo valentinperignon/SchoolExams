@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct EditSubjectView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) private var dismiss
   
   @EnvironmentObject var allSubjects: SubjectStore
   
   @ObservedObject var subject: Subject
   
   @State private var showAlert = false
-  @State private var action: Int? = 0
+  @State private var alertType: MGAlertType?
+@State private var action: Int? = 0
   
   var body: some View {
     ScrollView {
@@ -49,7 +50,7 @@ struct EditSubjectView: View {
           // cancel
           ButtonFullWidth(type: .warning, title: "Back", iconSysName: "arrow.left") {
             self.allSubjects.loadJSON()
-            self.presentationMode.wrappedValue.dismiss()
+            self.dismiss()
           }
           .frame(width: geometry.size.width/2+7.5, height: 50)
           .padding(.bottom, 20)
@@ -60,7 +61,7 @@ struct EditSubjectView: View {
             feedbackGenerator.prepare()
             
             guard !self.subject.name.isEmpty else {
-              Alert.mgType = .nameError
+              self.alertType = .nameError
               self.showAlert.toggle()
               
               feedbackGenerator.notificationOccurred(.error)
@@ -71,7 +72,7 @@ struct EditSubjectView: View {
             
             self.allSubjects.computeAverage()
             self.allSubjects.saveJSON()
-            self.presentationMode.wrappedValue.dismiss()
+            self.dismiss()
           }
           .frame(width: geometry.size.width/2+7.5, height: 50)
           .offset(x: geometry.size.width/2-7.5)
@@ -84,7 +85,7 @@ struct EditSubjectView: View {
           let feedbackGenerator = UINotificationFeedbackGenerator()
           feedbackGenerator.notificationOccurred(.warning)
           
-          Alert.mgType = .removeWarning
+          self.alertType = .removeWarning
           self.showAlert.toggle()
         }
       }
@@ -92,32 +93,30 @@ struct EditSubjectView: View {
       
       Spacer(minLength: 20)
     }
-    .navigationBarTitle(Text("Edit the Subject"))
+    .navigationTitle(Text("Edit the Subject"))
     .navigationBarBackButtonHidden(true)
-    .alert(isPresented: $showAlert) {
-      if Alert.mgType == .nameError {
-        return Alert(
-          title: Text("Something went wrong"),
-          message: Text("The name of the subject can't be empty."),
-          dismissButton: .default(Text("OK"))
-        )
-      }
-      
-      return Alert(
-        title: Text("Are you sure?"),
-        message: Text("Do you really want to remove this subject?"),
-        primaryButton: .destructive(Text("Remove"), action: {
+    .alert(alertType?.title ?? "", isPresented: $showAlert, presenting: alertType) { type in
+      if type == .removeWarning {
+        Button("Remove", role: .destructive) {
           self.allSubjects.subjects.remove(at:
-                                            self.allSubjects.subjects.firstIndex(of: self.subject)!
+            self.allSubjects.subjects.firstIndex(of: self.subject)!
           )
           self.allSubjects.computeAverage()
-          
-          self.presentationMode.wrappedValue.dismiss()
-        }),
-        secondaryButton: .cancel()
-      )
+
+          self.dismiss()
+        }
+        Button("Cancel", role: .cancel) {}
+      } else {
+        Button("OK") {}
+      }
+    } message: { type in
+      if type == .removeWarning {
+        Text("Do you really want to remove this subject?")
+      } else {
+        Text("The name of the subject can't be empty.")
+      }
     }
-  }
+}
 }
 
 #Preview {

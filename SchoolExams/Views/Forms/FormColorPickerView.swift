@@ -28,7 +28,7 @@ struct FormColorPickerView: View {
                 .resizable()
                 .frame(width: 14, height: 14)
                 .scaledToFit()
-                .foregroundColor(Subject.getColor(subjectColor: element).light)
+                .foregroundStyle(Subject.getColor(subjectColor: element).light)
             }
           }
           .frame(width: 30, height: 30)
@@ -40,7 +40,7 @@ struct FormColorPickerView: View {
           .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
             self.value = element
           })
-          .accessibility(label: Text(NSLocalizedString(element.rawValue, comment: "")))
+          .accessibilityLabel(Text(NSLocalizedString(element.rawValue, comment: "")))
         }
         
         Spacer()

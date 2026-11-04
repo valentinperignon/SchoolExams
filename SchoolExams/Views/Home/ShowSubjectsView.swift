@@ -17,14 +17,14 @@ struct SortTools: View {
         HStack {
           Text("Sort by")
             .font(.callout)
-            .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
+            .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : .white)
             .fontWeight(.medium)
             .padding(.trailing, 1)
 
           Picker("Sort by", selection: $allSubjects.sortBy) {
             ForEach(SubjectStore.Order.allCases, id: \.self) { element in
               Text(NSLocalizedString(element.rawValue, comment: ""))
-                .accessibility(value: Text(SubjectStore.getAccessibilityOrder(or: element)))
+                .accessibilityValue(Text(SubjectStore.getAccessibilityOrder(or: element)))
             }
           }
           .pickerStyle(SegmentedPickerStyle())
@@ -48,26 +48,25 @@ struct ShowSubjectsView: View {
       // ----- Subjects -----
       
       ForEach(allSubjects.subjects) { subject in
-        NavigationLink(destination: GradesView(subject: subject)) {
+        NavigationLink {
+          GradesView(subject: subject)
+        } label: {
           SubjectListView(subject: subject)
-            .contextMenu(
-              ContextMenu {
-                Button(action: {
-                  let feedbackGenerator = UINotificationFeedbackGenerator()
-                  feedbackGenerator.notificationOccurred(.success)
-                  
-                  self.allSubjects.subjects.remove(at:
-                    self.allSubjects.subjects.firstIndex(of: subject)!
-                  )
-                  self.allSubjects.computeAverage()
-                }) {
-                  Text("Remove")
-                  Image(systemName: "trash")
-                }
+            .contextMenu {
+              Button(action: {
+                let feedbackGenerator = UINotificationFeedbackGenerator()
+                feedbackGenerator.notificationOccurred(.success)
+                
+                self.allSubjects.subjects.remove(at:
+                  self.allSubjects.subjects.firstIndex(of: subject)!
+                )
+                self.allSubjects.computeAverage()
+              }) {
+                Label("Remove", systemImage: "trash")
               }
-            )
+            }
         }
-        .accentColor(Color.black)
+        .tint(Color.black)
         .buttonStyle(ButtonListStyle())
         .padding(.horizontal, 10)
         .padding(.bottom, -12)

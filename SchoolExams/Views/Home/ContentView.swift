@@ -16,7 +16,7 @@ struct ContentView: View {
   @State var showNewSubjectSheet = false
   
   var body: some View {
-    NavigationView {
+    NavigationStack {
       if allSubjects.subjects.isEmpty {
         NoSubjectView(showSheet: $showNewSubjectSheet)
           .padding(.horizontal, 15)
@@ -47,7 +47,7 @@ struct ContentViewNavigationModifier: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-      .navigationBarTitle(
+      .navigationTitle(
         Text("My Subjects")
       )
       .toolbarTitleDisplayMode(.inlineLarge)

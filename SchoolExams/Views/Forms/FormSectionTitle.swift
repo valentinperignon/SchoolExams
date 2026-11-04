@@ -18,7 +18,7 @@ struct FormSectionTitle: View {
         Text(NSLocalizedString(title, comment: "").uppercased())
           .font(.caption)
           .fontWeight(.bold)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .mgPurpleLight_dark)
+          .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : .mgPurpleLight_dark)
         Spacer()
       }
   }

@@ -295,6 +295,29 @@
         }
       }
     },
+    "Cancel" : {
+      "comment" : "Alerts – Buttons",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        }
+      }
+    },
     "coeff %@" : {
 
     },
@@ -468,7 +491,27 @@
       }
     },
     "Do you really want to remove this subject?" : {
-
+      "comment" : "Alerts – Messages",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar esta asignatura?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous vraiment supprimer cette matière ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuoi davvero eliminare questa materia?"
+          }
+        }
+      }
     },
     "Edit the Grade" : {
       "comment" : "NewGradeView & EditGradeView – Header",
@@ -1200,7 +1243,6 @@
     },
     "The value can't be empty and must be a number between 0 and" : {
       "comment" : "Alerts – Messages",
-      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1221,9 +1263,6 @@
           }
         }
       }
-    },
-    "The value can't be empty and must be a number between 0 and 20." : {
-
     },
     "Unknown error." : {
       "comment" : "Alerts – Messages",

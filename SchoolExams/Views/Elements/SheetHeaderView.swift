@@ -20,18 +20,18 @@ struct SheetHeaderView: View {
         Text(NSLocalizedString(title, comment: ""))
           .font(.largeTitle)
           .fontWeight(.bold)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
+          .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : .white)
         Spacer()
       }
       HStack {
         Text(NSLocalizedString(subtitle, comment: ""))
           .font(.callout)
-          .foregroundColor(colorScheme == .light ? .mgPurpleDark : .white)
+          .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : .white)
         Spacer()
       }
     }
     .accessibilityElement(children: .combine)
-    .accessibility(addTraits: .isHeader)
+    .accessibilityAddTraits(.isHeader)
     .padding([.horizontal, .bottom])
     .padding(.top, 60)
     .background(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
