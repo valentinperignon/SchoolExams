@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A762406F309BE004006C48FF /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = A762406E309BE004006C48FF /* AppIcon.icon */; };
 		F90F6FFA24D44BDA00D06FD9 /* FormTextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */; };
 		F91BB61D24D373640044C2E6 /* NewSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91BB61C24D373640044C2E6 /* NewSubjectView.swift */; };
 		F93FB55324EBFE4C00874D8C /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB55224EBFE4C00874D8C /* Average.swift */; };
@@ -52,7 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F9E7A4BE24E6CAF80084DA8B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A762406E309BE004006C48FF /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		F90F6FF924D44BDA00D06FD9 /* FormTextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextAreaView.swift; sourceTree = "<group>"; };
 		F91BB61C24D373640044C2E6 /* NewSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSubjectView.swift; sourceTree = "<group>"; };
 		F93FB55224EBFE4C00874D8C /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
@@ -60,7 +61,7 @@
 		F93FB55624EC00C500874D8C /* SubjectStore+Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubjectStore+Order.swift"; sourceTree = "<group>"; };
 		F94C1BC124F32B24002853D7 /* ButtonListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonListStyle.swift; sourceTree = "<group>"; };
 		F9501D8324E55F8F003169E2 /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
-		F9501D8524E583C5003169E2 /* MGAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MGAlertType.swift"; sourceTree = "<group>"; };
+		F9501D8524E583C5003169E2 /* MGAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGAlertType.swift; sourceTree = "<group>"; };
 		F96AB67824E17A9A00476A09 /* EditSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectView.swift; sourceTree = "<group>"; };
 		F96AB67A24E17ACA00476A09 /* SheetHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHeaderView.swift; sourceTree = "<group>"; };
 		F978B24824F1744C00C8EA89 /* ButtonCircleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircleStyle.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		F9DB0DFA24D57B6A0023E369 /* GradeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeListView.swift; sourceTree = "<group>"; };
 		F9DB0DFC24D57D3D0023E369 /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		F9DB0DFE24D59C390023E369 /* NewGradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGradeView.swift; sourceTree = "<group>"; };
+		F9E7A4BE24E6CAF80084DA8B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F9E7F47624D4B30C000744D5 /* FormStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormStepperView.swift; sourceTree = "<group>"; };
 		F9E7F47824D4B432000744D5 /* FormSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSectionTitle.swift; sourceTree = "<group>"; };
 		F9EE73A226DAA784002B0523 /* NoSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSubjectView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				F9CFFDE824CC6C95007E57C1 /* Models */,
 				F9CFFDE924CC6C9B007E57C1 /* Views */,
 				F9CFFDD424CC6C68007E57C1 /* SchoolExamsApp.swift */,
+				A762406E309BE004006C48FF /* AppIcon.icon */,
 				F9CFFDDA24CC6C68007E57C1 /* Assets.xcassets */,
 				F9CFFDDF24CC6C68007E57C1 /* LaunchScreen.storyboard */,
 				F9CFFDE224CC6C68007E57C1 /* Info.plist */,
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9CFFDE124CC6C68007E57C1 /* LaunchScreen.storyboard in Resources */,
+				A762406F309BE004006C48FF /* AppIcon.icon in Resources */,
 				F9E7A4BC24E6CAF80084DA8B /* Localizable.xcstrings in Resources */,
 				F9CFFDDB24CC6C68007E57C1 /* Assets.xcassets in Resources */,
 			);
@@ -520,12 +524,12 @@
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SchoolExams/Info.plist;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentinperignon.MyGrades;
 				PRODUCT_NAME = SchoolExams;
@@ -544,12 +548,12 @@
 				DEVELOPMENT_TEAM = LYG6796H6N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SchoolExams/Info.plist;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.valentinperignon.MyGrades;
 				PRODUCT_NAME = SchoolExams;
