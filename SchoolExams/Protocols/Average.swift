@@ -7,9 +7,9 @@
 //
 
 protocol Average {
-  var average: Double { get set }
-  var averageDisplay: String { get set }
-  
-  func computeAverage()
-  func averageToString() -> String
+    var average: Double { get set }
+    var averageDisplay: String { get set }
+
+    func computeAverage()
+    func averageToString() -> String
 }

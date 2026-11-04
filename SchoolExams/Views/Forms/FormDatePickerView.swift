@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct FormDatePickerView: View {
-  var title: String
-  
-  @Binding var selectedDate: Date
-  
-  var body: some View {
-    VStack {
-      FormSectionTitle(title: title)
-      
-      DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: .date)
-        .labelsHidden()
+    var title: String
+
+    @Binding var selectedDate: Date
+
+    var body: some View {
+        VStack {
+            FormSectionTitle(title: title)
+
+            DatePicker("", selection: $selectedDate, in: ...Date(), displayedComponents: .date)
+                .labelsHidden()
+        }
+        .padding(.horizontal, 15)
     }
-    .padding(.horizontal, 15)
-  }
 }
 
 #Preview {
-  FormDatePickerView(title: "Date", selectedDate: .constant(Date()))
+    FormDatePickerView(title: "Date", selectedDate: .constant(Date()))
 }

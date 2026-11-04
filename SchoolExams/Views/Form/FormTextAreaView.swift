@@ -9,32 +9,32 @@
 import SwiftUI
 
 struct FormTextFieldView: View {
-  // MARK: Property
-  
-  var keyboardType: UIKeyboardType
-  
-  var title: String
-  @Binding var textValue: String
-  
-  // MARK: Body
-  
-  var body: some View {
-    VStack {
-      // ----- Title
-      FormSectionTitle(title: title)
-      
-      // ----- Field
-      TextField("Type something here", text: $textValue)
-        .keyboardType(keyboardType)
-        .padding(.horizontal)
-        .padding(.vertical, 12)
-        .background(Color.appleGray)
-        .cornerRadius(8)
+    // MARK: Property
+
+    var keyboardType: UIKeyboardType
+
+    var title: String
+    @Binding var textValue: String
+
+    // MARK: Body
+
+    var body: some View {
+        VStack {
+            // ----- Title
+            FormSectionTitle(title: title)
+
+            // ----- Field
+            TextField("Type something here", text: $textValue)
+                .keyboardType(keyboardType)
+                .padding(.horizontal)
+                .padding(.vertical, 12)
+                .background(Color.appleGray)
+                .cornerRadius(8)
+        }
+        .padding(.horizontal, 15)
     }
-    .padding(.horizontal, 15)
-  }
 }
 
 #Preview {
-  FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
+    FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
 }

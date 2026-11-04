@@ -9,80 +9,79 @@
 import SwiftUI
 
 struct AverageView: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  var average: String
-  let radius = CGFloat(27)
-  
-  // MARK: Body
-  
-  var body: some View {
-    VStack(alignment: .center, spacing: 0) {
-      HStack(alignment: .center) {
-        // ----- Icon
-        ZStack {
-          Rectangle()
-            .fill(Color.white)
-          
-          Image("Calculator")
-            .renderingMode(.template)
-            .resizable()
-            .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleDark_dark)
-            .frame(width: 50, height: 50)
-            .accessibilityHidden(true)
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
+    var average: String
+    let radius = CGFloat(27)
+
+    // MARK: Body
+
+    var body: some View {
+        VStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center) {
+                // ----- Icon
+                ZStack {
+                    Rectangle()
+                        .fill(Color.white)
+
+                    Image("Calculator")
+                        .renderingMode(.template)
+                        .resizable()
+                        .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleDark_dark)
+                        .frame(width: 50, height: 50)
+                        .accessibilityHidden(true)
+                }
+                .frame(width: 75, height: 75)
+                .clipShape(Circle())
+                .padding(.trailing, 5)
+
+                // ----- Text
+                VStack {
+                    // Title
+                    HStack {
+                        Text("Average")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
+                            .padding(.bottom, 4)
+                        Spacer()
+                    }
+
+                    // Average grade
+                    HStack {
+                        Text("\(average)/20")
+                            .font(.largeTitle)
+                            .fontWeight(.light)
+                            .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
+                            .accessibilityLabel(
+                                Text(average != "-"
+                                    ? "\(average) " + NSLocalizedString("over 20", comment: "") + "."
+                                    : NSLocalizedString("No Grade.", comment: ""))
+                            )
+                        Spacer()
+                    }
+                }
+            }
+            .padding(.horizontal, 15)
+            .padding(.top, 5)
+            .padding(.bottom, 10)
+
+            ZStack {
+                Rectangle()
+                    .fill(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
+
+                MGRoundedRectangle(radius: 15)
+                    .fill(colorScheme == .light ? Color.white : Color.black)
+            }
+            .frame(height: 20)
         }
-        .frame(width: 75, height: 75)
-        .clipShape(Circle())
-        .padding(.trailing, 5)
-        
-        // ----- Text
-        VStack {
-          // Title
-          HStack {
-            Text("Average")
-              .font(.headline)
-              .fontWeight(.bold)
-              .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
-              .padding(.bottom, 4)
-            Spacer()
-          }
-          
-          // Average grade
-          HStack {
-            Text("\(average)/20")
-              .font(.largeTitle)
-              .fontWeight(.light)
-              .foregroundStyle(colorScheme == .light ? Color.mgPurpleDark : Color.white)
-              .accessibilityLabel(
-                Text(average != "-"
-                  ? "\(average) " + NSLocalizedString("over 20", comment: "") + "."
-                  : NSLocalizedString("No Grade.", comment: "")
-                )
-              )
-            Spacer()
-          }
-        }
-      }
-      .padding(.horizontal, 15)
-      .padding(.top, 5)
-      .padding(.bottom, 10)
-      
-      ZStack {
-        Rectangle()
-          .fill(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
-        
-        MGRoundedRectangle(radius: 15)
-          .fill(colorScheme == .light ? Color.white : Color.black)
-      }
-      .frame(height: 20)
+        .frame(maxWidth: .infinity)
+        .background(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
+        .accessibilityElement(children: .combine)
     }
-    .frame(maxWidth: .infinity)
-    .background(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
-    .accessibilityElement(children: .combine)
-  }
 }
 
 #Preview {
-  AverageView(average: "-")
-    .environment(\.colorScheme, .dark)
+    AverageView(average: "-")
+        .environment(\.colorScheme, .dark)
 }

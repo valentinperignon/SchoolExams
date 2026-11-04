@@ -9,31 +9,32 @@
 import SwiftUI
 
 struct FormStepperView: View {
-  // Properties
-  
-  var title: String
-  
-  @Binding var value: Double
-  
-  var incrementAction: () -> Void
-  var decrementAction: () -> Void
-  
-  // MARK: Body
-  var body: some View {
-    VStack {
-      FormSectionTitle(title: title)
-      
-      Stepper(
-        onIncrement: incrementAction,
-        onDecrement: decrementAction
-      ) {
-          Text("\(self.value.description)")
-      }
+    // Properties
+
+    var title: String
+
+    @Binding var value: Double
+
+    var incrementAction: () -> Void
+    var decrementAction: () -> Void
+
+    // MARK: Body
+
+    var body: some View {
+        VStack {
+            FormSectionTitle(title: title)
+
+            Stepper(
+                onIncrement: incrementAction,
+                onDecrement: decrementAction
+            ) {
+                Text("\(self.value.description)")
+            }
+        }
+        .padding(.horizontal, 15)
     }
-    .padding(.horizontal, 15)
-  }
 }
 
 #Preview {
-  FormStepperView(title: "My title", value: .constant(5), incrementAction: {}, decrementAction: {})
+    FormStepperView(title: "My title", value: .constant(5), incrementAction: {}, decrementAction: {})
 }

@@ -9,23 +9,23 @@
 import SwiftUI
 
 struct FormSectionTitle: View {
-  // MARK: Property
-  
-  var title: String
-  
-  // MARK: Body
-  
-  var body: some View {
-      HStack {
-        Text(title.uppercased())
-          .font(.caption)
-          .fontWeight(.bold)
-          .foregroundColor(.mgPurpleDark)
-        Spacer()
-      }
-  }
+    // MARK: Property
+
+    var title: String
+
+    // MARK: Body
+
+    var body: some View {
+        HStack {
+            Text(title.uppercased())
+                .font(.caption)
+                .fontWeight(.bold)
+                .foregroundColor(.mgPurpleDark)
+            Spacer()
+        }
+    }
 }
 
 #Preview {
-  FormSectionTitle(title: "My title")
+    FormSectionTitle(title: "My title")
 }

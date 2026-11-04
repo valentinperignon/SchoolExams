@@ -9,26 +9,26 @@
 import SwiftUI
 
 struct ButtonCircle: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  var action: () -> Void
-  
-  var body: some View {
-    Button(action: action) {
-      Image(systemName: "plus")
-        .font(.title)
-        .padding()
-        .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight_dark)
-        .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
-        .clipShape(Circle())
-        .shadow(radius: 10)
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "plus")
+                .font(.title)
+                .padding()
+                .background(colorScheme == .light ? Color.mgPurpleDark : Color.mgPurpleLight_dark)
+                .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : Color.mgPurpleDark_dark)
+                .clipShape(Circle())
+                .shadow(radius: 10)
+        }
+        .buttonStyle(ButtonCircleStyle())
+        .padding(.trailing, 22)
+        .padding(.bottom, 20)
     }
-    .buttonStyle(ButtonCircleStyle())
-    .padding(.trailing, 22)
-    .padding(.bottom, 20)
-  }
 }
 
 #Preview {
-  ButtonCircle(action: {})
+    ButtonCircle(action: {})
 }

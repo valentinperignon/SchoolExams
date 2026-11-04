@@ -1,5 +1,5 @@
 //
-//  Button.swift
+//  Button+ButtonType.swift
 //  MyGrades
 //
 //  Created by Valentin Perignon on 08/08/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 public extension Button {
-  enum buttonType {
-    case primary, alert
-  }
+    enum buttonType {
+        case primary, alert
+    }
 }

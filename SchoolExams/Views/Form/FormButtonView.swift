@@ -9,29 +9,29 @@
 import SwiftUI
 
 struct FormButtonView: View {
-  // MARK: Property
-  
-  var label: String
-  var action: () -> Void
-  
-  // MARK: Body
-  
-  var body: some View {
-    Button(action: action) {
-      HStack {
-        Spacer()
-        Text(label)
-        Spacer()
-      }
+    // MARK: Property
+
+    var label: String
+    var action: () -> Void
+
+    // MARK: Body
+
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Spacer()
+                Text(label)
+                Spacer()
+            }
+        }
+        .accentColor(.primary)
+        .padding(.vertical, 15)
+        .background(Color.mgPurpleLight)
+        .cornerRadius(10)
+        .padding(.horizontal, 15)
     }
-    .accentColor(.primary)
-    .padding(.vertical, 15)
-    .background(Color.mgPurpleLight)
-    .cornerRadius(10)
-    .padding(.horizontal,15)
-  }
 }
 
 #Preview {
-  FormButtonView(label: "Button Text") {}
+    FormButtonView(label: "Button Text") {}
 }

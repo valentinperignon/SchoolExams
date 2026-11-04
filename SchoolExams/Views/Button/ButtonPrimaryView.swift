@@ -9,33 +9,33 @@
 import SwiftUI
 
 struct ButtonPrimaryView: View {
-  // MARK: Properties
-  
-  var iconName: String?
-  var label: String
-  var action: () -> Void
-  
-  // MARK: Body
-  
-  var body: some View {
-    Button(action: action) {
-      HStack {
-        if let icon = iconName {
-          Image(systemName: icon)
-            .foregroundColor(.black)
+    // MARK: Properties
+
+    var iconName: String?
+    var label: String
+    var action: () -> Void
+
+    // MARK: Body
+
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                if let icon = iconName {
+                    Image(systemName: icon)
+                        .foregroundColor(.black)
+                }
+                Text(label)
+                    .foregroundColor(.black)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
         }
-        Text(label)
-          .foregroundColor(.black)
-      }
-      .frame(maxWidth: .infinity)
-      .padding()
+        .background(Color.mgPurpleLight)
+        .cornerRadius(10)
+        .padding(.horizontal, 15)
     }
-    .background(Color.mgPurpleLight)
-    .cornerRadius(10)
-    .padding(.horizontal, 15)
-  }
 }
 
 #Preview {
-  ButtonPrimaryView(iconName: "plus", label: "New Grade", action: {})
+    ButtonPrimaryView(iconName: "plus", label: "New Grade", action: {})
 }

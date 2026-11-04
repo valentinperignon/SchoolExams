@@ -1,5 +1,5 @@
 //
-//  SubjectColor.swift
+//  Subject+CustomColor.swift
 //  MyGrades
 //
 //  Created by Valentin Perignon on 26/07/2020.
@@ -9,14 +9,14 @@
 import Foundation
 
 extension Subject {
-  /// All possible colors for a subject
-  enum CustomColor: String, CaseIterable, Codable {
-    case blue
-    case gray
-    case green
-    case orange
-    case purple
-    case red
-    case yellow
-  }
+    /// All possible colors for a subject
+    enum CustomColor: String, CaseIterable, Codable {
+        case blue
+        case gray
+        case green
+        case orange
+        case purple
+        case red
+        case yellow
+    }
 }

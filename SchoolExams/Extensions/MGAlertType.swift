@@ -9,12 +9,12 @@
 import SwiftUI
 
 enum MGAlertType {
-  case nameError
-  case valueError
-  case scaleError
-  case removeWarning
+    case nameError
+    case valueError
+    case scaleError
+    case removeWarning
 
-  var title: LocalizedStringKey {
-    self == .removeWarning ? "Are you sure?" : "Something went wrong"
-  }
+    var title: LocalizedStringKey {
+        self == .removeWarning ? "Are you sure?" : "Something went wrong"
+    }
 }

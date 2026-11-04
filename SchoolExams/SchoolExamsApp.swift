@@ -10,12 +10,12 @@ import SwiftUI
 
 @main
 struct SchoolExamsApp: App {
-  @StateObject private var allSubjects = SubjectStore()
+    @StateObject private var allSubjects = SubjectStore()
 
-  var body: some Scene {
-    WindowGroup {
-      ContentView()
-        .environmentObject(allSubjects)
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(allSubjects)
+        }
     }
-  }
 }

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  File+DocumentsURL.swift
 //  MyGrades
 //
 //  Created by Valentin Perignon on 26/07/2020.
@@ -9,5 +9,5 @@
 import Foundation
 
 extension FileManager {
-  static var userDocumentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static var userDocumentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 }

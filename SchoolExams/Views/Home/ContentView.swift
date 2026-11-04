@@ -6,58 +6,58 @@
 //  Copyright © 2020 Valentin Perignon. All rights reserved.
 //
 
-import SwiftUI
 import StoreKit
+import SwiftUI
 
 struct ContentView: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
-  
-  @EnvironmentObject var allSubjects: SubjectStore
-  @State var showNewSubjectSheet = false
-  
-  var body: some View {
-    NavigationStack {
-      if allSubjects.subjects.isEmpty {
-        NoSubjectView(showSheet: $showNewSubjectSheet)
-          .padding(.horizontal, 15)
-          .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
-      } else {
-        ZStack(alignment: .bottomTrailing) {
-          ShowSubjectsView()
-            .environmentObject(allSubjects)
-            .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
-          
-          ButtonCircle {
-            let feedbackGenerator = UISelectionFeedbackGenerator()
-            feedbackGenerator.selectionChanged()
-            showNewSubjectSheet.toggle()
-          }
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+
+    @EnvironmentObject var allSubjects: SubjectStore
+    @State var showNewSubjectSheet = false
+
+    var body: some View {
+        NavigationStack {
+            if allSubjects.subjects.isEmpty {
+                NoSubjectView(showSheet: $showNewSubjectSheet)
+                    .padding(.horizontal, 15)
+                    .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
+            } else {
+                ZStack(alignment: .bottomTrailing) {
+                    ShowSubjectsView()
+                        .environmentObject(allSubjects)
+                        .modifier(ContentViewNavigationModifier(displaySheet: $showNewSubjectSheet))
+
+                    ButtonCircle {
+                        let feedbackGenerator = UISelectionFeedbackGenerator()
+                        feedbackGenerator.selectionChanged()
+                        showNewSubjectSheet.toggle()
+                    }
+                }
+            }
         }
-      }
+        .sheet(isPresented: $showNewSubjectSheet) {
+            NewSubjectView()
+                .environmentObject(self.allSubjects)
+        }
     }
-    .sheet(isPresented: $showNewSubjectSheet) {
-      NewSubjectView()
-        .environmentObject(self.allSubjects)
-    }
-  }
 }
 
 struct ContentViewNavigationModifier: ViewModifier {
-  @Binding var displaySheet: Bool
-  
-  func body(content: Content) -> some View {
-    content
-      .navigationTitle(
-        Text("My Subjects")
-      )
-      .toolbarTitleDisplayMode(.inlineLarge)
-  }
+    @Binding var displaySheet: Bool
+
+    func body(content: Content) -> some View {
+        content
+            .navigationTitle(
+                Text("My Subjects")
+            )
+            .toolbarTitleDisplayMode(.inlineLarge)
+    }
 }
 
 #Preview {
-  let store = SubjectStore()
-  store.subjects.append(Subject(name: "Test", color: .orange, coefficient: 1, tag: 1))
+    let store = SubjectStore()
+    store.subjects.append(Subject(name: "Test", color: .orange, coefficient: 1, tag: 1))
 
-  return ContentView()
-    .environmentObject(store)
+    return ContentView()
+        .environmentObject(store)
 }

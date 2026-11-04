@@ -9,29 +9,29 @@
 import SwiftUI
 
 struct FormSegmentedPickerView: View {
-  // MARK:: Property
-  
-  var title: String
-  
-  @Binding var value: SubjectColor
-  
-  // MARK: Body
-  
-  var body: some View {
-    VStack {
-      FormSectionTitle(title: title)
-      
-      Picker("", selection: $value) {
-        ForEach(SubjectColor.allCases, id: \.self) { element in
-          Text(element.rawValue)
+    // MARK: Property
+
+    var title: String
+
+    @Binding var value: SubjectColor
+
+    // MARK: Body
+
+    var body: some View {
+        VStack {
+            FormSectionTitle(title: title)
+
+            Picker("", selection: $value) {
+                ForEach(SubjectColor.allCases, id: \.self) { element in
+                    Text(element.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
         }
-      }
-    .pickerStyle(SegmentedPickerStyle())
+        .padding(.horizontal, 15)
     }
-    .padding(.horizontal, 15)
-  }
 }
 
 #Preview {
-  FormSegmentedPickerView(title: "My title", value: .constant(SubjectColor.purple))
+    FormSegmentedPickerView(title: "My title", value: .constant(SubjectColor.purple))
 }

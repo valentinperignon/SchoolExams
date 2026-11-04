@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct ButtonFullWidthStyle: ButtonStyle {
-  func makeBody(configuration: Configuration) -> some View {
-    configuration.label
-      .scaleEffect(configuration.isPressed ? 1.03 : 1)
-  }
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 1.03 : 1)
+    }
 }

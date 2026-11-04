@@ -9,44 +9,44 @@
 import SwiftUI
 
 struct NoSubjectView: View {
-  @Environment(\.colorScheme) var colorScheme: ColorScheme
-  @Binding var showSheet: Bool
-  
-  var body: some View {
-    VStack {
-      Spacer()
-      
-      Image("NothingToPrint")
-        .renderingMode(.template)
-        .resizable()
-        .scaledToFit()
-        .padding(.horizontal, 40)
-        .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : .appleDarkGray5)
-        .accessibilityHidden(true)
-      
-      VStack {
-        Text("No Subject")
-          .font(.title)
-          .fontWeight(.bold)
-        Text("You need to add at least one subject")
-          .foregroundStyle(Color.mgPurpleDark)
-          .multilineTextAlignment(.center)
-      }
-      .accessibilityElement(children: .combine)
-      
-      Spacer()
-      
-      ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
-        let feedbackGenerator = UISelectionFeedbackGenerator()
-        feedbackGenerator.selectionChanged()
-        
-        showSheet.toggle()
-      }
-      .padding(.bottom, 30)
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @Binding var showSheet: Bool
+
+    var body: some View {
+        VStack {
+            Spacer()
+
+            Image("NothingToPrint")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .padding(.horizontal, 40)
+                .foregroundStyle(colorScheme == .light ? Color.mgPurpleLight : .appleDarkGray5)
+                .accessibilityHidden(true)
+
+            VStack {
+                Text("No Subject")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("You need to add at least one subject")
+                    .foregroundStyle(Color.mgPurpleDark)
+                    .multilineTextAlignment(.center)
+            }
+            .accessibilityElement(children: .combine)
+
+            Spacer()
+
+            ButtonFullWidth(type: .primary, title: "New Subject", iconSysName: "plus") {
+                let feedbackGenerator = UISelectionFeedbackGenerator()
+                feedbackGenerator.selectionChanged()
+
+                showSheet.toggle()
+            }
+            .padding(.bottom, 30)
+        }
     }
-  }
 }
 
 #Preview {
-  NoSubjectView(showSheet: .constant(false))
+    NoSubjectView(showSheet: .constant(false))
 }
