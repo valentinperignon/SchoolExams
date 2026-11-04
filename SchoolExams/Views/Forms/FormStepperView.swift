@@ -26,8 +26,6 @@ struct FormStepperView: View {
   }
 }
 
-struct FormStepperView_Previews: PreviewProvider {
-    static var previews: some View {
-      FormStepperView(title: "My title", value: .constant(5), range: 0...20, step: 0.5)
-    }
+#Preview {
+  FormStepperView(title: "My title", value: .constant(5), range: 0...20, step: 0.5)
 }

@@ -32,8 +32,6 @@ struct FormSegmentedPickerView: View {
   }
 }
 
-struct FormSegmentedPickerView_Previews: PreviewProvider {
-  static var previews: some View {
-    FormSegmentedPickerView(title: "My title", value: .constant(SubjectColor.purple))
-  }
+#Preview {
+  FormSegmentedPickerView(title: "My title", value: .constant(SubjectColor.purple))
 }

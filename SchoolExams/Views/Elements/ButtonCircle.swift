@@ -29,8 +29,6 @@ struct ButtonCircle: View {
   }
 }
 
-struct ButtonCircle_Previews: PreviewProvider {
-  static var previews: some View {
-    ButtonCircle(action: {})
-  }
+#Preview {
+  ButtonCircle(action: {})
 }

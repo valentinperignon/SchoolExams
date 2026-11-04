@@ -37,10 +37,8 @@ struct MGRoundedRectangle: Shape {
   }
 }
 
-struct MGRoundedRectangle_Previews: PreviewProvider {
-  static var previews: some View {
-    MGRoundedRectangle(radius: 15)
-      .stroke(Color.blue)
-      .frame(height: 20)
-  }
+#Preview {
+  MGRoundedRectangle(radius: 15)
+    .stroke(Color.blue)
+    .frame(height: 20)
 }

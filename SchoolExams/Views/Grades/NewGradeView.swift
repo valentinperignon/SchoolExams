@@ -135,9 +135,7 @@ struct NewGradeView: View {
   }
 }
 
-struct NewGradeView_Previews: PreviewProvider {
-  static var previews: some View {
-    NewGradeView(subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0))
-      .environmentObject(SubjectStore())
-  }
+#Preview {
+  NewGradeView(subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0))
+    .environmentObject(SubjectStore())
 }

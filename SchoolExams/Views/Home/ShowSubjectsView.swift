@@ -78,9 +78,7 @@ struct ShowSubjectsView: View {
   }
 }
 
-struct ShowSubjectsView_Previews: PreviewProvider {
-  static var previews: some View {
-    ShowSubjectsView()
-          .environmentObject(SubjectStore())
-  }
+#Preview {
+  ShowSubjectsView()
+    .environmentObject(SubjectStore())
 }

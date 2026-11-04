@@ -39,8 +39,6 @@ struct SheetHeaderView: View {
   }
 }
 
-struct SheetHeaderView_Previews: PreviewProvider {
-  static var previews: some View {
-    SheetHeaderView(title: "My Title", subtitle: "My subtitle")
-  }
+#Preview {
+  SheetHeaderView(title: "My Title", subtitle: "My subtitle")
 }

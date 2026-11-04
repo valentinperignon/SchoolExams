@@ -33,8 +33,6 @@ struct FormTextFieldView: View {
   }
 }
 
-struct FormTextFieldView_Previews: PreviewProvider {
-  static var previews: some View {
-    FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
-  }
+#Preview {
+  FormTextFieldView(keyboardType: .default, title: "My Title", textValue: .constant(""))
 }

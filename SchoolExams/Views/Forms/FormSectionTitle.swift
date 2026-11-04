@@ -24,8 +24,6 @@ struct FormSectionTitle: View {
   }
 }
 
-struct FormSectionTitle_Previews: PreviewProvider {
-  static var previews: some View {
-    FormSectionTitle(title: "My title")
-  }
+#Preview {
+  FormSectionTitle(title: "My title")
 }

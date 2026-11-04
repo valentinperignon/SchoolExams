@@ -82,9 +82,7 @@ struct AverageView: View {
   }
 }
 
-struct AverageView_Previews: PreviewProvider {
-  static var previews: some View {
-    AverageView(average: "-")
-      .environment(\.colorScheme, .dark)
-  }
+#Preview {
+  AverageView(average: "-")
+    .environment(\.colorScheme, .dark)
 }

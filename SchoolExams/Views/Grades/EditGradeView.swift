@@ -162,13 +162,11 @@ struct EditGradeView: View {
   }
 }
 
-struct EditGradeView_Previews: PreviewProvider {
-  static var previews: some View {
-    EditGradeView(
-      subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0),
-      grade: Grade(name: "Oral", value: 18, scale: 20, coefficient: 1, date: Date(), tag: 0),
-      gradeValue: "18.0", scaleValue: "20"
-    )
-    .environmentObject(SubjectStore())
-  }
+#Preview {
+  EditGradeView(
+    subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0),
+    grade: Grade(name: "Oral", value: 18, scale: 20, coefficient: 1, date: Date(), tag: 0),
+    gradeValue: "18.0", scaleValue: "20"
+  )
+  .environmentObject(SubjectStore())
 }

@@ -24,8 +24,6 @@ struct FormDatePickerView: View {
   }
 }
 
-struct FormDatePickerView_Previews: PreviewProvider {
-  static var previews: some View {
-    FormDatePickerView(title: "Date", selectedDate: .constant(Date()))
-  }
+#Preview {
+  FormDatePickerView(title: "Date", selectedDate: .constant(Date()))
 }

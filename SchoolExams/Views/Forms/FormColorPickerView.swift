@@ -50,8 +50,6 @@ struct FormColorPickerView: View {
   }
 }
 
-struct FormColorPickerView_Previews: PreviewProvider {
-  static var previews: some View {
-    FormColorPickerView(title: "Accent color", value: .constant(.purple))
-  }
+#Preview {
+  FormColorPickerView(title: "Accent color", value: .constant(.purple))
 }

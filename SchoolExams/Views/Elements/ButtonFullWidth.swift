@@ -77,12 +77,10 @@ struct ButtonFullWidth: View {
   }
 }
 
-struct ButtonFullWidth_Previews: PreviewProvider {
-  static var previews: some View {
-    VStack {
-      ButtonFullWidth(type: .primary, title: "Get Weather", iconSysName: "cloud.sun", action: {})
-      ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "arrow.left", action: {})
-      ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "bin", action: {})
-    }
+#Preview {
+  VStack {
+    ButtonFullWidth(type: .primary, title: "Get Weather", iconSysName: "cloud.sun", action: {})
+    ButtonFullWidth(type: .warning, title: "Cancel", iconSysName: "arrow.left", action: {})
+    ButtonFullWidth(type: .alert, title: "Remove", iconSysName: "bin", action: {})
   }
 }

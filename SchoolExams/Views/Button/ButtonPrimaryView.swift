@@ -36,8 +36,6 @@ struct ButtonPrimaryView: View {
   }
 }
 
-struct ButtonPrimaryView_Previews: PreviewProvider {
-  static var previews: some View {
-    ButtonPrimaryView(iconName: "plus", label: "New Grade", action: {})
-  }
+#Preview {
+  ButtonPrimaryView(iconName: "plus", label: "New Grade", action: {})
 }

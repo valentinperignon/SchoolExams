@@ -47,8 +47,6 @@ struct NoSubjectView: View {
   }
 }
 
-struct NoSubjectView_Previews: PreviewProvider {
-  static var previews: some View {
-    NoSubjectView(showSheet: .constant(false))
-  }
+#Preview {
+  NoSubjectView(showSheet: .constant(false))
 }

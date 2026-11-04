@@ -32,8 +32,6 @@ struct FormButtonView: View {
   }
 }
 
-struct FormButtonView_Previews: PreviewProvider {
-  static var previews: some View {
-    FormButtonView(label: "Button Text") {}
-  }
+#Preview {
+  FormButtonView(label: "Button Text") {}
 }

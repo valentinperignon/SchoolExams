@@ -120,9 +120,7 @@ struct EditSubjectView: View {
   }
 }
 
-struct EditSubjectView_Previews: PreviewProvider {
-  static var previews: some View {
-    EditSubjectView(subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0))
-      .environmentObject(SubjectStore())
-  }
+#Preview {
+  EditSubjectView(subject: Subject(name: "Anglais", color: .red, coefficient: 3, tag: 0))
+    .environmentObject(SubjectStore())
 }
