@@ -22,7 +22,7 @@ class SubjectStore: Average, ObservableObject {
   @Published var averageDisplay = "0"
   
   @Published var sortBy: SubjectStore.Order = .defaultOrder {
-    didSet {
+    didSet {    
       sortSubjects()
       saveJSON()
     }

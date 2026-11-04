@@ -15,6 +15,7 @@ struct AppStoreReviewManager {
   private static let keyActionNumber = "APRM_ActionNumber"
   private static let keyLastVersion = "APRM_LastVersion"
   
+  @MainActor
   static func requestReviewIfPossible() {
     let defaults = UserDefaults.standard
     
@@ -37,12 +38,9 @@ struct AppStoreReviewManager {
     defaults.set(currentVersion, forKey: keyLastVersion)
   }
   
+  @MainActor
   private static func request() {
-    if #available(iOS 14.0, *) {
-      guard let scnene = UIApplication.shared.currentScene else { return }
-      SKStoreReviewController.requestReview(in: scnene)
-    } else {
-      SKStoreReviewController.requestReview()
-    }
+    guard let scene = UIApplication.shared.currentScene else { return }
+    AppStore.requestReview(in: scene)
   }
 }
